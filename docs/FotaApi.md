@@ -4,18 +4,18 @@ All URIs are relative to *https://api.lab5e.com/span*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SpanClearFirmwareError**](FotaApi.md#spanclearfirmwareerror) | **DELETE** /collections/{collectionId}/devices/{deviceId}/fwerror | Clear FOTA error
-[**SpanCreateFirmware**](FotaApi.md#spancreatefirmware) | **POST** /collections/{collectionId}/firmware | Create firmware
-[**SpanDeleteFirmware**](FotaApi.md#spandeletefirmware) | **DELETE** /collections/{collectionId}/firmware/{imageId} | Delete firmware
-[**SpanFirmwareUsage**](FotaApi.md#spanfirmwareusage) | **PATCH** /collections/{collectionId}/firmware/{imageId}/usage | Firmware usage
-[**SpanListFirmware**](FotaApi.md#spanlistfirmware) | **GET** /collections/{collectionId}/firmware | List firmware
-[**SpanRetrieveFirmware**](FotaApi.md#spanretrievefirmware) | **GET** /collections/{collectionId}/firmware/{imageId} | Retrieve firmware
-[**SpanUpdateFirmware**](FotaApi.md#spanupdatefirmware) | **PATCH** /collections/{collectionId}/firmware/{imageId} | Update firmware
+[**ClearFirmwareError**](FotaApi.md#clearfirmwareerror) | **DELETE** /collections/{collectionId}/devices/{deviceId}/fwerror | Clear FOTA error
+[**CreateFirmware**](FotaApi.md#createfirmware) | **POST** /collections/{collectionId}/firmware | Create firmware
+[**DeleteFirmware**](FotaApi.md#deletefirmware) | **DELETE** /collections/{collectionId}/firmware/{imageId} | Delete firmware
+[**FirmwareUsage**](FotaApi.md#firmwareusage) | **PATCH** /collections/{collectionId}/firmware/{imageId}/usage | Firmware usage
+[**ListFirmware**](FotaApi.md#listfirmware) | **GET** /collections/{collectionId}/firmware | List firmware
+[**RetrieveFirmware**](FotaApi.md#retrievefirmware) | **GET** /collections/{collectionId}/firmware/{imageId} | Retrieve firmware
+[**UpdateFirmware**](FotaApi.md#updatefirmware) | **PATCH** /collections/{collectionId}/firmware/{imageId} | Update firmware
 
 
-<a name="spanclearfirmwareerror"></a>
-# **SpanClearFirmwareError**
-> Object SpanClearFirmwareError (string collectionId, string deviceId)
+<a name="clearfirmwareerror"></a>
+# **ClearFirmwareError**
+> ClearFirmwareErrorResponse ClearFirmwareError (string collectionId, string deviceId)
 
 Clear FOTA error
 
@@ -29,7 +29,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class SpanClearFirmwareErrorExample
+    public class ClearFirmwareErrorExample
     {
         public static void Main()
         {
@@ -47,12 +47,12 @@ namespace Example
             try
             {
                 // Clear FOTA error
-                Object result = apiInstance.SpanClearFirmwareError(collectionId, deviceId);
+                ClearFirmwareErrorResponse result = apiInstance.ClearFirmwareError(collectionId, deviceId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FotaApi.SpanClearFirmwareError: " + e.Message );
+                Debug.Print("Exception when calling FotaApi.ClearFirmwareError: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**ClearFirmwareErrorResponse**](ClearFirmwareErrorResponse.md)
 
 ### Authorization
 
@@ -96,9 +96,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="spancreatefirmware"></a>
-# **SpanCreateFirmware**
-> Firmware SpanCreateFirmware (string collectionId, CreateFirmwareRequest body)
+<a name="createfirmware"></a>
+# **CreateFirmware**
+> Firmware CreateFirmware (string collectionId, CreateFirmwareRequest body)
 
 Create firmware
 
@@ -114,7 +114,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class SpanCreateFirmwareExample
+    public class CreateFirmwareExample
     {
         public static void Main()
         {
@@ -132,12 +132,12 @@ namespace Example
             try
             {
                 // Create firmware
-                Firmware result = apiInstance.SpanCreateFirmware(collectionId, body);
+                Firmware result = apiInstance.CreateFirmware(collectionId, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FotaApi.SpanCreateFirmware: " + e.Message );
+                Debug.Print("Exception when calling FotaApi.CreateFirmware: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -181,9 +181,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="spandeletefirmware"></a>
-# **SpanDeleteFirmware**
-> Firmware SpanDeleteFirmware (string collectionId, string imageId)
+<a name="deletefirmware"></a>
+# **DeleteFirmware**
+> Firmware DeleteFirmware (string collectionId, string imageId)
 
 Delete firmware
 
@@ -197,7 +197,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class SpanDeleteFirmwareExample
+    public class DeleteFirmwareExample
     {
         public static void Main()
         {
@@ -215,12 +215,12 @@ namespace Example
             try
             {
                 // Delete firmware
-                Firmware result = apiInstance.SpanDeleteFirmware(collectionId, imageId);
+                Firmware result = apiInstance.DeleteFirmware(collectionId, imageId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FotaApi.SpanDeleteFirmware: " + e.Message );
+                Debug.Print("Exception when calling FotaApi.DeleteFirmware: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -264,9 +264,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="spanfirmwareusage"></a>
-# **SpanFirmwareUsage**
-> FirmwareUsageResponse SpanFirmwareUsage (string collectionId, string imageId)
+<a name="firmwareusage"></a>
+# **FirmwareUsage**
+> FirmwareUsageResponse FirmwareUsage (string collectionId, string imageId)
 
 Firmware usage
 
@@ -282,7 +282,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class SpanFirmwareUsageExample
+    public class FirmwareUsageExample
     {
         public static void Main()
         {
@@ -300,12 +300,12 @@ namespace Example
             try
             {
                 // Firmware usage
-                FirmwareUsageResponse result = apiInstance.SpanFirmwareUsage(collectionId, imageId);
+                FirmwareUsageResponse result = apiInstance.FirmwareUsage(collectionId, imageId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FotaApi.SpanFirmwareUsage: " + e.Message );
+                Debug.Print("Exception when calling FotaApi.FirmwareUsage: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -349,9 +349,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="spanlistfirmware"></a>
-# **SpanListFirmware**
-> ListFirmwareResponse SpanListFirmware (string collectionId)
+<a name="listfirmware"></a>
+# **ListFirmware**
+> ListFirmwareResponse ListFirmware (string collectionId)
 
 List firmware
 
@@ -367,7 +367,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class SpanListFirmwareExample
+    public class ListFirmwareExample
     {
         public static void Main()
         {
@@ -384,12 +384,12 @@ namespace Example
             try
             {
                 // List firmware
-                ListFirmwareResponse result = apiInstance.SpanListFirmware(collectionId);
+                ListFirmwareResponse result = apiInstance.ListFirmware(collectionId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FotaApi.SpanListFirmware: " + e.Message );
+                Debug.Print("Exception when calling FotaApi.ListFirmware: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -432,9 +432,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="spanretrievefirmware"></a>
-# **SpanRetrieveFirmware**
-> Firmware SpanRetrieveFirmware (string collectionId, string imageId)
+<a name="retrievefirmware"></a>
+# **RetrieveFirmware**
+> Firmware RetrieveFirmware (string collectionId, string imageId)
 
 Retrieve firmware
 
@@ -450,7 +450,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class SpanRetrieveFirmwareExample
+    public class RetrieveFirmwareExample
     {
         public static void Main()
         {
@@ -468,12 +468,12 @@ namespace Example
             try
             {
                 // Retrieve firmware
-                Firmware result = apiInstance.SpanRetrieveFirmware(collectionId, imageId);
+                Firmware result = apiInstance.RetrieveFirmware(collectionId, imageId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FotaApi.SpanRetrieveFirmware: " + e.Message );
+                Debug.Print("Exception when calling FotaApi.RetrieveFirmware: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -517,9 +517,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="spanupdatefirmware"></a>
-# **SpanUpdateFirmware**
-> Firmware SpanUpdateFirmware (string collectionId, string imageId, Firmware body)
+<a name="updatefirmware"></a>
+# **UpdateFirmware**
+> Firmware UpdateFirmware (string collectionId, string imageId, Firmware body)
 
 Update firmware
 
@@ -533,7 +533,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class SpanUpdateFirmwareExample
+    public class UpdateFirmwareExample
     {
         public static void Main()
         {
@@ -552,12 +552,12 @@ namespace Example
             try
             {
                 // Update firmware
-                Firmware result = apiInstance.SpanUpdateFirmware(collectionId, imageId, body);
+                Firmware result = apiInstance.UpdateFirmware(collectionId, imageId, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FotaApi.SpanUpdateFirmware: " + e.Message );
+                Debug.Print("Exception when calling FotaApi.UpdateFirmware: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }

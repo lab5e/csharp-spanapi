@@ -4,18 +4,18 @@ All URIs are relative to *https://api.lab5e.com/span*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SpanCreateOutput**](OutputsApi.md#spancreateoutput) | **POST** /collections/{collectionId}/outputs | Create output
-[**SpanDeleteOutput**](OutputsApi.md#spandeleteoutput) | **DELETE** /collections/{collectionId}/outputs/{outputId} | Delete output
-[**SpanListOutputs**](OutputsApi.md#spanlistoutputs) | **GET** /collections/{collectionId}/outputs | List outputs
-[**SpanLogs**](OutputsApi.md#spanlogs) | **GET** /collections/{collectionId}/outputs/{outputId}/logs | Output logs
-[**SpanRetrieveOutput**](OutputsApi.md#spanretrieveoutput) | **GET** /collections/{collectionId}/outputs/{outputId} | Retrieve output
-[**SpanStatus**](OutputsApi.md#spanstatus) | **GET** /collections/{collectionId}/outputs/{outputId}/status | Output status
-[**SpanUpdateOutput**](OutputsApi.md#spanupdateoutput) | **PATCH** /collections/{collectionId}/outputs/{outputId} | Update output
+[**CreateOutput**](OutputsApi.md#createoutput) | **POST** /collections/{collectionId}/outputs | Create output
+[**DeleteOutput**](OutputsApi.md#deleteoutput) | **DELETE** /collections/{collectionId}/outputs/{outputId} | Delete output
+[**ListOutputs**](OutputsApi.md#listoutputs) | **GET** /collections/{collectionId}/outputs | List outputs
+[**Logs**](OutputsApi.md#logs) | **GET** /collections/{collectionId}/outputs/{outputId}/logs | Output logs
+[**RetrieveOutput**](OutputsApi.md#retrieveoutput) | **GET** /collections/{collectionId}/outputs/{outputId} | Retrieve output
+[**Status**](OutputsApi.md#status) | **GET** /collections/{collectionId}/outputs/{outputId}/status | Output status
+[**UpdateOutput**](OutputsApi.md#updateoutput) | **PATCH** /collections/{collectionId}/outputs/{outputId} | Update output
 
 
-<a name="spancreateoutput"></a>
-# **SpanCreateOutput**
-> Output SpanCreateOutput (string collectionId, Output body)
+<a name="createoutput"></a>
+# **CreateOutput**
+> Output CreateOutput (string collectionId, Output body)
 
 Create output
 
@@ -29,7 +29,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class SpanCreateOutputExample
+    public class CreateOutputExample
     {
         public static void Main()
         {
@@ -47,12 +47,12 @@ namespace Example
             try
             {
                 // Create output
-                Output result = apiInstance.SpanCreateOutput(collectionId, body);
+                Output result = apiInstance.CreateOutput(collectionId, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OutputsApi.SpanCreateOutput: " + e.Message );
+                Debug.Print("Exception when calling OutputsApi.CreateOutput: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -96,9 +96,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="spandeleteoutput"></a>
-# **SpanDeleteOutput**
-> Output SpanDeleteOutput (string collectionId, string outputId)
+<a name="deleteoutput"></a>
+# **DeleteOutput**
+> Output DeleteOutput (string collectionId, string outputId)
 
 Delete output
 
@@ -112,7 +112,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class SpanDeleteOutputExample
+    public class DeleteOutputExample
     {
         public static void Main()
         {
@@ -130,12 +130,12 @@ namespace Example
             try
             {
                 // Delete output
-                Output result = apiInstance.SpanDeleteOutput(collectionId, outputId);
+                Output result = apiInstance.DeleteOutput(collectionId, outputId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OutputsApi.SpanDeleteOutput: " + e.Message );
+                Debug.Print("Exception when calling OutputsApi.DeleteOutput: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -179,9 +179,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="spanlistoutputs"></a>
-# **SpanListOutputs**
-> ListOutputResponse SpanListOutputs (string collectionId)
+<a name="listoutputs"></a>
+# **ListOutputs**
+> ListOutputResponse ListOutputs (string collectionId)
 
 List outputs
 
@@ -195,7 +195,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class SpanListOutputsExample
+    public class ListOutputsExample
     {
         public static void Main()
         {
@@ -212,12 +212,12 @@ namespace Example
             try
             {
                 // List outputs
-                ListOutputResponse result = apiInstance.SpanListOutputs(collectionId);
+                ListOutputResponse result = apiInstance.ListOutputs(collectionId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OutputsApi.SpanListOutputs: " + e.Message );
+                Debug.Print("Exception when calling OutputsApi.ListOutputs: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -260,9 +260,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="spanlogs"></a>
-# **SpanLogs**
-> OutputLogResponse SpanLogs (string collectionId, string outputId)
+<a name="logs"></a>
+# **Logs**
+> OutputLogResponse Logs (string collectionId, string outputId)
 
 Output logs
 
@@ -276,7 +276,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class SpanLogsExample
+    public class LogsExample
     {
         public static void Main()
         {
@@ -294,12 +294,12 @@ namespace Example
             try
             {
                 // Output logs
-                OutputLogResponse result = apiInstance.SpanLogs(collectionId, outputId);
+                OutputLogResponse result = apiInstance.Logs(collectionId, outputId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OutputsApi.SpanLogs: " + e.Message );
+                Debug.Print("Exception when calling OutputsApi.Logs: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -343,9 +343,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="spanretrieveoutput"></a>
-# **SpanRetrieveOutput**
-> Output SpanRetrieveOutput (string collectionId, string outputId)
+<a name="retrieveoutput"></a>
+# **RetrieveOutput**
+> Output RetrieveOutput (string collectionId, string outputId)
 
 Retrieve output
 
@@ -359,7 +359,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class SpanRetrieveOutputExample
+    public class RetrieveOutputExample
     {
         public static void Main()
         {
@@ -377,12 +377,12 @@ namespace Example
             try
             {
                 // Retrieve output
-                Output result = apiInstance.SpanRetrieveOutput(collectionId, outputId);
+                Output result = apiInstance.RetrieveOutput(collectionId, outputId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OutputsApi.SpanRetrieveOutput: " + e.Message );
+                Debug.Print("Exception when calling OutputsApi.RetrieveOutput: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -426,9 +426,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="spanstatus"></a>
-# **SpanStatus**
-> OutputStatusResponse SpanStatus (string collectionId, string outputId)
+<a name="status"></a>
+# **Status**
+> OutputStatusResponse Status (string collectionId, string outputId)
 
 Output status
 
@@ -442,7 +442,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class SpanStatusExample
+    public class StatusExample
     {
         public static void Main()
         {
@@ -460,12 +460,12 @@ namespace Example
             try
             {
                 // Output status
-                OutputStatusResponse result = apiInstance.SpanStatus(collectionId, outputId);
+                OutputStatusResponse result = apiInstance.Status(collectionId, outputId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OutputsApi.SpanStatus: " + e.Message );
+                Debug.Print("Exception when calling OutputsApi.Status: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -509,9 +509,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="spanupdateoutput"></a>
-# **SpanUpdateOutput**
-> Output SpanUpdateOutput (string collectionId, string outputId, Output body)
+<a name="updateoutput"></a>
+# **UpdateOutput**
+> Output UpdateOutput (string collectionId, string outputId, Output body)
 
 Update output
 
@@ -527,7 +527,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class SpanUpdateOutputExample
+    public class UpdateOutputExample
     {
         public static void Main()
         {
@@ -546,12 +546,12 @@ namespace Example
             try
             {
                 // Update output
-                Output result = apiInstance.SpanUpdateOutput(collectionId, outputId, body);
+                Output result = apiInstance.UpdateOutput(collectionId, outputId, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OutputsApi.SpanUpdateOutput: " + e.Message );
+                Debug.Print("Exception when calling OutputsApi.UpdateOutput: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }

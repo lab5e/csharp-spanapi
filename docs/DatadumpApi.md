@@ -4,12 +4,12 @@ All URIs are relative to *https://api.lab5e.com/span*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SpanDataDump**](DatadumpApi.md#spandatadump) | **POST** /datadump | Data dump
+[**DataDump**](DatadumpApi.md#datadump) | **POST** /datadump | Data dump
 
 
-<a name="spandatadump"></a>
-# **SpanDataDump**
-> DataDumpResponse SpanDataDump (Object body)
+<a name="datadump"></a>
+# **DataDump**
+> DataDumpResponse DataDump (DataDumpRequest body)
 
 Data dump
 
@@ -25,7 +25,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class SpanDataDumpExample
+    public class DataDumpExample
     {
         public static void Main()
         {
@@ -37,17 +37,17 @@ namespace Example
             // config.AddApiKeyPrefix("X-API-Token", "Bearer");
 
             var apiInstance = new DatadumpApi(config);
-            var body = ;  // Object | 
+            var body = new DataDumpRequest(); // DataDumpRequest | 
 
             try
             {
                 // Data dump
-                DataDumpResponse result = apiInstance.SpanDataDump(body);
+                DataDumpResponse result = apiInstance.DataDump(body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatadumpApi.SpanDataDump: " + e.Message );
+                Debug.Print("Exception when calling DatadumpApi.DataDump: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -60,7 +60,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **Object**|  | 
+ **body** | [**DataDumpRequest**](DataDumpRequest.md)|  | 
 
 ### Return type
 

@@ -4,18 +4,18 @@ All URIs are relative to *https://api.lab5e.com/span*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SpanBroadcastMessage**](CollectionsApi.md#spanbroadcastmessage) | **POST** /collections/{collectionId}/to | Broadcast message
-[**SpanCreateCollection**](CollectionsApi.md#spancreatecollection) | **POST** /collections | Create collection
-[**SpanDeleteCollection**](CollectionsApi.md#spandeletecollection) | **DELETE** /collections/{collectionId} | Delete collection
-[**SpanListCollectionData**](CollectionsApi.md#spanlistcollectiondata) | **GET** /collections/{collectionId}/data | Get payloads
-[**SpanListCollections**](CollectionsApi.md#spanlistcollections) | **GET** /collections | List collections
-[**SpanRetrieveCollection**](CollectionsApi.md#spanretrievecollection) | **GET** /collections/{collectionId} | Retrieve collection
-[**SpanUpdateCollection**](CollectionsApi.md#spanupdatecollection) | **PATCH** /collections/{collectionId} | Update collection
+[**BroadcastMessage**](CollectionsApi.md#broadcastmessage) | **POST** /collections/{collectionId}/to | Broadcast message
+[**CreateCollection**](CollectionsApi.md#createcollection) | **POST** /collections | Create collection
+[**DeleteCollection**](CollectionsApi.md#deletecollection) | **DELETE** /collections/{collectionId} | Delete collection
+[**ListCollectionData**](CollectionsApi.md#listcollectiondata) | **GET** /collections/{collectionId}/data | Get payloads
+[**ListCollections**](CollectionsApi.md#listcollections) | **GET** /collections | List collections
+[**RetrieveCollection**](CollectionsApi.md#retrievecollection) | **GET** /collections/{collectionId} | Retrieve collection
+[**UpdateCollection**](CollectionsApi.md#updatecollection) | **PATCH** /collections/{collectionId} | Update collection
 
 
-<a name="spanbroadcastmessage"></a>
-# **SpanBroadcastMessage**
-> MultiSendMessageResponse SpanBroadcastMessage (string collectionId, BroadcastMessageRequest body)
+<a name="broadcastmessage"></a>
+# **BroadcastMessage**
+> MultiSendMessageResponse BroadcastMessage (string collectionId, BroadcastMessageRequest body)
 
 Broadcast message
 
@@ -31,7 +31,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class SpanBroadcastMessageExample
+    public class BroadcastMessageExample
     {
         public static void Main()
         {
@@ -49,12 +49,12 @@ namespace Example
             try
             {
                 // Broadcast message
-                MultiSendMessageResponse result = apiInstance.SpanBroadcastMessage(collectionId, body);
+                MultiSendMessageResponse result = apiInstance.BroadcastMessage(collectionId, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CollectionsApi.SpanBroadcastMessage: " + e.Message );
+                Debug.Print("Exception when calling CollectionsApi.BroadcastMessage: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -98,9 +98,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="spancreatecollection"></a>
-# **SpanCreateCollection**
-> Collection SpanCreateCollection (Collection body)
+<a name="createcollection"></a>
+# **CreateCollection**
+> Collection CreateCollection (Collection body)
 
 Create collection
 
@@ -116,7 +116,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class SpanCreateCollectionExample
+    public class CreateCollectionExample
     {
         public static void Main()
         {
@@ -133,12 +133,12 @@ namespace Example
             try
             {
                 // Create collection
-                Collection result = apiInstance.SpanCreateCollection(body);
+                Collection result = apiInstance.CreateCollection(body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CollectionsApi.SpanCreateCollection: " + e.Message );
+                Debug.Print("Exception when calling CollectionsApi.CreateCollection: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -181,9 +181,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="spandeletecollection"></a>
-# **SpanDeleteCollection**
-> Collection SpanDeleteCollection (string collectionId)
+<a name="deletecollection"></a>
+# **DeleteCollection**
+> Collection DeleteCollection (string collectionId)
 
 Delete collection
 
@@ -199,7 +199,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class SpanDeleteCollectionExample
+    public class DeleteCollectionExample
     {
         public static void Main()
         {
@@ -216,12 +216,12 @@ namespace Example
             try
             {
                 // Delete collection
-                Collection result = apiInstance.SpanDeleteCollection(collectionId);
+                Collection result = apiInstance.DeleteCollection(collectionId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CollectionsApi.SpanDeleteCollection: " + e.Message );
+                Debug.Print("Exception when calling CollectionsApi.DeleteCollection: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -264,9 +264,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="spanlistcollectiondata"></a>
-# **SpanListCollectionData**
-> ListDataResponse SpanListCollectionData (string collectionId, int? limit = null, string start = null, string end = null, string offset = null)
+<a name="listcollectiondata"></a>
+# **ListCollectionData**
+> ListDataResponse ListCollectionData (string collectionId, int? limit = null, string start = null, string end = null, string offset = null)
 
 Get payloads
 
@@ -282,7 +282,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class SpanListCollectionDataExample
+    public class ListCollectionDataExample
     {
         public static void Main()
         {
@@ -303,12 +303,12 @@ namespace Example
             try
             {
                 // Get payloads
-                ListDataResponse result = apiInstance.SpanListCollectionData(collectionId, limit, start, end, offset);
+                ListDataResponse result = apiInstance.ListCollectionData(collectionId, limit, start, end, offset);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CollectionsApi.SpanListCollectionData: " + e.Message );
+                Debug.Print("Exception when calling CollectionsApi.ListCollectionData: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -355,9 +355,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="spanlistcollections"></a>
-# **SpanListCollections**
-> ListCollectionResponse SpanListCollections ()
+<a name="listcollections"></a>
+# **ListCollections**
+> ListCollectionResponse ListCollections ()
 
 List collections
 
@@ -373,7 +373,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class SpanListCollectionsExample
+    public class ListCollectionsExample
     {
         public static void Main()
         {
@@ -389,12 +389,12 @@ namespace Example
             try
             {
                 // List collections
-                ListCollectionResponse result = apiInstance.SpanListCollections();
+                ListCollectionResponse result = apiInstance.ListCollections();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CollectionsApi.SpanListCollections: " + e.Message );
+                Debug.Print("Exception when calling CollectionsApi.ListCollections: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -434,9 +434,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="spanretrievecollection"></a>
-# **SpanRetrieveCollection**
-> Collection SpanRetrieveCollection (string collectionId)
+<a name="retrievecollection"></a>
+# **RetrieveCollection**
+> Collection RetrieveCollection (string collectionId)
 
 Retrieve collection
 
@@ -450,7 +450,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class SpanRetrieveCollectionExample
+    public class RetrieveCollectionExample
     {
         public static void Main()
         {
@@ -467,12 +467,12 @@ namespace Example
             try
             {
                 // Retrieve collection
-                Collection result = apiInstance.SpanRetrieveCollection(collectionId);
+                Collection result = apiInstance.RetrieveCollection(collectionId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CollectionsApi.SpanRetrieveCollection: " + e.Message );
+                Debug.Print("Exception when calling CollectionsApi.RetrieveCollection: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -515,9 +515,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="spanupdatecollection"></a>
-# **SpanUpdateCollection**
-> Collection SpanUpdateCollection (string collectionId, Collection body)
+<a name="updatecollection"></a>
+# **UpdateCollection**
+> Collection UpdateCollection (string collectionId, Collection body)
 
 Update collection
 
@@ -533,7 +533,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class SpanUpdateCollectionExample
+    public class UpdateCollectionExample
     {
         public static void Main()
         {
@@ -551,12 +551,12 @@ namespace Example
             try
             {
                 // Update collection
-                Collection result = apiInstance.SpanUpdateCollection(collectionId, body);
+                Collection result = apiInstance.UpdateCollection(collectionId, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CollectionsApi.SpanUpdateCollection: " + e.Message );
+                Debug.Print("Exception when calling CollectionsApi.UpdateCollection: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
