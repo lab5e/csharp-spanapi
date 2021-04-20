@@ -4,12 +4,12 @@ All URIs are relative to *https://api.lab5e.com/span*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetSystemInfo**](SystemApi.md#getsysteminfo) | **GET** /system | System information
+[**SpanGetSystemInfo**](SystemApi.md#spangetsysteminfo) | **GET** /system | System information
 
 
-<a name="getsysteminfo"></a>
-# **GetSystemInfo**
-> SystemInfoResponse GetSystemInfo ()
+<a name="spangetsysteminfo"></a>
+# **SpanGetSystemInfo**
+> SystemInfoResponse SpanGetSystemInfo ()
 
 System information
 
@@ -23,7 +23,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class GetSystemInfoExample
+    public class SpanGetSystemInfoExample
     {
         public static void Main()
         {
@@ -39,12 +39,12 @@ namespace Example
             try
             {
                 // System information
-                SystemInfoResponse result = apiInstance.GetSystemInfo();
+                SystemInfoResponse result = apiInstance.SpanGetSystemInfo();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SystemApi.GetSystemInfo: " + e.Message );
+                Debug.Print("Exception when calling SystemApi.SpanGetSystemInfo: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }

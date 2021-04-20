@@ -4,18 +4,18 @@ All URIs are relative to *https://api.lab5e.com/span*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateDevice**](DevicesApi.md#createdevice) | **POST** /collections/{collectionId}/devices | Create device
-[**DeleteDevice**](DevicesApi.md#deletedevice) | **DELETE** /collections/{collectionId}/devices/{deviceId} | Remove device
-[**ListDeviceData**](DevicesApi.md#listdevicedata) | **GET** /collections/{collectionId}/devices/{deviceId}/data | Get payloads
-[**ListDevices**](DevicesApi.md#listdevices) | **GET** /collections/{collectionId}/devices | List devices
-[**RetrieveDevice**](DevicesApi.md#retrievedevice) | **GET** /collections/{collectionId}/devices/{deviceId} | Retrieve device
-[**SendMessage**](DevicesApi.md#sendmessage) | **POST** /collections/{collectionId}/devices/{deviceId}/to | Send message
-[**UpdateDevice**](DevicesApi.md#updatedevice) | **PATCH** /collections/{existingCollectionId}/devices/{deviceId} | Update device
+[**SpanCreateDevice**](DevicesApi.md#spancreatedevice) | **POST** /collections/{collectionId}/devices | Create device
+[**SpanDeleteDevice**](DevicesApi.md#spandeletedevice) | **DELETE** /collections/{collectionId}/devices/{deviceId} | Remove device
+[**SpanListDeviceData**](DevicesApi.md#spanlistdevicedata) | **GET** /collections/{collectionId}/devices/{deviceId}/data | Get payloads
+[**SpanListDevices**](DevicesApi.md#spanlistdevices) | **GET** /collections/{collectionId}/devices | List devices
+[**SpanRetrieveDevice**](DevicesApi.md#spanretrievedevice) | **GET** /collections/{collectionId}/devices/{deviceId} | Retrieve device
+[**SpanSendMessage**](DevicesApi.md#spansendmessage) | **POST** /collections/{collectionId}/devices/{deviceId}/to | Send message
+[**SpanUpdateDevice**](DevicesApi.md#spanupdatedevice) | **PATCH** /collections/{existingCollectionId}/devices/{deviceId} | Update device
 
 
-<a name="createdevice"></a>
-# **CreateDevice**
-> Device CreateDevice (string collectionId, Device body)
+<a name="spancreatedevice"></a>
+# **SpanCreateDevice**
+> Device SpanCreateDevice (string collectionId, Device body)
 
 Create device
 
@@ -31,7 +31,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class CreateDeviceExample
+    public class SpanCreateDeviceExample
     {
         public static void Main()
         {
@@ -49,12 +49,12 @@ namespace Example
             try
             {
                 // Create device
-                Device result = apiInstance.CreateDevice(collectionId, body);
+                Device result = apiInstance.SpanCreateDevice(collectionId, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DevicesApi.CreateDevice: " + e.Message );
+                Debug.Print("Exception when calling DevicesApi.SpanCreateDevice: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -98,9 +98,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deletedevice"></a>
-# **DeleteDevice**
-> Device DeleteDevice (string collectionId, string deviceId)
+<a name="spandeletedevice"></a>
+# **SpanDeleteDevice**
+> Device SpanDeleteDevice (string collectionId, string deviceId)
 
 Remove device
 
@@ -114,7 +114,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class DeleteDeviceExample
+    public class SpanDeleteDeviceExample
     {
         public static void Main()
         {
@@ -132,12 +132,12 @@ namespace Example
             try
             {
                 // Remove device
-                Device result = apiInstance.DeleteDevice(collectionId, deviceId);
+                Device result = apiInstance.SpanDeleteDevice(collectionId, deviceId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DevicesApi.DeleteDevice: " + e.Message );
+                Debug.Print("Exception when calling DevicesApi.SpanDeleteDevice: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -181,9 +181,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="listdevicedata"></a>
-# **ListDeviceData**
-> ListDataResponse ListDeviceData (string collectionId, string deviceId, int? limit = null, string start = null, string end = null, string offset = null)
+<a name="spanlistdevicedata"></a>
+# **SpanListDeviceData**
+> ListDataResponse SpanListDeviceData (string collectionId, string deviceId, int? limit = null, string start = null, string end = null, string offset = null)
 
 Get payloads
 
@@ -199,7 +199,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class ListDeviceDataExample
+    public class SpanListDeviceDataExample
     {
         public static void Main()
         {
@@ -221,12 +221,12 @@ namespace Example
             try
             {
                 // Get payloads
-                ListDataResponse result = apiInstance.ListDeviceData(collectionId, deviceId, limit, start, end, offset);
+                ListDataResponse result = apiInstance.SpanListDeviceData(collectionId, deviceId, limit, start, end, offset);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DevicesApi.ListDeviceData: " + e.Message );
+                Debug.Print("Exception when calling DevicesApi.SpanListDeviceData: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -274,9 +274,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="listdevices"></a>
-# **ListDevices**
-> ListDevicesResponse ListDevices (string collectionId)
+<a name="spanlistdevices"></a>
+# **SpanListDevices**
+> ListDevicesResponse SpanListDevices (string collectionId)
 
 List devices
 
@@ -290,7 +290,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class ListDevicesExample
+    public class SpanListDevicesExample
     {
         public static void Main()
         {
@@ -307,12 +307,12 @@ namespace Example
             try
             {
                 // List devices
-                ListDevicesResponse result = apiInstance.ListDevices(collectionId);
+                ListDevicesResponse result = apiInstance.SpanListDevices(collectionId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DevicesApi.ListDevices: " + e.Message );
+                Debug.Print("Exception when calling DevicesApi.SpanListDevices: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -355,9 +355,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="retrievedevice"></a>
-# **RetrieveDevice**
-> Device RetrieveDevice (string collectionId, string deviceId)
+<a name="spanretrievedevice"></a>
+# **SpanRetrieveDevice**
+> Device SpanRetrieveDevice (string collectionId, string deviceId)
 
 Retrieve device
 
@@ -373,7 +373,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class RetrieveDeviceExample
+    public class SpanRetrieveDeviceExample
     {
         public static void Main()
         {
@@ -391,12 +391,12 @@ namespace Example
             try
             {
                 // Retrieve device
-                Device result = apiInstance.RetrieveDevice(collectionId, deviceId);
+                Device result = apiInstance.SpanRetrieveDevice(collectionId, deviceId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DevicesApi.RetrieveDevice: " + e.Message );
+                Debug.Print("Exception when calling DevicesApi.SpanRetrieveDevice: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -440,9 +440,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="sendmessage"></a>
-# **SendMessage**
-> SendMessageResponse SendMessage (string collectionId, string deviceId, SendMessageRequest body)
+<a name="spansendmessage"></a>
+# **SpanSendMessage**
+> Object SpanSendMessage (string collectionId, string deviceId, SendMessageRequest body)
 
 Send message
 
@@ -458,7 +458,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class SendMessageExample
+    public class SpanSendMessageExample
     {
         public static void Main()
         {
@@ -477,12 +477,12 @@ namespace Example
             try
             {
                 // Send message
-                SendMessageResponse result = apiInstance.SendMessage(collectionId, deviceId, body);
+                Object result = apiInstance.SpanSendMessage(collectionId, deviceId, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DevicesApi.SendMessage: " + e.Message );
+                Debug.Print("Exception when calling DevicesApi.SpanSendMessage: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -501,7 +501,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SendMessageResponse**](SendMessageResponse.md)
+**Object**
 
 ### Authorization
 
@@ -527,9 +527,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updatedevice"></a>
-# **UpdateDevice**
-> Device UpdateDevice (string existingCollectionId, string deviceId, UpdateDeviceRequest body)
+<a name="spanupdatedevice"></a>
+# **SpanUpdateDevice**
+> Device SpanUpdateDevice (string existingCollectionId, string deviceId, UpdateDeviceRequest body)
 
 Update device
 
@@ -543,7 +543,7 @@ using Com.Lab5e.Span.Model;
 
 namespace Example
 {
-    public class UpdateDeviceExample
+    public class SpanUpdateDeviceExample
     {
         public static void Main()
         {
@@ -562,12 +562,12 @@ namespace Example
             try
             {
                 // Update device
-                Device result = apiInstance.UpdateDevice(existingCollectionId, deviceId, body);
+                Device result = apiInstance.SpanUpdateDevice(existingCollectionId, deviceId, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DevicesApi.UpdateDevice: " + e.Message );
+                Debug.Print("Exception when calling DevicesApi.SpanUpdateDevice: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
