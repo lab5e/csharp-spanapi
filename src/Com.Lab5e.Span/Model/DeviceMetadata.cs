@@ -27,41 +27,25 @@ using OpenAPIDateConverter = Com.Lab5e.Span.Client.OpenAPIDateConverter;
 namespace Com.Lab5e.Span.Model
 {
     /// <summary>
-    /// SendMessageResponse
+    /// DeviceMetadata
     /// </summary>
-    [DataContract(Name = "SendMessageResponse")]
-    public partial class SendMessageResponse : IEquatable<SendMessageResponse>, IValidatableObject
+    [DataContract(Name = "DeviceMetadata")]
+    public partial class DeviceMetadata : IEquatable<DeviceMetadata>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SendMessageResponse" /> class.
+        /// Initializes a new instance of the <see cref="DeviceMetadata" /> class.
         /// </summary>
-        /// <param name="collectionId">collectionId.</param>
-        /// <param name="deviceId">deviceId.</param>
-        /// <param name="bytesSent">bytesSent.</param>
-        public SendMessageResponse(string collectionId = default(string), string deviceId = default(string), int bytesSent = default(int))
+        /// <param name="simOperator">simOperator.</param>
+        public DeviceMetadata(NetworkOperator simOperator = default(NetworkOperator))
         {
-            this.CollectionId = collectionId;
-            this.DeviceId = deviceId;
-            this.BytesSent = bytesSent;
+            this.SimOperator = simOperator;
         }
 
         /// <summary>
-        /// Gets or Sets CollectionId
+        /// Gets or Sets SimOperator
         /// </summary>
-        [DataMember(Name = "collectionId", EmitDefaultValue = false)]
-        public string CollectionId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DeviceId
-        /// </summary>
-        [DataMember(Name = "deviceId", EmitDefaultValue = false)]
-        public string DeviceId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets BytesSent
-        /// </summary>
-        [DataMember(Name = "bytesSent", EmitDefaultValue = false)]
-        public int BytesSent { get; set; }
+        [DataMember(Name = "simOperator", EmitDefaultValue = false)]
+        public NetworkOperator SimOperator { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -70,10 +54,8 @@ namespace Com.Lab5e.Span.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class SendMessageResponse {\n");
-            sb.Append("  CollectionId: ").Append(CollectionId).Append("\n");
-            sb.Append("  DeviceId: ").Append(DeviceId).Append("\n");
-            sb.Append("  BytesSent: ").Append(BytesSent).Append("\n");
+            sb.Append("class DeviceMetadata {\n");
+            sb.Append("  SimOperator: ").Append(SimOperator).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -94,33 +76,24 @@ namespace Com.Lab5e.Span.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SendMessageResponse);
+            return this.Equals(input as DeviceMetadata);
         }
 
         /// <summary>
-        /// Returns true if SendMessageResponse instances are equal
+        /// Returns true if DeviceMetadata instances are equal
         /// </summary>
-        /// <param name="input">Instance of SendMessageResponse to be compared</param>
+        /// <param name="input">Instance of DeviceMetadata to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(SendMessageResponse input)
+        public bool Equals(DeviceMetadata input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.CollectionId == input.CollectionId ||
-                    (this.CollectionId != null &&
-                    this.CollectionId.Equals(input.CollectionId))
-                ) && 
-                (
-                    this.DeviceId == input.DeviceId ||
-                    (this.DeviceId != null &&
-                    this.DeviceId.Equals(input.DeviceId))
-                ) && 
-                (
-                    this.BytesSent == input.BytesSent ||
-                    this.BytesSent.Equals(input.BytesSent)
+                    this.SimOperator == input.SimOperator ||
+                    (this.SimOperator != null &&
+                    this.SimOperator.Equals(input.SimOperator))
                 );
         }
 
@@ -133,11 +106,8 @@ namespace Com.Lab5e.Span.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.CollectionId != null)
-                    hashCode = hashCode * 59 + this.CollectionId.GetHashCode();
-                if (this.DeviceId != null)
-                    hashCode = hashCode * 59 + this.DeviceId.GetHashCode();
-                hashCode = hashCode * 59 + this.BytesSent.GetHashCode();
+                if (this.SimOperator != null)
+                    hashCode = hashCode * 59 + this.SimOperator.GetHashCode();
                 return hashCode;
             }
         }

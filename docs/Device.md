@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Tags** | **Dictionary&lt;string, string&gt;** | Tags are metadata for the device that you can set. These are just strings. | [optional] 
 **Network** | [**NetworkMetadata**](NetworkMetadata.md) |  | [optional] 
 **Firmware** | [**FirmwareMetadata**](FirmwareMetadata.md) |  | [optional] 
+**Metadata** | [**DeviceMetadata**](DeviceMetadata.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

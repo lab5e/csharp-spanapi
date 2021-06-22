@@ -14,6 +14,7 @@ docs/DataDumpRequest.md
 docs/DataDumpResponse.md
 docs/DatadumpApi.md
 docs/Device.md
+docs/DeviceMetadata.md
 docs/DevicesApi.md
 docs/DumpedCollection.md
 docs/DumpedDevice.md
@@ -30,6 +31,7 @@ docs/ListOutputResponse.md
 docs/MessageSendResult.md
 docs/MultiSendMessageResponse.md
 docs/NetworkMetadata.md
+docs/NetworkOperator.md
 docs/Output.md
 docs/OutputConfig.md
 docs/OutputDataMessage.md
@@ -64,6 +66,7 @@ src/Com.Lab5e.Span.Test/Model/CollectionTests.cs
 src/Com.Lab5e.Span.Test/Model/CreateFirmwareRequestTests.cs
 src/Com.Lab5e.Span.Test/Model/DataDumpRequestTests.cs
 src/Com.Lab5e.Span.Test/Model/DataDumpResponseTests.cs
+src/Com.Lab5e.Span.Test/Model/DeviceMetadataTests.cs
 src/Com.Lab5e.Span.Test/Model/DeviceTests.cs
 src/Com.Lab5e.Span.Test/Model/DumpedCollectionTests.cs
 src/Com.Lab5e.Span.Test/Model/DumpedDeviceTests.cs
@@ -79,6 +82,7 @@ src/Com.Lab5e.Span.Test/Model/ListOutputResponseTests.cs
 src/Com.Lab5e.Span.Test/Model/MessageSendResultTests.cs
 src/Com.Lab5e.Span.Test/Model/MultiSendMessageResponseTests.cs
 src/Com.Lab5e.Span.Test/Model/NetworkMetadataTests.cs
+src/Com.Lab5e.Span.Test/Model/NetworkOperatorTests.cs
 src/Com.Lab5e.Span.Test/Model/OutputConfigTests.cs
 src/Com.Lab5e.Span.Test/Model/OutputDataMessageOutputMessageTypeTests.cs
 src/Com.Lab5e.Span.Test/Model/OutputDataMessageTests.cs
@@ -128,6 +132,7 @@ src/Com.Lab5e.Span/Model/CreateFirmwareRequest.cs
 src/Com.Lab5e.Span/Model/DataDumpRequest.cs
 src/Com.Lab5e.Span/Model/DataDumpResponse.cs
 src/Com.Lab5e.Span/Model/Device.cs
+src/Com.Lab5e.Span/Model/DeviceMetadata.cs
 src/Com.Lab5e.Span/Model/DumpedCollection.cs
 src/Com.Lab5e.Span/Model/DumpedDevice.cs
 src/Com.Lab5e.Span/Model/FieldMask.cs
@@ -142,6 +147,7 @@ src/Com.Lab5e.Span/Model/ListOutputResponse.cs
 src/Com.Lab5e.Span/Model/MessageSendResult.cs
 src/Com.Lab5e.Span/Model/MultiSendMessageResponse.cs
 src/Com.Lab5e.Span/Model/NetworkMetadata.cs
+src/Com.Lab5e.Span/Model/NetworkOperator.cs
 src/Com.Lab5e.Span/Model/Output.cs
 src/Com.Lab5e.Span/Model/OutputConfig.cs
 src/Com.Lab5e.Span/Model/OutputDataMessage.cs

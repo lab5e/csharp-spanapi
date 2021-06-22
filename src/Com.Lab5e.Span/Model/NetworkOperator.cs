@@ -27,49 +27,50 @@ using OpenAPIDateConverter = Com.Lab5e.Span.Client.OpenAPIDateConverter;
 namespace Com.Lab5e.Span.Model
 {
     /// <summary>
-    /// FieldMask
+    /// Operator holds information on the network operator. There might be several operators involved; one operator is running the network your devices are connected to and the SIM card in your device belongs to a different operator.
     /// </summary>
-    [DataContract(Name = "FieldMask")]
-    public partial class FieldMask : IEquatable<FieldMask>, IValidatableObject
+    [DataContract(Name = "NetworkOperator")]
+    public partial class NetworkOperator : IEquatable<NetworkOperator>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="FieldMask" /> class.
+        /// Initializes a new instance of the <see cref="NetworkOperator" /> class.
         /// </summary>
-        /// <param name="imsi">imsi.</param>
-        /// <param name="imei">imei.</param>
-        /// <param name="msisdn">msisdn.</param>
-        /// <param name="location">location.</param>
-        public FieldMask(bool imsi = default(bool), bool imei = default(bool), bool msisdn = default(bool), bool location = default(bool))
+        /// <param name="mcc">The Mobil Country Code for the operator..</param>
+        /// <param name="mnc">mnc.</param>
+        /// <param name="country">country.</param>
+        /// <param name="network">network.</param>
+        public NetworkOperator(int mcc = default(int), int mnc = default(int), string country = default(string), string network = default(string))
         {
-            this.Imsi = imsi;
-            this.Imei = imei;
-            this.Msisdn = msisdn;
-            this.Location = location;
+            this.Mcc = mcc;
+            this.Mnc = mnc;
+            this.Country = country;
+            this.Network = network;
         }
 
         /// <summary>
-        /// Gets or Sets Imsi
+        /// The Mobil Country Code for the operator.
         /// </summary>
-        [DataMember(Name = "imsi", EmitDefaultValue = false)]
-        public bool Imsi { get; set; }
+        /// <value>The Mobil Country Code for the operator.</value>
+        [DataMember(Name = "mcc", EmitDefaultValue = false)]
+        public int Mcc { get; set; }
 
         /// <summary>
-        /// Gets or Sets Imei
+        /// Gets or Sets Mnc
         /// </summary>
-        [DataMember(Name = "imei", EmitDefaultValue = false)]
-        public bool Imei { get; set; }
+        [DataMember(Name = "mnc", EmitDefaultValue = false)]
+        public int Mnc { get; set; }
 
         /// <summary>
-        /// Gets or Sets Msisdn
+        /// Gets or Sets Country
         /// </summary>
-        [DataMember(Name = "msisdn", EmitDefaultValue = false)]
-        public bool Msisdn { get; set; }
+        [DataMember(Name = "country", EmitDefaultValue = false)]
+        public string Country { get; set; }
 
         /// <summary>
-        /// Gets or Sets Location
+        /// Gets or Sets Network
         /// </summary>
-        [DataMember(Name = "location", EmitDefaultValue = false)]
-        public bool Location { get; set; }
+        [DataMember(Name = "network", EmitDefaultValue = false)]
+        public string Network { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -78,11 +79,11 @@ namespace Com.Lab5e.Span.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class FieldMask {\n");
-            sb.Append("  Imsi: ").Append(Imsi).Append("\n");
-            sb.Append("  Imei: ").Append(Imei).Append("\n");
-            sb.Append("  Msisdn: ").Append(Msisdn).Append("\n");
-            sb.Append("  Location: ").Append(Location).Append("\n");
+            sb.Append("class NetworkOperator {\n");
+            sb.Append("  Mcc: ").Append(Mcc).Append("\n");
+            sb.Append("  Mnc: ").Append(Mnc).Append("\n");
+            sb.Append("  Country: ").Append(Country).Append("\n");
+            sb.Append("  Network: ").Append(Network).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -103,35 +104,37 @@ namespace Com.Lab5e.Span.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as FieldMask);
+            return this.Equals(input as NetworkOperator);
         }
 
         /// <summary>
-        /// Returns true if FieldMask instances are equal
+        /// Returns true if NetworkOperator instances are equal
         /// </summary>
-        /// <param name="input">Instance of FieldMask to be compared</param>
+        /// <param name="input">Instance of NetworkOperator to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(FieldMask input)
+        public bool Equals(NetworkOperator input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Imsi == input.Imsi ||
-                    this.Imsi.Equals(input.Imsi)
+                    this.Mcc == input.Mcc ||
+                    this.Mcc.Equals(input.Mcc)
                 ) && 
                 (
-                    this.Imei == input.Imei ||
-                    this.Imei.Equals(input.Imei)
+                    this.Mnc == input.Mnc ||
+                    this.Mnc.Equals(input.Mnc)
                 ) && 
                 (
-                    this.Msisdn == input.Msisdn ||
-                    this.Msisdn.Equals(input.Msisdn)
+                    this.Country == input.Country ||
+                    (this.Country != null &&
+                    this.Country.Equals(input.Country))
                 ) && 
                 (
-                    this.Location == input.Location ||
-                    this.Location.Equals(input.Location)
+                    this.Network == input.Network ||
+                    (this.Network != null &&
+                    this.Network.Equals(input.Network))
                 );
         }
 
@@ -144,10 +147,12 @@ namespace Com.Lab5e.Span.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Imsi.GetHashCode();
-                hashCode = hashCode * 59 + this.Imei.GetHashCode();
-                hashCode = hashCode * 59 + this.Msisdn.GetHashCode();
-                hashCode = hashCode * 59 + this.Location.GetHashCode();
+                hashCode = hashCode * 59 + this.Mcc.GetHashCode();
+                hashCode = hashCode * 59 + this.Mnc.GetHashCode();
+                if (this.Country != null)
+                    hashCode = hashCode * 59 + this.Country.GetHashCode();
+                if (this.Network != null)
+                    hashCode = hashCode * 59 + this.Network.GetHashCode();
                 return hashCode;
             }
         }
