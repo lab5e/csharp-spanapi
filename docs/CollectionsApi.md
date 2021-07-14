@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 
 Get payloads
 
-List the data received from all the devices in the collection.
+List the data received from all the devices in the collection. The maximum number of data points is 100.
 
 ### Example
 ```csharp

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**FirmwareUsage**](FotaApi.md#firmwareusage) | **GET** /collections/{collectionId}/firmware/{imageId}/usage | Firmware usage
 [**ListFirmware**](FotaApi.md#listfirmware) | **GET** /collections/{collectionId}/firmware | List firmware
 [**RetrieveFirmware**](FotaApi.md#retrievefirmware) | **GET** /collections/{collectionId}/firmware/{imageId} | Retrieve firmware
-[**UpdateFirmware**](FotaApi.md#updatefirmware) | **PATCH** /collections/{collectionId}/firmware/{imageId} | Update firmware
+[**UpdateFirmware**](FotaApi.md#updatefirmware) | **PATCH** /collections/{collectionId}/firmware/{imageId} | Update firmware. Only the version and tags fields can be updated. The other fields will be ignored..
 
 
 <a name="clearfirmwareerror"></a>
@@ -521,7 +521,7 @@ Name | Type | Description  | Notes
 # **UpdateFirmware**
 > Firmware UpdateFirmware (string collectionId, string imageId, Firmware body)
 
-Update firmware
+Update firmware. Only the version and tags fields can be updated. The other fields will be ignored..
 
 ### Example
 ```csharp
@@ -551,7 +551,7 @@ namespace Example
 
             try
             {
-                // Update firmware
+                // Update firmware. Only the version and tags fields can be updated. The other fields will be ignored..
                 Firmware result = apiInstance.UpdateFirmware(collectionId, imageId, body);
                 Debug.WriteLine(result);
             }

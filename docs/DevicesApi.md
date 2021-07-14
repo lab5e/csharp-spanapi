@@ -5,12 +5,12 @@ All URIs are relative to *https://api.lab5e.com/span*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateDevice**](DevicesApi.md#createdevice) | **POST** /collections/{collectionId}/devices | Create device
-[**DeleteDevice**](DevicesApi.md#deletedevice) | **DELETE** /collections/{collectionId}/devices/{deviceId} | Remove device
+[**DeleteDevice**](DevicesApi.md#deletedevice) | **DELETE** /collections/{collectionId}/devices/{deviceId} | Remove device.
 [**ListDeviceData**](DevicesApi.md#listdevicedata) | **GET** /collections/{collectionId}/devices/{deviceId}/data | Get payloads
-[**ListDevices**](DevicesApi.md#listdevices) | **GET** /collections/{collectionId}/devices | List devices
+[**ListDevices**](DevicesApi.md#listdevices) | **GET** /collections/{collectionId}/devices | List devices in collection.
 [**RetrieveDevice**](DevicesApi.md#retrievedevice) | **GET** /collections/{collectionId}/devices/{deviceId} | Retrieve device
-[**SendMessage**](DevicesApi.md#sendmessage) | **POST** /collections/{collectionId}/devices/{deviceId}/to | Send message
-[**UpdateDevice**](DevicesApi.md#updatedevice) | **PATCH** /collections/{existingCollectionId}/devices/{deviceId} | Update device
+[**SendMessage**](DevicesApi.md#sendmessage) | **POST** /collections/{collectionId}/devices/{deviceId}/to | Send message to a device.
+[**UpdateDevice**](DevicesApi.md#updatedevice) | **PATCH** /collections/{existingCollectionId}/devices/{deviceId} | Update device. The device can be moved from one collection to another by setting the collection ID field to the new collection. You must have administrative access to both collections.
 
 
 <a name="createdevice"></a>
@@ -102,7 +102,9 @@ Name | Type | Description  | Notes
 # **DeleteDevice**
 > Device DeleteDevice (string collectionId, string deviceId)
 
-Remove device
+Remove device.
+
+Remove device from collection
 
 ### Example
 ```csharp
@@ -131,7 +133,7 @@ namespace Example
 
             try
             {
-                // Remove device
+                // Remove device.
                 Device result = apiInstance.DeleteDevice(collectionId, deviceId);
                 Debug.WriteLine(result);
             }
@@ -187,7 +189,7 @@ Name | Type | Description  | Notes
 
 Get payloads
 
-List the data received from the device. Use the query parameters to control what data you retrieve.
+List the data received from the device. Use the query parameters to control what data you retrieve. The maximumnumber of data points is 100.
 
 ### Example
 ```csharp
@@ -278,7 +280,9 @@ Name | Type | Description  | Notes
 # **ListDevices**
 > ListDevicesResponse ListDevices (string collectionId)
 
-List devices
+List devices in collection.
+
+List devices in collection
 
 ### Example
 ```csharp
@@ -306,7 +310,7 @@ namespace Example
 
             try
             {
-                // List devices
+                // List devices in collection.
                 ListDevicesResponse result = apiInstance.ListDevices(collectionId);
                 Debug.WriteLine(result);
             }
@@ -444,7 +448,7 @@ Name | Type | Description  | Notes
 # **SendMessage**
 > SendMessageResponse SendMessage (string collectionId, string deviceId, SendMessageRequest body)
 
-Send message
+Send message to a device.
 
 Send a message to the device
 
@@ -476,7 +480,7 @@ namespace Example
 
             try
             {
-                // Send message
+                // Send message to a device.
                 SendMessageResponse result = apiInstance.SendMessage(collectionId, deviceId, body);
                 Debug.WriteLine(result);
             }
@@ -531,7 +535,9 @@ Name | Type | Description  | Notes
 # **UpdateDevice**
 > Device UpdateDevice (string existingCollectionId, string deviceId, UpdateDeviceRequest body)
 
-Update device
+Update device. The device can be moved from one collection to another by setting the collection ID field to the new collection. You must have administrative access to both collections.
+
+Update device. The device can be moved from one collection to another by setting the collection ID field to the new collection. You must have administrative access to both collections.
 
 ### Example
 ```csharp
@@ -561,7 +567,7 @@ namespace Example
 
             try
             {
-                // Update device
+                // Update device. The device can be moved from one collection to another by setting the collection ID field to the new collection. You must have administrative access to both collections.
                 Device result = apiInstance.UpdateDevice(existingCollectionId, deviceId, body);
                 Debug.WriteLine(result);
             }

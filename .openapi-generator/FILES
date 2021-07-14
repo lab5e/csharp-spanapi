@@ -10,14 +10,9 @@ docs/CollectionFirmware.md
 docs/CollectionFirmwareFirmwareManagement.md
 docs/CollectionsApi.md
 docs/CreateFirmwareRequest.md
-docs/DataDumpRequest.md
-docs/DataDumpResponse.md
-docs/DatadumpApi.md
 docs/Device.md
 docs/DeviceMetadata.md
 docs/DevicesApi.md
-docs/DumpedCollection.md
-docs/DumpedDevice.md
 docs/FieldMask.md
 docs/Firmware.md
 docs/FirmwareMetadata.md
@@ -51,7 +46,6 @@ docs/UDPMetadata.md
 docs/UpdateDeviceRequest.md
 git_push.sh
 src/Com.Lab5e.Span.Test/Api/CollectionsApiTests.cs
-src/Com.Lab5e.Span.Test/Api/DatadumpApiTests.cs
 src/Com.Lab5e.Span.Test/Api/DevicesApiTests.cs
 src/Com.Lab5e.Span.Test/Api/FotaApiTests.cs
 src/Com.Lab5e.Span.Test/Api/OutputsApiTests.cs
@@ -64,12 +58,8 @@ src/Com.Lab5e.Span.Test/Model/CollectionFirmwareFirmwareManagementTests.cs
 src/Com.Lab5e.Span.Test/Model/CollectionFirmwareTests.cs
 src/Com.Lab5e.Span.Test/Model/CollectionTests.cs
 src/Com.Lab5e.Span.Test/Model/CreateFirmwareRequestTests.cs
-src/Com.Lab5e.Span.Test/Model/DataDumpRequestTests.cs
-src/Com.Lab5e.Span.Test/Model/DataDumpResponseTests.cs
 src/Com.Lab5e.Span.Test/Model/DeviceMetadataTests.cs
 src/Com.Lab5e.Span.Test/Model/DeviceTests.cs
-src/Com.Lab5e.Span.Test/Model/DumpedCollectionTests.cs
-src/Com.Lab5e.Span.Test/Model/DumpedDeviceTests.cs
 src/Com.Lab5e.Span.Test/Model/FieldMaskTests.cs
 src/Com.Lab5e.Span.Test/Model/FirmwareMetadataTests.cs
 src/Com.Lab5e.Span.Test/Model/FirmwareTests.cs
@@ -99,7 +89,6 @@ src/Com.Lab5e.Span.Test/Model/SystemInfoResponseTests.cs
 src/Com.Lab5e.Span.Test/Model/UDPMetadataTests.cs
 src/Com.Lab5e.Span.Test/Model/UpdateDeviceRequestTests.cs
 src/Com.Lab5e.Span/Api/CollectionsApi.cs
-src/Com.Lab5e.Span/Api/DatadumpApi.cs
 src/Com.Lab5e.Span/Api/DevicesApi.cs
 src/Com.Lab5e.Span/Api/FotaApi.cs
 src/Com.Lab5e.Span/Api/OutputsApi.cs
@@ -129,12 +118,8 @@ src/Com.Lab5e.Span/Model/Collection.cs
 src/Com.Lab5e.Span/Model/CollectionFirmware.cs
 src/Com.Lab5e.Span/Model/CollectionFirmwareFirmwareManagement.cs
 src/Com.Lab5e.Span/Model/CreateFirmwareRequest.cs
-src/Com.Lab5e.Span/Model/DataDumpRequest.cs
-src/Com.Lab5e.Span/Model/DataDumpResponse.cs
 src/Com.Lab5e.Span/Model/Device.cs
 src/Com.Lab5e.Span/Model/DeviceMetadata.cs
-src/Com.Lab5e.Span/Model/DumpedCollection.cs
-src/Com.Lab5e.Span/Model/DumpedDevice.cs
 src/Com.Lab5e.Span/Model/FieldMask.cs
 src/Com.Lab5e.Span/Model/Firmware.cs
 src/Com.Lab5e.Span/Model/FirmwareMetadata.cs
