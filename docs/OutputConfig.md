@@ -21,6 +21,9 @@ Name | Type | Description | Notes
 **Password** | **string** |  | [optional] 
 **ClientId** | **string** |  | [optional] 
 **TopicName** | **string** |  | [optional] 
+**TopicTemplate** | **byte[]** |  | [optional] 
+**PayloadFormat** | **string** |  | [optional] 
+**PayloadTemplate** | **byte[]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
