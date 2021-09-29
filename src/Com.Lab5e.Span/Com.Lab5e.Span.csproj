@@ -12,7 +12,7 @@
     <Description>A library generated from a OpenAPI doc</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>Com.Lab5e.Span</RootNamespace>
-    <Version>4.1.17</Version>
+    <Version>4.1.18</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Com.Lab5e.Span.xml</DocumentationFile>
     <PackageLicenseExpression>BSD</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/lab5e/csharp-spanapi.git</RepositoryUrl>
