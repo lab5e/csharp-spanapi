@@ -1,12 +1,12 @@
 # Com.Lab5e.Span.Model.CreateFirmwareRequest
+Create a new firmware image
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CollectionId** | **string** |  | [optional] 
 **Image** | **byte[]** |  | [optional] 
-**Version** | **string** |  | [optional] 
+**_Version** | **string** |  | [optional] 
 **Filename** | **string** |  | [optional] 
 **Tags** | **Dictionary&lt;string, string&gt;** |  | [optional] 
 

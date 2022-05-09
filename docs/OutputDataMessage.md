@@ -5,7 +5,7 @@ The output data message contains payload plus metadata for a payload received fr
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **OutputDataMessageOutputMessageType** |  | [optional] 
+**Type** | **OutputMessageType** |  | [optional] 
 **Device** | [**Device**](Device.md) |  | [optional] 
 **Payload** | **byte[]** |  | [optional] 
 **Received** | **string** | Received time for message. Value is ms since epoch. | [optional] 

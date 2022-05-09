@@ -1,4 +1,5 @@
 # Com.Lab5e.Span.Model.ListDataResponse
+List of device payloads
 
 ## Properties
 

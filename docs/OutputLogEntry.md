@@ -1,4 +1,5 @@
 # Com.Lab5e.Span.Model.OutputLogEntry
+Log entries for outputs
 
 ## Properties
 

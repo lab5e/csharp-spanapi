@@ -1,4 +1,5 @@
 # Com.Lab5e.Span.Model.FirmwareUsageResponse
+Firmware usage report
 
 ## Properties
 

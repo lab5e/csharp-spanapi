@@ -1,5 +1,5 @@
 # Com.Lab5e.Span.Model.NetworkMetadata
-Network metadata for devices.
+This is the network metadata for a device.
 
 ## Properties
 

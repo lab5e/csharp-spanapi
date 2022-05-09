@@ -1,110 +1,24 @@
 # Com.Lab5e.Span.Api.CollectionsApi
 
-All URIs are relative to *https://api.lab5e.com/span*
+All URIs are relative to *https://api.lab5e.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BroadcastMessage**](CollectionsApi.md#broadcastmessage) | **POST** /collections/{collectionId}/to | Broadcast message
-[**CreateCollection**](CollectionsApi.md#createcollection) | **POST** /collections | Create collection
-[**DeleteCollection**](CollectionsApi.md#deletecollection) | **DELETE** /collections/{collectionId} | Delete collection
-[**ListCollectionData**](CollectionsApi.md#listcollectiondata) | **GET** /collections/{collectionId}/data | Get payloads
-[**ListCollections**](CollectionsApi.md#listcollections) | **GET** /collections | List collections
-[**RetrieveCollection**](CollectionsApi.md#retrievecollection) | **GET** /collections/{collectionId} | Retrieve collection
-[**UpdateCollection**](CollectionsApi.md#updatecollection) | **PATCH** /collections/{collectionId} | Update collection
+[**CreateCollection**](CollectionsApi.md#createcollection) | **POST** /span/collections | Create collection
+[**DeleteCollection**](CollectionsApi.md#deletecollection) | **DELETE** /span/collections/{collectionId} | Delete collection
+[**ListCollectionData**](CollectionsApi.md#listcollectiondata) | **GET** /span/collections/{collectionId}/data | Retrieve data from devices
+[**ListCollections**](CollectionsApi.md#listcollections) | **GET** /span/collections | List collections
+[**RetrieveCollection**](CollectionsApi.md#retrievecollection) | **GET** /span/collections/{collectionId} | Retrieve collection
+[**UpdateCollection**](CollectionsApi.md#updatecollection) | **PATCH** /span/collections/{collectionId} | Update collection
 
-
-<a name="broadcastmessage"></a>
-# **BroadcastMessage**
-> MultiSendMessageResponse BroadcastMessage (string collectionId, BroadcastMessageRequest body)
-
-Broadcast message
-
-Broadcast a message to all devices in the collection. This request will always succeed if the collection exists, even if there are one or more send errors. Individual errors are returned as an array of error messages in the response. Use equivalent to resource for devices to send a message to single device.
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Com.Lab5e.Span.Api;
-using Com.Lab5e.Span.Client;
-using Com.Lab5e.Span.Model;
-
-namespace Example
-{
-    public class BroadcastMessageExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.lab5e.com/span";
-            // Configure API key authorization: APIToken
-            config.AddApiKey("X-API-Token", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("X-API-Token", "Bearer");
-
-            var apiInstance = new CollectionsApi(config);
-            var collectionId = collectionId_example;  // string | 
-            var body = new BroadcastMessageRequest(); // BroadcastMessageRequest | 
-
-            try
-            {
-                // Broadcast message
-                MultiSendMessageResponse result = apiInstance.BroadcastMessage(collectionId, body);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling CollectionsApi.BroadcastMessage: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **body** | [**BroadcastMessageRequest**](BroadcastMessageRequest.md)|  | 
-
-### Return type
-
-[**MultiSendMessageResponse**](MultiSendMessageResponse.md)
-
-### Authorization
-
-[APIToken](../README.md#APIToken)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | A successful response. |  -  |
-| **201** | It&#39;s created. |  -  |
-| **400** | The request has an error. |  -  |
-| **401** | You can&#39;t touch this |  -  |
-| **404** | Couldn&#39;t find the resource. |  -  |
-| **409** | There&#39;s a resource conflict here. |  -  |
-| **500** | I&#39;m sorry. We are broken |  -  |
-| **0** | An unexpected error response. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="createcollection"></a>
 # **CreateCollection**
-> Collection CreateCollection (Collection body)
+> Collection CreateCollection (CreateCollectionRequest body)
 
 Create collection
 
-The returned collection is the collection stored in the backend. Defaults have been set. There are no required fields in a collection
+Create a new collection
 
 ### Example
 ```csharp
@@ -121,14 +35,14 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.lab5e.com/span";
+            config.BasePath = "https://api.lab5e.com";
             // Configure API key authorization: APIToken
             config.AddApiKey("X-API-Token", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("X-API-Token", "Bearer");
 
             var apiInstance = new CollectionsApi(config);
-            var body = new Collection(); // Collection | 
+            var body = new CreateCollectionRequest(); // CreateCollectionRequest | 
 
             try
             {
@@ -151,7 +65,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Collection**](Collection.md)|  | 
+ **body** | [**CreateCollectionRequest**](CreateCollectionRequest.md)|  | 
 
 ### Return type
 
@@ -187,7 +101,7 @@ Name | Type | Description  | Notes
 
 Delete collection
 
-You must have write access to the collection
+Remove the collection. Devices, firmware images, outputs and all other related resources must be removed from the collection before it can be deleted.
 
 ### Example
 ```csharp
@@ -204,14 +118,14 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.lab5e.com/span";
+            config.BasePath = "https://api.lab5e.com";
             // Configure API key authorization: APIToken
             config.AddApiKey("X-API-Token", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("X-API-Token", "Bearer");
 
             var apiInstance = new CollectionsApi(config);
-            var collectionId = collectionId_example;  // string | The ID of the collection you want to delete
+            var collectionId = "collectionId_example";  // string | The ID of the collection you want to delete
 
             try
             {
@@ -268,9 +182,9 @@ Name | Type | Description  | Notes
 # **ListCollectionData**
 > ListDataResponse ListCollectionData (string collectionId, int? limit = null, string start = null, string end = null, string offset = null)
 
-Get payloads
+Retrieve data from devices
 
-List the data received from all the devices in the collection. The maximum number of data points is 100.
+Retrieve data sent by the devices in the collection. The maximum number of data points is 100.
 
 ### Example
 ```csharp
@@ -287,22 +201,22 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.lab5e.com/span";
+            config.BasePath = "https://api.lab5e.com";
             // Configure API key authorization: APIToken
             config.AddApiKey("X-API-Token", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("X-API-Token", "Bearer");
 
             var apiInstance = new CollectionsApi(config);
-            var collectionId = collectionId_example;  // string | The collection ID requested. This is included in the request path.
+            var collectionId = "collectionId_example";  // string | The collection ID requested. This is included in the request path.
             var limit = 56;  // int? | Limit the number of payloads to return. The default is 512. (optional) 
-            var start = start_example;  // string | Start of time range. The default is 24 hours ago. Value is in milliseconds since epoch. (optional) 
-            var end = end_example;  // string | End of time range. The default is the current time stamp. Value is in milliseconds since epoch. (optional) 
-            var offset = offset_example;  // string | The message offset based on the message ID. This parameter can't be combined with the start and end parameters. If no parameter is set the first N messages will be returned. If this parameter is set the next N messages (from newest to oldest) with message ID less than the offset will be returned. (optional) 
+            var start = "start_example";  // string | Start of time range. The default is 24 hours ago. Value is in milliseconds since epoch. (optional) 
+            var end = "end_example";  // string | End of time range. The default is the current time stamp. Value is in milliseconds since epoch. (optional) 
+            var offset = "offset_example";  // string | The message offset based on the message ID. This parameter can't be combined with the start and end parameters. If no parameter is set the first N messages will be returned. If this parameter is set the next N messages (from newest to oldest) with message ID less than the offset will be returned. (optional) 
 
             try
             {
-                // Get payloads
+                // Retrieve data from devices
                 ListDataResponse result = apiInstance.ListCollectionData(collectionId, limit, start, end, offset);
                 Debug.WriteLine(result);
             }
@@ -378,7 +292,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.lab5e.com/span";
+            config.BasePath = "https://api.lab5e.com";
             // Configure API key authorization: APIToken
             config.AddApiKey("X-API-Token", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -455,14 +369,14 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.lab5e.com/span";
+            config.BasePath = "https://api.lab5e.com";
             // Configure API key authorization: APIToken
             config.AddApiKey("X-API-Token", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("X-API-Token", "Bearer");
 
             var apiInstance = new CollectionsApi(config);
-            var collectionId = collectionId_example;  // string | The collection ID of the collection you are requesting
+            var collectionId = "collectionId_example";  // string | The collection ID of the collection you are requesting
 
             try
             {
@@ -517,11 +431,11 @@ Name | Type | Description  | Notes
 
 <a name="updatecollection"></a>
 # **UpdateCollection**
-> Collection UpdateCollection (string collectionId, Collection body)
+> Collection UpdateCollection (string collectionId, UpdateCollectionRequest body)
 
 Update collection
 
-You must have write access to the collection, ie. you must administer it
+Update a collection.
 
 ### Example
 ```csharp
@@ -538,15 +452,15 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.lab5e.com/span";
+            config.BasePath = "https://api.lab5e.com";
             // Configure API key authorization: APIToken
             config.AddApiKey("X-API-Token", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("X-API-Token", "Bearer");
 
             var apiInstance = new CollectionsApi(config);
-            var collectionId = collectionId_example;  // string | The ID of the collection. This is assigned by the backend.
-            var body = new Collection(); // Collection | 
+            var collectionId = "collectionId_example";  // string | The ID of the collection. This is assigned by the backend.
+            var body = new UpdateCollectionRequest(); // UpdateCollectionRequest | 
 
             try
             {
@@ -570,7 +484,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId** | **string**| The ID of the collection. This is assigned by the backend. | 
- **body** | [**Collection**](Collection.md)|  | 
+ **body** | [**UpdateCollectionRequest**](UpdateCollectionRequest.md)|  | 
 
 ### Return type
 

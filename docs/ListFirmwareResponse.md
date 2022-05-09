@@ -1,4 +1,5 @@
 # Com.Lab5e.Span.Model.ListFirmwareResponse
+List firmware response
 
 ## Properties
 

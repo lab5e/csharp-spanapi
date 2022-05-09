@@ -1,11 +1,11 @@
 # Com.Lab5e.Span.Model.OutputConfig
-Output configuration.
+Configuration for outputs.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Url** | **string** |  | [optional] 
+**Url** | **string** | URL for the webhook. | [optional] 
 **BasicAuthUser** | **string** |  | [optional] 
 **BasicAuthPass** | **string** |  | [optional] 
 **CustomHeaderName** | **string** |  | [optional] 

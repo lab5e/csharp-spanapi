@@ -1,21 +1,21 @@
 # Com.Lab5e.Span.Api.OutputsApi
 
-All URIs are relative to *https://api.lab5e.com/span*
+All URIs are relative to *https://api.lab5e.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateOutput**](OutputsApi.md#createoutput) | **POST** /collections/{collectionId}/outputs | Create output
-[**DeleteOutput**](OutputsApi.md#deleteoutput) | **DELETE** /collections/{collectionId}/outputs/{outputId} | Delete output
-[**ListOutputs**](OutputsApi.md#listoutputs) | **GET** /collections/{collectionId}/outputs | List outputs
-[**Logs**](OutputsApi.md#logs) | **GET** /collections/{collectionId}/outputs/{outputId}/logs | Output logs
-[**RetrieveOutput**](OutputsApi.md#retrieveoutput) | **GET** /collections/{collectionId}/outputs/{outputId} | Retrieve output
-[**Status**](OutputsApi.md#status) | **GET** /collections/{collectionId}/outputs/{outputId}/status | Output status
-[**UpdateOutput**](OutputsApi.md#updateoutput) | **PATCH** /collections/{collectionId}/outputs/{outputId} | Update output
+[**CreateOutput**](OutputsApi.md#createoutput) | **POST** /span/collections/{collectionId}/outputs | Create output
+[**DeleteOutput**](OutputsApi.md#deleteoutput) | **DELETE** /span/collections/{collectionId}/outputs/{outputId} | Delete output
+[**ListOutputs**](OutputsApi.md#listoutputs) | **GET** /span/collections/{collectionId}/outputs | List outputs
+[**Logs**](OutputsApi.md#logs) | **GET** /span/collections/{collectionId}/outputs/{outputId}/logs | Output logs
+[**RetrieveOutput**](OutputsApi.md#retrieveoutput) | **GET** /span/collections/{collectionId}/outputs/{outputId} | Retrieve output
+[**Status**](OutputsApi.md#status) | **GET** /span/collections/{collectionId}/outputs/{outputId}/status | Output status
+[**UpdateOutput**](OutputsApi.md#updateoutput) | **PATCH** /span/collections/{existingCollectionId}/outputs/{outputId} | Update output
 
 
 <a name="createoutput"></a>
 # **CreateOutput**
-> Output CreateOutput (string collectionId, Output body)
+> Output CreateOutput (string collectionId, CreateOutputRequest body)
 
 Create output
 
@@ -34,15 +34,15 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.lab5e.com/span";
+            config.BasePath = "https://api.lab5e.com";
             // Configure API key authorization: APIToken
             config.AddApiKey("X-API-Token", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("X-API-Token", "Bearer");
 
             var apiInstance = new OutputsApi(config);
-            var collectionId = collectionId_example;  // string | 
-            var body = new Output(); // Output | 
+            var collectionId = "collectionId_example";  // string | 
+            var body = new CreateOutputRequest(); // CreateOutputRequest | 
 
             try
             {
@@ -66,7 +66,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId** | **string**|  | 
- **body** | [**Output**](Output.md)|  | 
+ **body** | [**CreateOutputRequest**](CreateOutputRequest.md)|  | 
 
 ### Return type
 
@@ -117,15 +117,15 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.lab5e.com/span";
+            config.BasePath = "https://api.lab5e.com";
             // Configure API key authorization: APIToken
             config.AddApiKey("X-API-Token", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("X-API-Token", "Bearer");
 
             var apiInstance = new OutputsApi(config);
-            var collectionId = collectionId_example;  // string | 
-            var outputId = outputId_example;  // string | 
+            var collectionId = "collectionId_example";  // string | 
+            var outputId = "outputId_example";  // string | 
 
             try
             {
@@ -200,14 +200,14 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.lab5e.com/span";
+            config.BasePath = "https://api.lab5e.com";
             // Configure API key authorization: APIToken
             config.AddApiKey("X-API-Token", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("X-API-Token", "Bearer");
 
             var apiInstance = new OutputsApi(config);
-            var collectionId = collectionId_example;  // string | 
+            var collectionId = "collectionId_example";  // string | 
 
             try
             {
@@ -281,15 +281,15 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.lab5e.com/span";
+            config.BasePath = "https://api.lab5e.com";
             // Configure API key authorization: APIToken
             config.AddApiKey("X-API-Token", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("X-API-Token", "Bearer");
 
             var apiInstance = new OutputsApi(config);
-            var collectionId = collectionId_example;  // string | 
-            var outputId = outputId_example;  // string | 
+            var collectionId = "collectionId_example";  // string | 
+            var outputId = "outputId_example";  // string | 
 
             try
             {
@@ -364,15 +364,15 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.lab5e.com/span";
+            config.BasePath = "https://api.lab5e.com";
             // Configure API key authorization: APIToken
             config.AddApiKey("X-API-Token", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("X-API-Token", "Bearer");
 
             var apiInstance = new OutputsApi(config);
-            var collectionId = collectionId_example;  // string | 
-            var outputId = outputId_example;  // string | 
+            var collectionId = "collectionId_example";  // string | 
+            var outputId = "outputId_example";  // string | 
 
             try
             {
@@ -447,15 +447,15 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.lab5e.com/span";
+            config.BasePath = "https://api.lab5e.com";
             // Configure API key authorization: APIToken
             config.AddApiKey("X-API-Token", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("X-API-Token", "Bearer");
 
             var apiInstance = new OutputsApi(config);
-            var collectionId = collectionId_example;  // string | 
-            var outputId = outputId_example;  // string | 
+            var collectionId = "collectionId_example";  // string | 
+            var outputId = "outputId_example";  // string | 
 
             try
             {
@@ -511,11 +511,9 @@ Name | Type | Description  | Notes
 
 <a name="updateoutput"></a>
 # **UpdateOutput**
-> Output UpdateOutput (string collectionId, string outputId, Output body)
+> Output UpdateOutput (string existingCollectionId, string outputId, UpdateOutputRequest body)
 
 Update output
-
-Running outputs will be restarted if required. Note that the collection ID can't be changed on an existing output.
 
 ### Example
 ```csharp
@@ -532,21 +530,21 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.lab5e.com/span";
+            config.BasePath = "https://api.lab5e.com";
             // Configure API key authorization: APIToken
             config.AddApiKey("X-API-Token", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("X-API-Token", "Bearer");
 
             var apiInstance = new OutputsApi(config);
-            var collectionId = collectionId_example;  // string | 
-            var outputId = outputId_example;  // string | 
-            var body = new Output(); // Output | 
+            var existingCollectionId = "existingCollectionId_example";  // string | 
+            var outputId = "outputId_example";  // string | 
+            var body = new UpdateOutputRequest(); // UpdateOutputRequest | 
 
             try
             {
                 // Update output
-                Output result = apiInstance.UpdateOutput(collectionId, outputId, body);
+                Output result = apiInstance.UpdateOutput(existingCollectionId, outputId, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -564,9 +562,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
+ **existingCollectionId** | **string**|  | 
  **outputId** | **string**|  | 
- **body** | [**Output**](Output.md)|  | 
+ **body** | [**UpdateOutputRequest**](UpdateOutputRequest.md)|  | 
 
 ### Return type
 

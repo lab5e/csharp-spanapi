@@ -1,16 +1,16 @@
 # Com.Lab5e.Span.Api.FotaApi
 
-All URIs are relative to *https://api.lab5e.com/span*
+All URIs are relative to *https://api.lab5e.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ClearFirmwareError**](FotaApi.md#clearfirmwareerror) | **DELETE** /collections/{collectionId}/devices/{deviceId}/fwerror | Clear FOTA error
-[**CreateFirmware**](FotaApi.md#createfirmware) | **POST** /collections/{collectionId}/firmware | Create firmware
-[**DeleteFirmware**](FotaApi.md#deletefirmware) | **DELETE** /collections/{collectionId}/firmware/{imageId} | Delete firmware
-[**FirmwareUsage**](FotaApi.md#firmwareusage) | **GET** /collections/{collectionId}/firmware/{imageId}/usage | Firmware usage
-[**ListFirmware**](FotaApi.md#listfirmware) | **GET** /collections/{collectionId}/firmware | List firmware
-[**RetrieveFirmware**](FotaApi.md#retrievefirmware) | **GET** /collections/{collectionId}/firmware/{imageId} | Retrieve firmware
-[**UpdateFirmware**](FotaApi.md#updatefirmware) | **PATCH** /collections/{collectionId}/firmware/{imageId} | Update firmware. Only the version and tags fields can be updated. The other fields will be ignored..
+[**ClearFirmwareError**](FotaApi.md#clearfirmwareerror) | **DELETE** /span/collections/{collectionId}/devices/{deviceId}/fwerror | Clear FOTA error
+[**CreateFirmware**](FotaApi.md#createfirmware) | **POST** /span/collections/{collectionId}/firmware | Create firmware
+[**DeleteFirmware**](FotaApi.md#deletefirmware) | **DELETE** /span/collections/{collectionId}/firmware/{imageId} | Delete firmware
+[**FirmwareUsage**](FotaApi.md#firmwareusage) | **GET** /span/collections/{collectionId}/firmware/{imageId}/usage | Firmware usage
+[**ListFirmware**](FotaApi.md#listfirmware) | **GET** /span/collections/{collectionId}/firmware | List firmware
+[**RetrieveFirmware**](FotaApi.md#retrievefirmware) | **GET** /span/collections/{collectionId}/firmware/{imageId} | Retrieve firmware
+[**UpdateFirmware**](FotaApi.md#updatefirmware) | **PATCH** /span/collections/{existingCollectionId}/firmware/{imageId} | Update firmware
 
 
 <a name="clearfirmwareerror"></a>
@@ -34,15 +34,15 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.lab5e.com/span";
+            config.BasePath = "https://api.lab5e.com";
             // Configure API key authorization: APIToken
             config.AddApiKey("X-API-Token", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("X-API-Token", "Bearer");
 
             var apiInstance = new FotaApi(config);
-            var collectionId = collectionId_example;  // string | 
-            var deviceId = deviceId_example;  // string | 
+            var collectionId = "collectionId_example";  // string | 
+            var deviceId = "deviceId_example";  // string | 
 
             try
             {
@@ -102,8 +102,6 @@ Name | Type | Description  | Notes
 
 Create firmware
 
-Create a new firmware image. This is also invoked by the custom HTTP uploader if the POST uses multipart/formdata for the request.
-
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -119,14 +117,14 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.lab5e.com/span";
+            config.BasePath = "https://api.lab5e.com";
             // Configure API key authorization: APIToken
             config.AddApiKey("X-API-Token", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("X-API-Token", "Bearer");
 
             var apiInstance = new FotaApi(config);
-            var collectionId = collectionId_example;  // string | 
+            var collectionId = "collectionId_example";  // string | 
             var body = new CreateFirmwareRequest(); // CreateFirmwareRequest | 
 
             try
@@ -202,15 +200,15 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.lab5e.com/span";
+            config.BasePath = "https://api.lab5e.com";
             // Configure API key authorization: APIToken
             config.AddApiKey("X-API-Token", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("X-API-Token", "Bearer");
 
             var apiInstance = new FotaApi(config);
-            var collectionId = collectionId_example;  // string | 
-            var imageId = imageId_example;  // string | 
+            var collectionId = "collectionId_example";  // string | 
+            var imageId = "imageId_example";  // string | 
 
             try
             {
@@ -270,8 +268,6 @@ Name | Type | Description  | Notes
 
 Firmware usage
 
-Shows the firmware usage for devices in the collection
-
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -287,15 +283,15 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.lab5e.com/span";
+            config.BasePath = "https://api.lab5e.com";
             // Configure API key authorization: APIToken
             config.AddApiKey("X-API-Token", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("X-API-Token", "Bearer");
 
             var apiInstance = new FotaApi(config);
-            var collectionId = collectionId_example;  // string | 
-            var imageId = imageId_example;  // string | 
+            var collectionId = "collectionId_example";  // string | 
+            var imageId = "imageId_example";  // string | 
 
             try
             {
@@ -355,8 +351,6 @@ Name | Type | Description  | Notes
 
 List firmware
 
-Lists available firmware images in collection
-
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -372,14 +366,14 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.lab5e.com/span";
+            config.BasePath = "https://api.lab5e.com";
             // Configure API key authorization: APIToken
             config.AddApiKey("X-API-Token", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("X-API-Token", "Bearer");
 
             var apiInstance = new FotaApi(config);
-            var collectionId = collectionId_example;  // string | 
+            var collectionId = "collectionId_example";  // string | 
 
             try
             {
@@ -438,8 +432,6 @@ Name | Type | Description  | Notes
 
 Retrieve firmware
 
-Retrieve information on a firmware image
-
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -455,15 +447,15 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.lab5e.com/span";
+            config.BasePath = "https://api.lab5e.com";
             // Configure API key authorization: APIToken
             config.AddApiKey("X-API-Token", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("X-API-Token", "Bearer");
 
             var apiInstance = new FotaApi(config);
-            var collectionId = collectionId_example;  // string | 
-            var imageId = imageId_example;  // string | 
+            var collectionId = "collectionId_example";  // string | 
+            var imageId = "imageId_example";  // string | 
 
             try
             {
@@ -519,9 +511,11 @@ Name | Type | Description  | Notes
 
 <a name="updatefirmware"></a>
 # **UpdateFirmware**
-> Firmware UpdateFirmware (string collectionId, string imageId, Firmware body)
+> Firmware UpdateFirmware (string existingCollectionId, string imageId, UpdateFirmwareRequest body)
 
-Update firmware. Only the version and tags fields can be updated. The other fields will be ignored..
+Update firmware
+
+Only the version and tags fields can be updated. The other fields will be ignored.
 
 ### Example
 ```csharp
@@ -538,21 +532,21 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.lab5e.com/span";
+            config.BasePath = "https://api.lab5e.com";
             // Configure API key authorization: APIToken
             config.AddApiKey("X-API-Token", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("X-API-Token", "Bearer");
 
             var apiInstance = new FotaApi(config);
-            var collectionId = collectionId_example;  // string | Collection ID  Collection ID for the collection owning the firmware image.
-            var imageId = imageId_example;  // string | Firmware image ID
-            var body = new Firmware(); // Firmware | 
+            var existingCollectionId = "existingCollectionId_example";  // string | 
+            var imageId = "imageId_example";  // string | 
+            var body = new UpdateFirmwareRequest(); // UpdateFirmwareRequest | 
 
             try
             {
-                // Update firmware. Only the version and tags fields can be updated. The other fields will be ignored..
-                Firmware result = apiInstance.UpdateFirmware(collectionId, imageId, body);
+                // Update firmware
+                Firmware result = apiInstance.UpdateFirmware(existingCollectionId, imageId, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -570,9 +564,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collectionId** | **string**| Collection ID  Collection ID for the collection owning the firmware image. | 
- **imageId** | **string**| Firmware image ID | 
- **body** | [**Firmware**](Firmware.md)|  | 
+ **existingCollectionId** | **string**|  | 
+ **imageId** | **string**|  | 
+ **body** | [**UpdateFirmwareRequest**](UpdateFirmwareRequest.md)|  | 
 
 ### Return type
 

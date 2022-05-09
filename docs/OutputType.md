@@ -1,4 +1,5 @@
 # Com.Lab5e.Span.Model.OutputType
+Output types available   - undefined: The undefined output type is an invalid type
 
 ## Properties
 

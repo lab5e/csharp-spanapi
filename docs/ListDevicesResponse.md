@@ -1,4 +1,5 @@
 # Com.Lab5e.Span.Model.ListDevicesResponse
+List device response
 
 ## Properties
 

@@ -1,4 +1,5 @@
 # Com.Lab5e.Span.Model.ClearFirmwareErrorResponse
+Clear firmware error response object
 
 ## Properties
 

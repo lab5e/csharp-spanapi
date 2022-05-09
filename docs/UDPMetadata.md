@@ -1,4 +1,5 @@
 # Com.Lab5e.Span.Model.UDPMetadata
+UDP metadata for messages receveied through one of the UDP endpoints
 
 ## Properties
 
