@@ -6,10 +6,10 @@ This is the metadata for a Cellular IoT device connected via an APN.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **GatewayId** | **string** |  | [optional] 
-**AllocatedIp** | **string** |  | [optional] 
+**AllocatedIp** | **string** | Allocated IP address. | [optional] 
 **AllocatedAt** | **string** |  | [optional] 
 **CellId** | **string** |  | [optional] 
-**Mcc** | **int** | the provider in use. | [optional] 
+**Mcc** | **int** | the provider in use.  The Mobile Country Code for the operator. | [optional] 
 **Mnc** | **int** |  | [optional] 
 **Country** | **string** |  | [optional] 
 **Network** | **string** |  | [optional] 

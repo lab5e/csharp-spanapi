@@ -27,25 +27,25 @@ using OpenAPIDateConverter = Com.Lab5e.Span.Client.OpenAPIDateConverter;
 namespace Com.Lab5e.Span.Model
 {
     /// <summary>
-    /// List networks.
+    /// MQTT metadata for messages received through one of the MQTT endpoints. This is an EXPERIMENTAL feature.
     /// </summary>
-    [DataContract(Name = "ListNetworkResponse")]
-    public partial class ListNetworkResponse : IEquatable<ListNetworkResponse>, IValidatableObject
+    [DataContract(Name = "MQTTMetadata")]
+    public partial class MQTTMetadata : IEquatable<MQTTMetadata>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListNetworkResponse" /> class.
+        /// Initializes a new instance of the <see cref="MQTTMetadata" /> class.
         /// </summary>
-        /// <param name="networks">networks.</param>
-        public ListNetworkResponse(List<Network> networks = default(List<Network>))
+        /// <param name="topic">topic.</param>
+        public MQTTMetadata(string topic = default(string))
         {
-            this.Networks = networks;
+            this.Topic = topic;
         }
 
         /// <summary>
-        /// Gets or Sets Networks
+        /// Gets or Sets Topic
         /// </summary>
-        [DataMember(Name = "networks", EmitDefaultValue = false)]
-        public List<Network> Networks { get; set; }
+        [DataMember(Name = "topic", EmitDefaultValue = false)]
+        public string Topic { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,8 +54,8 @@ namespace Com.Lab5e.Span.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ListNetworkResponse {\n");
-            sb.Append("  Networks: ").Append(Networks).Append("\n");
+            sb.Append("class MQTTMetadata {\n");
+            sb.Append("  Topic: ").Append(Topic).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -76,15 +76,15 @@ namespace Com.Lab5e.Span.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ListNetworkResponse);
+            return this.Equals(input as MQTTMetadata);
         }
 
         /// <summary>
-        /// Returns true if ListNetworkResponse instances are equal
+        /// Returns true if MQTTMetadata instances are equal
         /// </summary>
-        /// <param name="input">Instance of ListNetworkResponse to be compared</param>
+        /// <param name="input">Instance of MQTTMetadata to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ListNetworkResponse input)
+        public bool Equals(MQTTMetadata input)
         {
             if (input == null)
             {
@@ -92,10 +92,9 @@ namespace Com.Lab5e.Span.Model
             }
             return 
                 (
-                    this.Networks == input.Networks ||
-                    this.Networks != null &&
-                    input.Networks != null &&
-                    this.Networks.SequenceEqual(input.Networks)
+                    this.Topic == input.Topic ||
+                    (this.Topic != null &&
+                    this.Topic.Equals(input.Topic))
                 );
         }
 
@@ -108,9 +107,9 @@ namespace Com.Lab5e.Span.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Networks != null)
+                if (this.Topic != null)
                 {
-                    hashCode = (hashCode * 59) + this.Networks.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Topic.GetHashCode();
                 }
                 return hashCode;
             }

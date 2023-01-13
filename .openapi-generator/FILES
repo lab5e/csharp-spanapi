@@ -43,6 +43,7 @@ docs/ListGatewayResponse.md
 docs/ListNetworkResponse.md
 docs/ListOutputResponse.md
 docs/ListUpstreamMessagesResponse.md
+docs/MQTTMetadata.md
 docs/MessageDownstream.md
 docs/MessageState.md
 docs/MessageTransport.md
@@ -116,6 +117,7 @@ src/Com.Lab5e.Span.Test/Model/ListGatewayResponseTests.cs
 src/Com.Lab5e.Span.Test/Model/ListNetworkResponseTests.cs
 src/Com.Lab5e.Span.Test/Model/ListOutputResponseTests.cs
 src/Com.Lab5e.Span.Test/Model/ListUpstreamMessagesResponseTests.cs
+src/Com.Lab5e.Span.Test/Model/MQTTMetadataTests.cs
 src/Com.Lab5e.Span.Test/Model/MessageDownstreamTests.cs
 src/Com.Lab5e.Span.Test/Model/MessageStateTests.cs
 src/Com.Lab5e.Span.Test/Model/MessageTransportTests.cs
@@ -203,6 +205,7 @@ src/Com.Lab5e.Span/Model/ListGatewayResponse.cs
 src/Com.Lab5e.Span/Model/ListNetworkResponse.cs
 src/Com.Lab5e.Span/Model/ListOutputResponse.cs
 src/Com.Lab5e.Span/Model/ListUpstreamMessagesResponse.cs
+src/Com.Lab5e.Span/Model/MQTTMetadata.cs
 src/Com.Lab5e.Span/Model/MessageDownstream.cs
 src/Com.Lab5e.Span/Model/MessageState.cs
 src/Com.Lab5e.Span/Model/MessageTransport.cs
