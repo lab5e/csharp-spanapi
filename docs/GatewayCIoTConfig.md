@@ -1,11 +1,12 @@
-# Com.Lab5e.Span.Model.ListNetworkResponse
-List networks.
+# Com.Lab5e.Span.Model.GatewayCIoTConfig
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Networks** | [**List&lt;Network&gt;**](Network.md) |  | [optional] 
+**Apn** | **string** |  | [optional] 
+**UdpEndpoint** | **string** |  | [optional] 
+**CoapEndpoint** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

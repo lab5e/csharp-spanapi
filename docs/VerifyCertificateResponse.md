@@ -1,5 +1,5 @@
 # Com.Lab5e.Span.Model.VerifyCertificateResponse
-Response when verifying a certificate. The valid flag is set to true when the certificate is valid.  Any errors will be added to the errors array.
+Response when verifying a certificate. The valid flag is set to true when the certificate is valid. Any errors will be added to the errors array.
 
 ## Properties
 
