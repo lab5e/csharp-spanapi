@@ -62,8 +62,6 @@ docs/MessageDownstream.md
 docs/MessageState.md
 docs/MessageTransport.md
 docs/MessageUpstream.md
-docs/NetworkMetadata.md
-docs/NetworkOperator.md
 docs/Output.md
 docs/OutputConfig.md
 docs/OutputDataMessage.md
@@ -150,8 +148,6 @@ src/Com.Lab5e.Span.Test/Model/MessageDownstreamTests.cs
 src/Com.Lab5e.Span.Test/Model/MessageStateTests.cs
 src/Com.Lab5e.Span.Test/Model/MessageTransportTests.cs
 src/Com.Lab5e.Span.Test/Model/MessageUpstreamTests.cs
-src/Com.Lab5e.Span.Test/Model/NetworkMetadataTests.cs
-src/Com.Lab5e.Span.Test/Model/NetworkOperatorTests.cs
 src/Com.Lab5e.Span.Test/Model/OutputConfigTests.cs
 src/Com.Lab5e.Span.Test/Model/OutputDataMessageTests.cs
 src/Com.Lab5e.Span.Test/Model/OutputLogEntryTests.cs
@@ -252,8 +248,6 @@ src/Com.Lab5e.Span/Model/MessageDownstream.cs
 src/Com.Lab5e.Span/Model/MessageState.cs
 src/Com.Lab5e.Span/Model/MessageTransport.cs
 src/Com.Lab5e.Span/Model/MessageUpstream.cs
-src/Com.Lab5e.Span/Model/NetworkMetadata.cs
-src/Com.Lab5e.Span/Model/NetworkOperator.cs
 src/Com.Lab5e.Span/Model/Output.cs
 src/Com.Lab5e.Span/Model/OutputConfig.cs
 src/Com.Lab5e.Span/Model/OutputDataMessage.cs

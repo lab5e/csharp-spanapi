@@ -5,7 +5,6 @@ This is the metadata for devices.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SimOperator** | [**NetworkOperator**](NetworkOperator.md) |  | [optional] 
 **Ciot** | [**CellularIoTMetadata**](CellularIoTMetadata.md) |  | [optional] 
 **Inet** | [**InetMetadata**](InetMetadata.md) |  | [optional] 
 **Gateway** | [**GatewayDeviceMetadata**](GatewayDeviceMetadata.md) |  | [optional] 

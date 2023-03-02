@@ -9,9 +9,6 @@ Name | Type | Description | Notes
 **Firmware** | [**FirmwareMetadata**](FirmwareMetadata.md) |  | [optional] 
 **Config** | [**DeviceConfig**](DeviceConfig.md) |  | [optional] 
 **Metadata** | [**DeviceMetadata**](DeviceMetadata.md) |  | [optional] 
-**Imsi** | **string** | Deprecated: The IMSI is replaced by CellularIoTMetadata | [optional] 
-**Imei** | **string** | The IMEI number is the unique ID for your hardware as seen by the network. Obviously you might have a completely different view on things. This field is deprecated.  Deprecated: The IMEI is replaced by CellularIoTMetadata | [optional] 
-**Network** | [**NetworkMetadata**](NetworkMetadata.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
