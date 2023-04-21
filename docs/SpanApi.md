@@ -2,10 +2,9 @@
 
 All URIs are relative to *https://api.lab5e.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**GetSystemInfo**](SpanApi.md#getsysteminfo) | **GET** /span/system | System information
-
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**GetSystemInfo**](SpanApi.md#getsysteminfo) | **GET** /span/system | System information |
 
 <a name="getsysteminfo"></a>
 # **GetSystemInfo**
@@ -46,8 +45,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SpanApi.GetSystemInfo: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling SpanApi.GetSystemInfo: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -55,9 +54,28 @@ namespace Example
 }
 ```
 
+#### Using the GetSystemInfoWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // System information
+    ApiResponse<SystemInfoResponse> response = apiInstance.GetSystemInfoWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling SpanApi.GetSystemInfoWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 This endpoint does not need any parameter.
-
 ### Return type
 
 [**SystemInfoResponse**](SystemInfoResponse.md)

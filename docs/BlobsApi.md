@@ -2,11 +2,10 @@
 
 All URIs are relative to *https://api.lab5e.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**DeleteBlob**](BlobsApi.md#deleteblob) | **DELETE** /span/collections/{collectionId}/blobs/{blobId} | Remove a blob stored on a collection
-[**ListBlobs**](BlobsApi.md#listblobs) | **GET** /span/collections/{collectionId}/blobs | List the blobs for a collection
-
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**DeleteBlob**](BlobsApi.md#deleteblob) | **DELETE** /span/collections/{collectionId}/blobs/{blobId} | Remove a blob stored on a collection |
+| [**ListBlobs**](BlobsApi.md#listblobs) | **GET** /span/collections/{collectionId}/blobs | List the blobs for a collection |
 
 <a name="deleteblob"></a>
 # **DeleteBlob**
@@ -49,8 +48,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BlobsApi.DeleteBlob: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling BlobsApi.DeleteBlob: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -58,12 +57,32 @@ namespace Example
 }
 ```
 
+#### Using the DeleteBlobWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Remove a blob stored on a collection
+    ApiResponse<Object> response = apiInstance.DeleteBlobWithHttpInfo(collectionId, blobId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling BlobsApi.DeleteBlobWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **blobId** | **string**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **blobId** | **string** |  |  |
 
 ### Return type
 
@@ -134,8 +153,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BlobsApi.ListBlobs: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling BlobsApi.ListBlobs: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -143,12 +162,32 @@ namespace Example
 }
 ```
 
+#### Using the ListBlobsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List the blobs for a collection
+    ApiResponse<ListBlobResponse> response = apiInstance.ListBlobsWithHttpInfo(collectionId, limit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling BlobsApi.ListBlobsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **limit** | **int?**|  | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **limit** | **int?** |  | [optional]  |
 
 ### Return type
 

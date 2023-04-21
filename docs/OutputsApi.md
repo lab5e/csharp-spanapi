@@ -2,16 +2,15 @@
 
 All URIs are relative to *https://api.lab5e.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**CreateOutput**](OutputsApi.md#createoutput) | **POST** /span/collections/{collectionId}/outputs | Create output
-[**DeleteOutput**](OutputsApi.md#deleteoutput) | **DELETE** /span/collections/{collectionId}/outputs/{outputId} | Delete output
-[**ListOutputs**](OutputsApi.md#listoutputs) | **GET** /span/collections/{collectionId}/outputs | List outputs
-[**Logs**](OutputsApi.md#logs) | **GET** /span/collections/{collectionId}/outputs/{outputId}/logs | Output logs
-[**RetrieveOutput**](OutputsApi.md#retrieveoutput) | **GET** /span/collections/{collectionId}/outputs/{outputId} | Retrieve output
-[**Status**](OutputsApi.md#status) | **GET** /span/collections/{collectionId}/outputs/{outputId}/status | Output status
-[**UpdateOutput**](OutputsApi.md#updateoutput) | **PATCH** /span/collections/{existingCollectionId}/outputs/{outputId} | Update output
-
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**CreateOutput**](OutputsApi.md#createoutput) | **POST** /span/collections/{collectionId}/outputs | Create output |
+| [**DeleteOutput**](OutputsApi.md#deleteoutput) | **DELETE** /span/collections/{collectionId}/outputs/{outputId} | Delete output |
+| [**ListOutputs**](OutputsApi.md#listoutputs) | **GET** /span/collections/{collectionId}/outputs | List outputs |
+| [**Logs**](OutputsApi.md#logs) | **GET** /span/collections/{collectionId}/outputs/{outputId}/logs | Output logs |
+| [**RetrieveOutput**](OutputsApi.md#retrieveoutput) | **GET** /span/collections/{collectionId}/outputs/{outputId} | Retrieve output |
+| [**Status**](OutputsApi.md#status) | **GET** /span/collections/{collectionId}/outputs/{outputId}/status | Output status |
+| [**UpdateOutput**](OutputsApi.md#updateoutput) | **PATCH** /span/collections/{existingCollectionId}/outputs/{outputId} | Update output |
 
 <a name="createoutput"></a>
 # **CreateOutput**
@@ -52,8 +51,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OutputsApi.CreateOutput: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OutputsApi.CreateOutput: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -61,12 +60,32 @@ namespace Example
 }
 ```
 
+#### Using the CreateOutputWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create output
+    ApiResponse<Output> response = apiInstance.CreateOutputWithHttpInfo(collectionId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OutputsApi.CreateOutputWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **body** | [**CreateOutputRequest**](CreateOutputRequest.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **body** | [**CreateOutputRequest**](CreateOutputRequest.md) |  |  |
 
 ### Return type
 
@@ -135,8 +154,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OutputsApi.DeleteOutput: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OutputsApi.DeleteOutput: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -144,12 +163,32 @@ namespace Example
 }
 ```
 
+#### Using the DeleteOutputWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete output
+    ApiResponse<Output> response = apiInstance.DeleteOutputWithHttpInfo(collectionId, outputId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OutputsApi.DeleteOutputWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **outputId** | **string**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **outputId** | **string** |  |  |
 
 ### Return type
 
@@ -217,8 +256,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OutputsApi.ListOutputs: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OutputsApi.ListOutputs: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -226,11 +265,31 @@ namespace Example
 }
 ```
 
+#### Using the ListOutputsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List outputs
+    ApiResponse<ListOutputResponse> response = apiInstance.ListOutputsWithHttpInfo(collectionId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OutputsApi.ListOutputsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
 
 ### Return type
 
@@ -299,8 +358,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OutputsApi.Logs: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OutputsApi.Logs: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -308,12 +367,32 @@ namespace Example
 }
 ```
 
+#### Using the LogsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Output logs
+    ApiResponse<OutputLogResponse> response = apiInstance.LogsWithHttpInfo(collectionId, outputId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OutputsApi.LogsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **outputId** | **string**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **outputId** | **string** |  |  |
 
 ### Return type
 
@@ -382,8 +461,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OutputsApi.RetrieveOutput: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OutputsApi.RetrieveOutput: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -391,12 +470,32 @@ namespace Example
 }
 ```
 
+#### Using the RetrieveOutputWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Retrieve output
+    ApiResponse<Output> response = apiInstance.RetrieveOutputWithHttpInfo(collectionId, outputId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OutputsApi.RetrieveOutputWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **outputId** | **string**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **outputId** | **string** |  |  |
 
 ### Return type
 
@@ -465,8 +564,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OutputsApi.Status: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OutputsApi.Status: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -474,12 +573,32 @@ namespace Example
 }
 ```
 
+#### Using the StatusWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Output status
+    ApiResponse<OutputStatusResponse> response = apiInstance.StatusWithHttpInfo(collectionId, outputId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OutputsApi.StatusWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **outputId** | **string**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **outputId** | **string** |  |  |
 
 ### Return type
 
@@ -549,8 +668,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OutputsApi.UpdateOutput: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OutputsApi.UpdateOutput: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -558,13 +677,33 @@ namespace Example
 }
 ```
 
+#### Using the UpdateOutputWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update output
+    ApiResponse<Output> response = apiInstance.UpdateOutputWithHttpInfo(existingCollectionId, outputId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OutputsApi.UpdateOutputWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **existingCollectionId** | **string**|  | 
- **outputId** | **string**|  | 
- **body** | [**UpdateOutputRequest**](UpdateOutputRequest.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **existingCollectionId** | **string** |  |  |
+| **outputId** | **string** |  |  |
+| **body** | [**UpdateOutputRequest**](UpdateOutputRequest.md) |  |  |
 
 ### Return type
 

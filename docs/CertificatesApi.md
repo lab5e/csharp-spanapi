@@ -2,13 +2,12 @@
 
 All URIs are relative to *https://api.lab5e.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**CreateCertificate**](CertificatesApi.md#createcertificate) | **POST** /span/collections/{collectionId}/certificates/create | Create certificate
-[**RetrieveCertificateChain**](CertificatesApi.md#retrievecertificatechain) | **GET** /span/collections/{collectionId}/certificates | Get certificate chain
-[**SignCertificate**](CertificatesApi.md#signcertificate) | **POST** /span/collections/{collectionId}/certificates/sign | Sign certificate
-[**VerifyCertificate**](CertificatesApi.md#verifycertificate) | **POST** /span/collections/{collectionId}/certificates/verify | Verify certificate
-
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**CreateCertificate**](CertificatesApi.md#createcertificate) | **POST** /span/collections/{collectionId}/certificates/create | Create certificate |
+| [**RetrieveCertificateChain**](CertificatesApi.md#retrievecertificatechain) | **GET** /span/collections/{collectionId}/certificates | Get certificate chain |
+| [**SignCertificate**](CertificatesApi.md#signcertificate) | **POST** /span/collections/{collectionId}/certificates/sign | Sign certificate |
+| [**VerifyCertificate**](CertificatesApi.md#verifycertificate) | **POST** /span/collections/{collectionId}/certificates/verify | Verify certificate |
 
 <a name="createcertificate"></a>
 # **CreateCertificate**
@@ -51,8 +50,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CertificatesApi.CreateCertificate: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling CertificatesApi.CreateCertificate: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -60,12 +59,32 @@ namespace Example
 }
 ```
 
+#### Using the CreateCertificateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create certificate
+    ApiResponse<CreateCertificateResponse> response = apiInstance.CreateCertificateWithHttpInfo(collectionId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CertificatesApi.CreateCertificateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **body** | [**CreateCertificateRequest**](CreateCertificateRequest.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **body** | [**CreateCertificateRequest**](CreateCertificateRequest.md) |  |  |
 
 ### Return type
 
@@ -97,7 +116,7 @@ Name | Type | Description  | Notes
 
 <a name="retrievecertificatechain"></a>
 # **RetrieveCertificateChain**
-> CertificateChainResponse RetrieveCertificateChain (string collectionId, string gatewayId = null, string deviceId = null)
+> CertificateChainResponse RetrieveCertificateChain (string collectionId, string? gatewayId = null, string? deviceId = null)
 
 Get certificate chain
 
@@ -126,8 +145,8 @@ namespace Example
 
             var apiInstance = new CertificatesApi(config);
             var collectionId = "collectionId_example";  // string | 
-            var gatewayId = "gatewayId_example";  // string |  (optional) 
-            var deviceId = "deviceId_example";  // string |  (optional) 
+            var gatewayId = "gatewayId_example";  // string? |  (optional) 
+            var deviceId = "deviceId_example";  // string? |  (optional) 
 
             try
             {
@@ -137,8 +156,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CertificatesApi.RetrieveCertificateChain: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling CertificatesApi.RetrieveCertificateChain: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -146,13 +165,33 @@ namespace Example
 }
 ```
 
+#### Using the RetrieveCertificateChainWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get certificate chain
+    ApiResponse<CertificateChainResponse> response = apiInstance.RetrieveCertificateChainWithHttpInfo(collectionId, gatewayId, deviceId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CertificatesApi.RetrieveCertificateChainWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **gatewayId** | **string**|  | [optional] 
- **deviceId** | **string**|  | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **gatewayId** | **string?** |  | [optional]  |
+| **deviceId** | **string?** |  | [optional]  |
 
 ### Return type
 
@@ -223,8 +262,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CertificatesApi.SignCertificate: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling CertificatesApi.SignCertificate: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -232,12 +271,32 @@ namespace Example
 }
 ```
 
+#### Using the SignCertificateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Sign certificate
+    ApiResponse<SignCertificateResponse> response = apiInstance.SignCertificateWithHttpInfo(collectionId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CertificatesApi.SignCertificateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **body** | [**SignCertificateRequest**](SignCertificateRequest.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **body** | [**SignCertificateRequest**](SignCertificateRequest.md) |  |  |
 
 ### Return type
 
@@ -308,8 +367,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CertificatesApi.VerifyCertificate: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling CertificatesApi.VerifyCertificate: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -317,12 +376,32 @@ namespace Example
 }
 ```
 
+#### Using the VerifyCertificateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Verify certificate
+    ApiResponse<VerifyCertificateResponse> response = apiInstance.VerifyCertificateWithHttpInfo(collectionId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CertificatesApi.VerifyCertificateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **body** | [**VerifyCertificateRequest**](VerifyCertificateRequest.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **body** | [**VerifyCertificateRequest**](VerifyCertificateRequest.md) |  |  |
 
 ### Return type
 

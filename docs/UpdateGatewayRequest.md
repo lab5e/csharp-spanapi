@@ -1,10 +1,11 @@
-# Com.Lab5e.Span.Model.InlineObject
+# Com.Lab5e.Span.Model.UpdateGatewayRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | [optional] 
+**CollectionId** | **string** |  | [optional] 
 **Type** | **GatewayType** |  | [optional] 
 **Config** | [**GatewayConfig**](GatewayConfig.md) |  | [optional] 
 **Tags** | **Dictionary&lt;string, string&gt;** |  | [optional] 

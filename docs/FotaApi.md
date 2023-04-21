@@ -2,16 +2,15 @@
 
 All URIs are relative to *https://api.lab5e.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**ClearFirmwareError**](FotaApi.md#clearfirmwareerror) | **DELETE** /span/collections/{collectionId}/devices/{deviceId}/fwerror | Clear FOTA error
-[**CreateFirmware**](FotaApi.md#createfirmware) | **POST** /span/collections/{collectionId}/firmware | Create firmware
-[**DeleteFirmware**](FotaApi.md#deletefirmware) | **DELETE** /span/collections/{collectionId}/firmware/{imageId} | Delete firmware
-[**FirmwareUsage**](FotaApi.md#firmwareusage) | **GET** /span/collections/{collectionId}/firmware/{imageId}/usage | Firmware usage
-[**ListFirmware**](FotaApi.md#listfirmware) | **GET** /span/collections/{collectionId}/firmware | List firmware
-[**RetrieveFirmware**](FotaApi.md#retrievefirmware) | **GET** /span/collections/{collectionId}/firmware/{imageId} | Retrieve firmware
-[**UpdateFirmware**](FotaApi.md#updatefirmware) | **PATCH** /span/collections/{existingCollectionId}/firmware/{imageId} | Update firmware
-
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**ClearFirmwareError**](FotaApi.md#clearfirmwareerror) | **DELETE** /span/collections/{collectionId}/devices/{deviceId}/fwerror | Clear FOTA error |
+| [**CreateFirmware**](FotaApi.md#createfirmware) | **POST** /span/collections/{collectionId}/firmware | Create firmware |
+| [**DeleteFirmware**](FotaApi.md#deletefirmware) | **DELETE** /span/collections/{collectionId}/firmware/{imageId} | Delete firmware |
+| [**FirmwareUsage**](FotaApi.md#firmwareusage) | **GET** /span/collections/{collectionId}/firmware/{imageId}/usage | Firmware usage |
+| [**ListFirmware**](FotaApi.md#listfirmware) | **GET** /span/collections/{collectionId}/firmware | List firmware |
+| [**RetrieveFirmware**](FotaApi.md#retrievefirmware) | **GET** /span/collections/{collectionId}/firmware/{imageId} | Retrieve firmware |
+| [**UpdateFirmware**](FotaApi.md#updatefirmware) | **PATCH** /span/collections/{existingCollectionId}/firmware/{imageId} | Update firmware |
 
 <a name="clearfirmwareerror"></a>
 # **ClearFirmwareError**
@@ -52,8 +51,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FotaApi.ClearFirmwareError: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling FotaApi.ClearFirmwareError: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -61,12 +60,32 @@ namespace Example
 }
 ```
 
+#### Using the ClearFirmwareErrorWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Clear FOTA error
+    ApiResponse<ClearFirmwareErrorResponse> response = apiInstance.ClearFirmwareErrorWithHttpInfo(collectionId, deviceId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FotaApi.ClearFirmwareErrorWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **deviceId** | **string**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **deviceId** | **string** |  |  |
 
 ### Return type
 
@@ -102,6 +121,8 @@ Name | Type | Description  | Notes
 
 Create firmware
 
+Firmware images must have unique version numbers and have an unique checksum. The checksum is calculated when the firmware image is uploaded.
+
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -135,8 +156,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FotaApi.CreateFirmware: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling FotaApi.CreateFirmware: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -144,12 +165,32 @@ namespace Example
 }
 ```
 
+#### Using the CreateFirmwareWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create firmware
+    ApiResponse<Firmware> response = apiInstance.CreateFirmwareWithHttpInfo(collectionId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FotaApi.CreateFirmwareWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **body** | [**CreateFirmwareRequest**](CreateFirmwareRequest.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **body** | [**CreateFirmwareRequest**](CreateFirmwareRequest.md) |  |  |
 
 ### Return type
 
@@ -218,8 +259,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FotaApi.DeleteFirmware: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling FotaApi.DeleteFirmware: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -227,12 +268,32 @@ namespace Example
 }
 ```
 
+#### Using the DeleteFirmwareWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete firmware
+    ApiResponse<Firmware> response = apiInstance.DeleteFirmwareWithHttpInfo(collectionId, imageId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FotaApi.DeleteFirmwareWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **imageId** | **string**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **imageId** | **string** |  |  |
 
 ### Return type
 
@@ -301,8 +362,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FotaApi.FirmwareUsage: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling FotaApi.FirmwareUsage: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -310,12 +371,32 @@ namespace Example
 }
 ```
 
+#### Using the FirmwareUsageWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Firmware usage
+    ApiResponse<FirmwareUsageResponse> response = apiInstance.FirmwareUsageWithHttpInfo(collectionId, imageId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FotaApi.FirmwareUsageWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **imageId** | **string**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **imageId** | **string** |  |  |
 
 ### Return type
 
@@ -383,8 +464,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FotaApi.ListFirmware: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling FotaApi.ListFirmware: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -392,11 +473,31 @@ namespace Example
 }
 ```
 
+#### Using the ListFirmwareWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List firmware
+    ApiResponse<ListFirmwareResponse> response = apiInstance.ListFirmwareWithHttpInfo(collectionId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FotaApi.ListFirmwareWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
 
 ### Return type
 
@@ -465,8 +566,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FotaApi.RetrieveFirmware: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling FotaApi.RetrieveFirmware: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -474,12 +575,32 @@ namespace Example
 }
 ```
 
+#### Using the RetrieveFirmwareWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Retrieve firmware
+    ApiResponse<Firmware> response = apiInstance.RetrieveFirmwareWithHttpInfo(collectionId, imageId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FotaApi.RetrieveFirmwareWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **imageId** | **string**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **imageId** | **string** |  |  |
 
 ### Return type
 
@@ -551,8 +672,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FotaApi.UpdateFirmware: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling FotaApi.UpdateFirmware: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -560,13 +681,33 @@ namespace Example
 }
 ```
 
+#### Using the UpdateFirmwareWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update firmware
+    ApiResponse<Firmware> response = apiInstance.UpdateFirmwareWithHttpInfo(existingCollectionId, imageId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FotaApi.UpdateFirmwareWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **existingCollectionId** | **string**|  | 
- **imageId** | **string**|  | 
- **body** | [**UpdateFirmwareRequest**](UpdateFirmwareRequest.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **existingCollectionId** | **string** |  |  |
+| **imageId** | **string** |  |  |
+| **body** | [**UpdateFirmwareRequest**](UpdateFirmwareRequest.md) |  |  |
 
 ### Return type
 

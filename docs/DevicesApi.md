@@ -2,20 +2,19 @@
 
 All URIs are relative to *https://api.lab5e.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**AddDownstreamMessage**](DevicesApi.md#adddownstreammessage) | **POST** /span/collections/{collectionId}/devices/{deviceId}/outbox | Add message to oubox
-[**CreateDevice**](DevicesApi.md#createdevice) | **POST** /span/collections/{collectionId}/devices | Create device
-[**DeleteDevice**](DevicesApi.md#deletedevice) | **DELETE** /span/collections/{collectionId}/devices/{deviceId} | Remove device.
-[**DeleteDownstreamMessage**](DevicesApi.md#deletedownstreammessage) | **DELETE** /span/collections/{collectionId}/devices/{deviceId}/outbox/{messageId} | Delete outgoing message
-[**DeviceCertificate**](DevicesApi.md#devicecertificate) | **GET** /span/collections/{collectionId}/devices/{deviceId}/certs | Get issued certificate(s) for device
-[**ListDeviceData**](DevicesApi.md#listdevicedata) | **GET** /span/collections/{collectionId}/devices/{deviceId}/data | Retrieve data from device
-[**ListDevices**](DevicesApi.md#listdevices) | **GET** /span/collections/{collectionId}/devices | List devices in collection.
-[**ListDownstreamMessages**](DevicesApi.md#listdownstreammessages) | **GET** /span/collections/{collectionId}/devices/{deviceId}/outbox | List the messages in the outbox
-[**ListUpstreamMessages**](DevicesApi.md#listupstreammessages) | **GET** /span/collections/{collectionId}/devices/{deviceId}/inbox | List incoming messages
-[**RetrieveDevice**](DevicesApi.md#retrievedevice) | **GET** /span/collections/{collectionId}/devices/{deviceId} | Retrieve device
-[**UpdateDevice**](DevicesApi.md#updatedevice) | **PATCH** /span/collections/{existingCollectionId}/devices/{deviceId} | Update device
-
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**AddDownstreamMessage**](DevicesApi.md#adddownstreammessage) | **POST** /span/collections/{collectionId}/devices/{deviceId}/outbox | Add message to oubox |
+| [**CreateDevice**](DevicesApi.md#createdevice) | **POST** /span/collections/{collectionId}/devices | Create device |
+| [**DeleteDevice**](DevicesApi.md#deletedevice) | **DELETE** /span/collections/{collectionId}/devices/{deviceId} | Remove device. |
+| [**DeleteDownstreamMessage**](DevicesApi.md#deletedownstreammessage) | **DELETE** /span/collections/{collectionId}/devices/{deviceId}/outbox/{messageId} | Delete outgoing message |
+| [**DeviceCertificate**](DevicesApi.md#devicecertificate) | **GET** /span/collections/{collectionId}/devices/{deviceId}/certs | Get issued certificate(s) for device |
+| [**ListDeviceData**](DevicesApi.md#listdevicedata) | **GET** /span/collections/{collectionId}/devices/{deviceId}/data | Retrieve data from device |
+| [**ListDevices**](DevicesApi.md#listdevices) | **GET** /span/collections/{collectionId}/devices | List devices in collection. |
+| [**ListDownstreamMessages**](DevicesApi.md#listdownstreammessages) | **GET** /span/collections/{collectionId}/devices/{deviceId}/outbox | List the messages in the outbox |
+| [**ListUpstreamMessages**](DevicesApi.md#listupstreammessages) | **GET** /span/collections/{collectionId}/devices/{deviceId}/inbox | List incoming messages |
+| [**RetrieveDevice**](DevicesApi.md#retrievedevice) | **GET** /span/collections/{collectionId}/devices/{deviceId} | Retrieve device |
+| [**UpdateDevice**](DevicesApi.md#updatedevice) | **PATCH** /span/collections/{existingCollectionId}/devices/{deviceId} | Update device |
 
 <a name="adddownstreammessage"></a>
 # **AddDownstreamMessage**
@@ -59,8 +58,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DevicesApi.AddDownstreamMessage: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling DevicesApi.AddDownstreamMessage: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -68,13 +67,33 @@ namespace Example
 }
 ```
 
+#### Using the AddDownstreamMessageWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Add message to oubox
+    ApiResponse<MessageDownstream> response = apiInstance.AddDownstreamMessageWithHttpInfo(collectionId, deviceId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DevicesApi.AddDownstreamMessageWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **deviceId** | **string**|  | 
- **body** | [**AddDownstreamMessageRequest**](AddDownstreamMessageRequest.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **deviceId** | **string** |  |  |
+| **body** | [**AddDownstreamMessageRequest**](AddDownstreamMessageRequest.md) |  |  |
 
 ### Return type
 
@@ -143,8 +162,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DevicesApi.CreateDevice: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling DevicesApi.CreateDevice: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -152,12 +171,32 @@ namespace Example
 }
 ```
 
+#### Using the CreateDeviceWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create device
+    ApiResponse<Device> response = apiInstance.CreateDeviceWithHttpInfo(collectionId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DevicesApi.CreateDeviceWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**| This is the containing collection | 
- **body** | [**CreateDeviceRequest**](CreateDeviceRequest.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** | This is the containing collection |  |
+| **body** | [**CreateDeviceRequest**](CreateDeviceRequest.md) |  |  |
 
 ### Return type
 
@@ -226,8 +265,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DevicesApi.DeleteDevice: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling DevicesApi.DeleteDevice: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -235,12 +274,32 @@ namespace Example
 }
 ```
 
+#### Using the DeleteDeviceWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Remove device.
+    ApiResponse<Device> response = apiInstance.DeleteDeviceWithHttpInfo(collectionId, deviceId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DevicesApi.DeleteDeviceWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**| This is the containing collection | 
- **deviceId** | **string**| The device ID is assigned by the backend. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** | This is the containing collection |  |
+| **deviceId** | **string** | The device ID is assigned by the backend. |  |
 
 ### Return type
 
@@ -312,8 +371,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DevicesApi.DeleteDownstreamMessage: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling DevicesApi.DeleteDownstreamMessage: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -321,13 +380,33 @@ namespace Example
 }
 ```
 
+#### Using the DeleteDownstreamMessageWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete outgoing message
+    ApiResponse<DeleteDownstreamMessageResponse> response = apiInstance.DeleteDownstreamMessageWithHttpInfo(collectionId, deviceId, messageId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DevicesApi.DeleteDownstreamMessageWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **deviceId** | **string**|  | 
- **messageId** | **string**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **deviceId** | **string** |  |  |
+| **messageId** | **string** |  |  |
 
 ### Return type
 
@@ -396,8 +475,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DevicesApi.DeviceCertificate: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling DevicesApi.DeviceCertificate: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -405,12 +484,32 @@ namespace Example
 }
 ```
 
+#### Using the DeviceCertificateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get issued certificate(s) for device
+    ApiResponse<DeviceCertificateResponse> response = apiInstance.DeviceCertificateWithHttpInfo(collectionId, deviceId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DevicesApi.DeviceCertificateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **deviceId** | **string**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **deviceId** | **string** |  |  |
 
 ### Return type
 
@@ -442,7 +541,7 @@ Name | Type | Description  | Notes
 
 <a name="listdevicedata"></a>
 # **ListDeviceData**
-> ListDataResponse ListDeviceData (string collectionId, string deviceId, int? limit = null, string start = null, string end = null, string offset = null)
+> ListDataResponse ListDeviceData (string collectionId, string deviceId, int? limit = null, string? start = null, string? end = null, string? offset = null)
 
 Retrieve data from device
 
@@ -473,9 +572,9 @@ namespace Example
             var collectionId = "collectionId_example";  // string | The collection ID. This is included in the request path.
             var deviceId = "deviceId_example";  // string | The device ID. This is included in the request path.
             var limit = 56;  // int? | Limit the number of payloads to return. The default is 512. (optional) 
-            var start = "start_example";  // string | Start of time range. The default is 24 hours ago. Value is in milliseconds since epoch. (optional) 
-            var end = "end_example";  // string | End of time range. The default is the current time stamp. Value is in milliseconds since epoch. (optional) 
-            var offset = "offset_example";  // string | The message offset based on the message ID. This parameter can't be combined with the start and end parameters. If no parameter is set the first N messages will be returned. If this parameter is set the next N messages (from newest to oldest) with message ID less than the offset will be returned. (optional) 
+            var start = "start_example";  // string? | Start of time range. The default is 24 hours ago. Value is in milliseconds since epoch. (optional) 
+            var end = "end_example";  // string? | End of time range. The default is the current time stamp. Value is in milliseconds since epoch. (optional) 
+            var offset = "offset_example";  // string? | The message offset based on the message ID. This parameter can't be combined with the start and end parameters. If no parameter is set the first N messages will be returned. If this parameter is set the next N messages (from newest to oldest) with message ID less than the offset will be returned. (optional) 
 
             try
             {
@@ -485,8 +584,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DevicesApi.ListDeviceData: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling DevicesApi.ListDeviceData: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -494,16 +593,36 @@ namespace Example
 }
 ```
 
+#### Using the ListDeviceDataWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Retrieve data from device
+    ApiResponse<ListDataResponse> response = apiInstance.ListDeviceDataWithHttpInfo(collectionId, deviceId, limit, start, end, offset);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DevicesApi.ListDeviceDataWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**| The collection ID. This is included in the request path. | 
- **deviceId** | **string**| The device ID. This is included in the request path. | 
- **limit** | **int?**| Limit the number of payloads to return. The default is 512. | [optional] 
- **start** | **string**| Start of time range. The default is 24 hours ago. Value is in milliseconds since epoch. | [optional] 
- **end** | **string**| End of time range. The default is the current time stamp. Value is in milliseconds since epoch. | [optional] 
- **offset** | **string**| The message offset based on the message ID. This parameter can&#39;t be combined with the start and end parameters. If no parameter is set the first N messages will be returned. If this parameter is set the next N messages (from newest to oldest) with message ID less than the offset will be returned. | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** | The collection ID. This is included in the request path. |  |
+| **deviceId** | **string** | The device ID. This is included in the request path. |  |
+| **limit** | **int?** | Limit the number of payloads to return. The default is 512. | [optional]  |
+| **start** | **string?** | Start of time range. The default is 24 hours ago. Value is in milliseconds since epoch. | [optional]  |
+| **end** | **string?** | End of time range. The default is the current time stamp. Value is in milliseconds since epoch. | [optional]  |
+| **offset** | **string?** | The message offset based on the message ID. This parameter can&#39;t be combined with the start and end parameters. If no parameter is set the first N messages will be returned. If this parameter is set the next N messages (from newest to oldest) with message ID less than the offset will be returned. | [optional]  |
 
 ### Return type
 
@@ -571,8 +690,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DevicesApi.ListDevices: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling DevicesApi.ListDevices: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -580,11 +699,31 @@ namespace Example
 }
 ```
 
+#### Using the ListDevicesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List devices in collection.
+    ApiResponse<ListDevicesResponse> response = apiInstance.ListDevicesWithHttpInfo(collectionId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DevicesApi.ListDevicesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
 
 ### Return type
 
@@ -616,7 +755,7 @@ Name | Type | Description  | Notes
 
 <a name="listdownstreammessages"></a>
 # **ListDownstreamMessages**
-> ListDownstreamMessagesResponse ListDownstreamMessages (string collectionId, string deviceId, int? limit = null, string start = null, string end = null, string offset = null)
+> ListDownstreamMessagesResponse ListDownstreamMessages (string collectionId, string deviceId, int? limit = null, string? start = null, string? end = null, string? offset = null)
 
 List the messages in the outbox
 
@@ -647,9 +786,9 @@ namespace Example
             var collectionId = "collectionId_example";  // string | 
             var deviceId = "deviceId_example";  // string | 
             var limit = 56;  // int? |  (optional) 
-            var start = "start_example";  // string | Start of time range. The default is 24 hours ago. Value is in milliseconds since epoch. (optional) 
-            var end = "end_example";  // string | End of time range. The default is the current time stamp. Value is in milliseconds since epoch. (optional) 
-            var offset = "offset_example";  // string | The message offset based on the message ID. This parameter can't be combined with the start and end parameters. If no parameter is set the first N messages will be returned. If this parameter is set the next N messages (from newest to oldest) with message ID less than the offset will be returned. (optional) 
+            var start = "start_example";  // string? | Start of time range. The default is 24 hours ago. Value is in milliseconds since epoch. (optional) 
+            var end = "end_example";  // string? | End of time range. The default is the current time stamp. Value is in milliseconds since epoch. (optional) 
+            var offset = "offset_example";  // string? | The message offset based on the message ID. This parameter can't be combined with the start and end parameters. If no parameter is set the first N messages will be returned. If this parameter is set the next N messages (from newest to oldest) with message ID less than the offset will be returned. (optional) 
 
             try
             {
@@ -659,8 +798,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DevicesApi.ListDownstreamMessages: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling DevicesApi.ListDownstreamMessages: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -668,16 +807,36 @@ namespace Example
 }
 ```
 
+#### Using the ListDownstreamMessagesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List the messages in the outbox
+    ApiResponse<ListDownstreamMessagesResponse> response = apiInstance.ListDownstreamMessagesWithHttpInfo(collectionId, deviceId, limit, start, end, offset);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DevicesApi.ListDownstreamMessagesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **deviceId** | **string**|  | 
- **limit** | **int?**|  | [optional] 
- **start** | **string**| Start of time range. The default is 24 hours ago. Value is in milliseconds since epoch. | [optional] 
- **end** | **string**| End of time range. The default is the current time stamp. Value is in milliseconds since epoch. | [optional] 
- **offset** | **string**| The message offset based on the message ID. This parameter can&#39;t be combined with the start and end parameters. If no parameter is set the first N messages will be returned. If this parameter is set the next N messages (from newest to oldest) with message ID less than the offset will be returned. | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **deviceId** | **string** |  |  |
+| **limit** | **int?** |  | [optional]  |
+| **start** | **string?** | Start of time range. The default is 24 hours ago. Value is in milliseconds since epoch. | [optional]  |
+| **end** | **string?** | End of time range. The default is the current time stamp. Value is in milliseconds since epoch. | [optional]  |
+| **offset** | **string?** | The message offset based on the message ID. This parameter can&#39;t be combined with the start and end parameters. If no parameter is set the first N messages will be returned. If this parameter is set the next N messages (from newest to oldest) with message ID less than the offset will be returned. | [optional]  |
 
 ### Return type
 
@@ -709,7 +868,7 @@ Name | Type | Description  | Notes
 
 <a name="listupstreammessages"></a>
 # **ListUpstreamMessages**
-> ListUpstreamMessagesResponse ListUpstreamMessages (string collectionId, string deviceId, int? limit = null, string start = null, string end = null, string offset = null)
+> ListUpstreamMessagesResponse ListUpstreamMessages (string collectionId, string deviceId, int? limit = null, string? start = null, string? end = null, string? offset = null)
 
 List incoming messages
 
@@ -740,9 +899,9 @@ namespace Example
             var collectionId = "collectionId_example";  // string | 
             var deviceId = "deviceId_example";  // string | 
             var limit = 56;  // int? |  (optional) 
-            var start = "start_example";  // string | Start of time range. The default is 24 hours ago. Value is in milliseconds since epoch. (optional) 
-            var end = "end_example";  // string | End of time range. The default is the current time stamp. Value is in milliseconds since epoch. (optional) 
-            var offset = "offset_example";  // string | The message offset based on the message ID. This parameter can't be combined with the start and end parameters. If no parameter is set the first N messages will be returned. If this parameter is set the next N messages (from newest to oldest) with message ID less than the offset will be returned. (optional) 
+            var start = "start_example";  // string? | Start of time range. The default is 24 hours ago. Value is in milliseconds since epoch. (optional) 
+            var end = "end_example";  // string? | End of time range. The default is the current time stamp. Value is in milliseconds since epoch. (optional) 
+            var offset = "offset_example";  // string? | The message offset based on the message ID. This parameter can't be combined with the start and end parameters. If no parameter is set the first N messages will be returned. If this parameter is set the next N messages (from newest to oldest) with message ID less than the offset will be returned. (optional) 
 
             try
             {
@@ -752,8 +911,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DevicesApi.ListUpstreamMessages: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling DevicesApi.ListUpstreamMessages: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -761,16 +920,36 @@ namespace Example
 }
 ```
 
+#### Using the ListUpstreamMessagesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List incoming messages
+    ApiResponse<ListUpstreamMessagesResponse> response = apiInstance.ListUpstreamMessagesWithHttpInfo(collectionId, deviceId, limit, start, end, offset);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DevicesApi.ListUpstreamMessagesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **deviceId** | **string**|  | 
- **limit** | **int?**|  | [optional] 
- **start** | **string**| Start of time range. The default is 24 hours ago. Value is in milliseconds since epoch. | [optional] 
- **end** | **string**| End of time range. The default is the current time stamp. Value is in milliseconds since epoch. | [optional] 
- **offset** | **string**| The message offset based on the message ID. This parameter can&#39;t be combined with the start and end parameters. If no parameter is set the first N messages will be returned. If this parameter is set the next N messages (from newest to oldest) with message ID less than the offset will be returned. | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **deviceId** | **string** |  |  |
+| **limit** | **int?** |  | [optional]  |
+| **start** | **string?** | Start of time range. The default is 24 hours ago. Value is in milliseconds since epoch. | [optional]  |
+| **end** | **string?** | End of time range. The default is the current time stamp. Value is in milliseconds since epoch. | [optional]  |
+| **offset** | **string?** | The message offset based on the message ID. This parameter can&#39;t be combined with the start and end parameters. If no parameter is set the first N messages will be returned. If this parameter is set the next N messages (from newest to oldest) with message ID less than the offset will be returned. | [optional]  |
 
 ### Return type
 
@@ -839,8 +1018,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DevicesApi.RetrieveDevice: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling DevicesApi.RetrieveDevice: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -848,12 +1027,32 @@ namespace Example
 }
 ```
 
+#### Using the RetrieveDeviceWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Retrieve device
+    ApiResponse<Device> response = apiInstance.RetrieveDeviceWithHttpInfo(collectionId, deviceId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DevicesApi.RetrieveDeviceWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**| This is the containing collection | 
- **deviceId** | **string**| The device ID is assigned by the backend. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** | This is the containing collection |  |
+| **deviceId** | **string** | The device ID is assigned by the backend. |  |
 
 ### Return type
 
@@ -925,8 +1124,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DevicesApi.UpdateDevice: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling DevicesApi.UpdateDevice: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -934,13 +1133,33 @@ namespace Example
 }
 ```
 
+#### Using the UpdateDeviceWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update device
+    ApiResponse<Device> response = apiInstance.UpdateDeviceWithHttpInfo(existingCollectionId, deviceId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DevicesApi.UpdateDeviceWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **existingCollectionId** | **string**|  | 
- **deviceId** | **string**|  | 
- **body** | [**UpdateDeviceRequest**](UpdateDeviceRequest.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **existingCollectionId** | **string** |  |  |
+| **deviceId** | **string** |  |  |
+| **body** | [**UpdateDeviceRequest**](UpdateDeviceRequest.md) |  |  |
 
 ### Return type
 

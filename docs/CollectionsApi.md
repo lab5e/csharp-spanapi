@@ -2,15 +2,14 @@
 
 All URIs are relative to *https://api.lab5e.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**CreateCollection**](CollectionsApi.md#createcollection) | **POST** /span/collections | Create collection
-[**DeleteCollection**](CollectionsApi.md#deletecollection) | **DELETE** /span/collections/{collectionId} | Delete collection
-[**ListCollectionData**](CollectionsApi.md#listcollectiondata) | **GET** /span/collections/{collectionId}/data | Retrieve data from devices
-[**ListCollections**](CollectionsApi.md#listcollections) | **GET** /span/collections | List collections
-[**RetrieveCollection**](CollectionsApi.md#retrievecollection) | **GET** /span/collections/{collectionId} | Retrieve collection
-[**UpdateCollection**](CollectionsApi.md#updatecollection) | **PATCH** /span/collections/{collectionId} | Update collection
-
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**CreateCollection**](CollectionsApi.md#createcollection) | **POST** /span/collections | Create collection |
+| [**DeleteCollection**](CollectionsApi.md#deletecollection) | **DELETE** /span/collections/{collectionId} | Delete collection |
+| [**ListCollectionData**](CollectionsApi.md#listcollectiondata) | **GET** /span/collections/{collectionId}/data | Retrieve data from devices |
+| [**ListCollections**](CollectionsApi.md#listcollections) | **GET** /span/collections | List collections |
+| [**RetrieveCollection**](CollectionsApi.md#retrievecollection) | **GET** /span/collections/{collectionId} | Retrieve collection |
+| [**UpdateCollection**](CollectionsApi.md#updatecollection) | **PATCH** /span/collections/{collectionId} | Update collection |
 
 <a name="createcollection"></a>
 # **CreateCollection**
@@ -52,8 +51,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CollectionsApi.CreateCollection: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling CollectionsApi.CreateCollection: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -61,11 +60,31 @@ namespace Example
 }
 ```
 
+#### Using the CreateCollectionWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create collection
+    ApiResponse<Collection> response = apiInstance.CreateCollectionWithHttpInfo(body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CollectionsApi.CreateCollectionWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**CreateCollectionRequest**](CreateCollectionRequest.md)| Request object when creating a collection. The collect ID is assigned by the service. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **body** | [**CreateCollectionRequest**](CreateCollectionRequest.md) | Request object when creating a collection. The collect ID is assigned by the service. |  |
 
 ### Return type
 
@@ -135,8 +154,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CollectionsApi.DeleteCollection: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling CollectionsApi.DeleteCollection: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -144,11 +163,31 @@ namespace Example
 }
 ```
 
+#### Using the DeleteCollectionWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete collection
+    ApiResponse<Collection> response = apiInstance.DeleteCollectionWithHttpInfo(collectionId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CollectionsApi.DeleteCollectionWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**| The ID of the collection you want to delete | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** | The ID of the collection you want to delete |  |
 
 ### Return type
 
@@ -180,7 +219,7 @@ Name | Type | Description  | Notes
 
 <a name="listcollectiondata"></a>
 # **ListCollectionData**
-> ListDataResponse ListCollectionData (string collectionId, int? limit = null, string start = null, string end = null, string offset = null)
+> ListDataResponse ListCollectionData (string collectionId, int? limit = null, string? start = null, string? end = null, string? offset = null)
 
 Retrieve data from devices
 
@@ -210,9 +249,9 @@ namespace Example
             var apiInstance = new CollectionsApi(config);
             var collectionId = "collectionId_example";  // string | The collection ID requested. This is included in the request path.
             var limit = 56;  // int? | Limit the number of payloads to return. The default is 512. (optional) 
-            var start = "start_example";  // string | Start of time range. The default is 24 hours ago. Value is in milliseconds since epoch. (optional) 
-            var end = "end_example";  // string | End of time range. The default is the current time stamp. Value is in milliseconds since epoch. (optional) 
-            var offset = "offset_example";  // string | The message offset based on the message ID. This parameter can't be combined with the start and end parameters. If no parameter is set the first N messages will be returned. If this parameter is set the next N messages (from newest to oldest) with message ID less than the offset will be returned. (optional) 
+            var start = "start_example";  // string? | Start of time range. The default is 24 hours ago. Value is in milliseconds since epoch. (optional) 
+            var end = "end_example";  // string? | End of time range. The default is the current time stamp. Value is in milliseconds since epoch. (optional) 
+            var offset = "offset_example";  // string? | The message offset based on the message ID. This parameter can't be combined with the start and end parameters. If no parameter is set the first N messages will be returned. If this parameter is set the next N messages (from newest to oldest) with message ID less than the offset will be returned. (optional) 
 
             try
             {
@@ -222,8 +261,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CollectionsApi.ListCollectionData: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling CollectionsApi.ListCollectionData: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -231,15 +270,35 @@ namespace Example
 }
 ```
 
+#### Using the ListCollectionDataWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Retrieve data from devices
+    ApiResponse<ListDataResponse> response = apiInstance.ListCollectionDataWithHttpInfo(collectionId, limit, start, end, offset);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CollectionsApi.ListCollectionDataWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**| The collection ID requested. This is included in the request path. | 
- **limit** | **int?**| Limit the number of payloads to return. The default is 512. | [optional] 
- **start** | **string**| Start of time range. The default is 24 hours ago. Value is in milliseconds since epoch. | [optional] 
- **end** | **string**| End of time range. The default is the current time stamp. Value is in milliseconds since epoch. | [optional] 
- **offset** | **string**| The message offset based on the message ID. This parameter can&#39;t be combined with the start and end parameters. If no parameter is set the first N messages will be returned. If this parameter is set the next N messages (from newest to oldest) with message ID less than the offset will be returned. | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** | The collection ID requested. This is included in the request path. |  |
+| **limit** | **int?** | Limit the number of payloads to return. The default is 512. | [optional]  |
+| **start** | **string?** | Start of time range. The default is 24 hours ago. Value is in milliseconds since epoch. | [optional]  |
+| **end** | **string?** | End of time range. The default is the current time stamp. Value is in milliseconds since epoch. | [optional]  |
+| **offset** | **string?** | The message offset based on the message ID. This parameter can&#39;t be combined with the start and end parameters. If no parameter is set the first N messages will be returned. If this parameter is set the next N messages (from newest to oldest) with message ID less than the offset will be returned. | [optional]  |
 
 ### Return type
 
@@ -275,7 +334,7 @@ Name | Type | Description  | Notes
 
 List collections
 
-Lists all the collections that one of your teams owns.
+Lists all the collections that one of your teams owns. The collections returned includes only the data on the collection and not the summary information
 
 ### Example
 ```csharp
@@ -308,8 +367,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CollectionsApi.ListCollections: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling CollectionsApi.ListCollections: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -317,9 +376,28 @@ namespace Example
 }
 ```
 
+#### Using the ListCollectionsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List collections
+    ApiResponse<ListCollectionResponse> response = apiInstance.ListCollectionsWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CollectionsApi.ListCollectionsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 This endpoint does not need any parameter.
-
 ### Return type
 
 [**ListCollectionResponse**](ListCollectionResponse.md)
@@ -350,9 +428,11 @@ This endpoint does not need any parameter.
 
 <a name="retrievecollection"></a>
 # **RetrieveCollection**
-> Collection RetrieveCollection (string collectionId)
+> Collection RetrieveCollection (string collectionId, bool? upstream = null, bool? downstream = null)
 
 Retrieve collection
+
+Retrieve collection information. This includes a list of the most recent messages in the inbox. The upstream and downstream parameters are optional and if set to true will include the timestamps for up to 100 messages up- and downstream for the last hour.
 
 ### Example
 ```csharp
@@ -377,17 +457,19 @@ namespace Example
 
             var apiInstance = new CollectionsApi(config);
             var collectionId = "collectionId_example";  // string | The collection ID of the collection you are requesting
+            var upstream = true;  // bool? |  (optional) 
+            var downstream = true;  // bool? |  (optional) 
 
             try
             {
                 // Retrieve collection
-                Collection result = apiInstance.RetrieveCollection(collectionId);
+                Collection result = apiInstance.RetrieveCollection(collectionId, upstream, downstream);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CollectionsApi.RetrieveCollection: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling CollectionsApi.RetrieveCollection: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -395,11 +477,33 @@ namespace Example
 }
 ```
 
+#### Using the RetrieveCollectionWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Retrieve collection
+    ApiResponse<Collection> response = apiInstance.RetrieveCollectionWithHttpInfo(collectionId, upstream, downstream);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CollectionsApi.RetrieveCollectionWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**| The collection ID of the collection you are requesting | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** | The collection ID of the collection you are requesting |  |
+| **upstream** | **bool?** |  | [optional]  |
+| **downstream** | **bool?** |  | [optional]  |
 
 ### Return type
 
@@ -470,8 +574,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CollectionsApi.UpdateCollection: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling CollectionsApi.UpdateCollection: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -479,12 +583,32 @@ namespace Example
 }
 ```
 
+#### Using the UpdateCollectionWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update collection
+    ApiResponse<Collection> response = apiInstance.UpdateCollectionWithHttpInfo(collectionId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CollectionsApi.UpdateCollectionWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**| The ID of the collection. This is assigned by the backend. | 
- **body** | [**UpdateCollectionRequest**](UpdateCollectionRequest.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** | The ID of the collection. This is assigned by the backend. |  |
+| **body** | [**UpdateCollectionRequest**](UpdateCollectionRequest.md) |  |  |
 
 ### Return type
 

@@ -2,19 +2,18 @@
 
 All URIs are relative to *https://api.lab5e.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**CreateGateway**](GatewaysApi.md#creategateway) | **POST** /span/collections/{collectionId}/gateways | Create gateway
-[**DeleteGateway**](GatewaysApi.md#deletegateway) | **DELETE** /span/collections/{collectionId}/gateways/{gatewayId} | Delete gateway
-[**GatewayCertificates**](GatewaysApi.md#gatewaycertificates) | **GET** /span/collections/{collectionId}/gateways/{gatewayId}/certs | Get issued certificate(s) for gateway
-[**ListGateways**](GatewaysApi.md#listgateways) | **GET** /span/collections/{collectionId}/gateways | List gateways
-[**RetrieveGateway**](GatewaysApi.md#retrievegateway) | **GET** /span/collections/{collectionId}/gateways/{gatewayId} | Retrieve gateway
-[**UpdateGateway**](GatewaysApi.md#updategateway) | **PATCH** /span/collections/{existingCollectionId}/gateways/{gatewayId} | Update gateway
-
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**CreateGateway**](GatewaysApi.md#creategateway) | **POST** /span/collections/{collectionId}/gateways | Create gateway |
+| [**DeleteGateway**](GatewaysApi.md#deletegateway) | **DELETE** /span/collections/{collectionId}/gateways/{gatewayId} | Delete gateway |
+| [**GatewayCertificates**](GatewaysApi.md#gatewaycertificates) | **GET** /span/collections/{collectionId}/gateways/{gatewayId}/certs | Get issued certificate(s) for gateway |
+| [**ListGateways**](GatewaysApi.md#listgateways) | **GET** /span/collections/{collectionId}/gateways | List gateways |
+| [**RetrieveGateway**](GatewaysApi.md#retrievegateway) | **GET** /span/collections/{collectionId}/gateways/{gatewayId} | Retrieve gateway |
+| [**UpdateGateway**](GatewaysApi.md#updategateway) | **PATCH** /span/collections/{existingCollectionId}/gateways/{gatewayId} | Update gateway |
 
 <a name="creategateway"></a>
 # **CreateGateway**
-> Gateway CreateGateway (string collectionId, InlineObject body)
+> Gateway CreateGateway (string collectionId, CreateGatewayRequest body)
 
 Create gateway
 
@@ -43,7 +42,7 @@ namespace Example
 
             var apiInstance = new GatewaysApi(config);
             var collectionId = "collectionId_example";  // string | 
-            var body = new InlineObject(); // InlineObject | 
+            var body = new CreateGatewayRequest(); // CreateGatewayRequest | 
 
             try
             {
@@ -53,8 +52,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling GatewaysApi.CreateGateway: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling GatewaysApi.CreateGateway: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -62,12 +61,32 @@ namespace Example
 }
 ```
 
+#### Using the CreateGatewayWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create gateway
+    ApiResponse<Gateway> response = apiInstance.CreateGatewayWithHttpInfo(collectionId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling GatewaysApi.CreateGatewayWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **body** | [**InlineObject**](InlineObject.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **body** | [**CreateGatewayRequest**](CreateGatewayRequest.md) |  |  |
 
 ### Return type
 
@@ -138,8 +157,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling GatewaysApi.DeleteGateway: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling GatewaysApi.DeleteGateway: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -147,12 +166,32 @@ namespace Example
 }
 ```
 
+#### Using the DeleteGatewayWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete gateway
+    ApiResponse<Gateway> response = apiInstance.DeleteGatewayWithHttpInfo(collectionId, gatewayId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling GatewaysApi.DeleteGatewayWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **gatewayId** | **string**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **gatewayId** | **string** |  |  |
 
 ### Return type
 
@@ -221,8 +260,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling GatewaysApi.GatewayCertificates: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling GatewaysApi.GatewayCertificates: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -230,12 +269,32 @@ namespace Example
 }
 ```
 
+#### Using the GatewayCertificatesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get issued certificate(s) for gateway
+    ApiResponse<GatewayCertificateResponse> response = apiInstance.GatewayCertificatesWithHttpInfo(collectionId, gatewayId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling GatewaysApi.GatewayCertificatesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **gatewayId** | **string**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **gatewayId** | **string** |  |  |
 
 ### Return type
 
@@ -305,8 +364,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling GatewaysApi.ListGateways: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling GatewaysApi.ListGateways: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -314,11 +373,31 @@ namespace Example
 }
 ```
 
+#### Using the ListGatewaysWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List gateways
+    ApiResponse<ListGatewayResponse> response = apiInstance.ListGatewaysWithHttpInfo(collectionId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling GatewaysApi.ListGatewaysWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
 
 ### Return type
 
@@ -389,8 +468,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling GatewaysApi.RetrieveGateway: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling GatewaysApi.RetrieveGateway: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -398,12 +477,32 @@ namespace Example
 }
 ```
 
+#### Using the RetrieveGatewayWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Retrieve gateway
+    ApiResponse<Gateway> response = apiInstance.RetrieveGatewayWithHttpInfo(collectionId, gatewayId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling GatewaysApi.RetrieveGatewayWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId** | **string**|  | 
- **gatewayId** | **string**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **gatewayId** | **string** |  |  |
 
 ### Return type
 
@@ -435,7 +534,7 @@ Name | Type | Description  | Notes
 
 <a name="updategateway"></a>
 # **UpdateGateway**
-> Gateway UpdateGateway (string existingCollectionId, string gatewayId, InlineObject1 body)
+> Gateway UpdateGateway (string existingCollectionId, string gatewayId, UpdateGatewayRequest body)
 
 Update gateway
 
@@ -465,7 +564,7 @@ namespace Example
             var apiInstance = new GatewaysApi(config);
             var existingCollectionId = "existingCollectionId_example";  // string | 
             var gatewayId = "gatewayId_example";  // string | 
-            var body = new InlineObject1(); // InlineObject1 | 
+            var body = new UpdateGatewayRequest(); // UpdateGatewayRequest | 
 
             try
             {
@@ -475,8 +574,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling GatewaysApi.UpdateGateway: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling GatewaysApi.UpdateGateway: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -484,13 +583,33 @@ namespace Example
 }
 ```
 
+#### Using the UpdateGatewayWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update gateway
+    ApiResponse<Gateway> response = apiInstance.UpdateGatewayWithHttpInfo(existingCollectionId, gatewayId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling GatewaysApi.UpdateGatewayWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **existingCollectionId** | **string**|  | 
- **gatewayId** | **string**|  | 
- **body** | [**InlineObject1**](InlineObject1.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **existingCollectionId** | **string** |  |  |
+| **gatewayId** | **string** |  |  |
+| **body** | [**UpdateGatewayRequest**](UpdateGatewayRequest.md) |  |  |
 
 ### Return type
 
