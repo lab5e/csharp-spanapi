@@ -9,6 +9,7 @@ All URIs are relative to *https://api.lab5e.com*
 | [**GatewayCertificates**](GatewaysApi.md#gatewaycertificates) | **GET** /span/collections/{collectionId}/gateways/{gatewayId}/certs | Get issued certificate(s) for gateway |
 | [**ListGateways**](GatewaysApi.md#listgateways) | **GET** /span/collections/{collectionId}/gateways | List gateways |
 | [**RetrieveGateway**](GatewaysApi.md#retrievegateway) | **GET** /span/collections/{collectionId}/gateways/{gatewayId} | Retrieve gateway |
+| [**RetrieveGatewayStats**](GatewaysApi.md#retrievegatewaystats) | **GET** /span/collections/{collectionId}/gateways/{gatewayId}/stats | Retrieve gateway statistics |
 | [**UpdateGateway**](GatewaysApi.md#updategateway) | **PATCH** /span/collections/{existingCollectionId}/gateways/{gatewayId} | Update gateway |
 
 <a name="creategateway"></a>
@@ -507,6 +508,111 @@ catch (ApiException e)
 ### Return type
 
 [**Gateway**](Gateway.md)
+
+### Authorization
+
+[APIToken](../README.md#APIToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A successful response. |  -  |
+| **201** | It&#39;s created. |  -  |
+| **400** | The request has an error. |  -  |
+| **401** | You can&#39;t touch this |  -  |
+| **404** | Couldn&#39;t find the resource. |  -  |
+| **409** | There&#39;s a resource conflict here. |  -  |
+| **500** | I&#39;m sorry. We are broken |  -  |
+| **0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="retrievegatewaystats"></a>
+# **RetrieveGatewayStats**
+> GatewayStats RetrieveGatewayStats (string collectionId, string gatewayId)
+
+Retrieve gateway statistics
+
+Get statistics for gateway
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Lab5e.Span.Api;
+using Com.Lab5e.Span.Client;
+using Com.Lab5e.Span.Model;
+
+namespace Example
+{
+    public class RetrieveGatewayStatsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.lab5e.com";
+            // Configure API key authorization: APIToken
+            config.AddApiKey("X-API-Token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-API-Token", "Bearer");
+
+            var apiInstance = new GatewaysApi(config);
+            var collectionId = "collectionId_example";  // string | 
+            var gatewayId = "gatewayId_example";  // string | 
+
+            try
+            {
+                // Retrieve gateway statistics
+                GatewayStats result = apiInstance.RetrieveGatewayStats(collectionId, gatewayId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling GatewaysApi.RetrieveGatewayStats: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RetrieveGatewayStatsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Retrieve gateway statistics
+    ApiResponse<GatewayStats> response = apiInstance.RetrieveGatewayStatsWithHttpInfo(collectionId, gatewayId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling GatewaysApi.RetrieveGatewayStatsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **gatewayId** | **string** |  |  |
+
+### Return type
+
+[**GatewayStats**](GatewayStats.md)
 
 ### Authorization
 

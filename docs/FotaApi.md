@@ -10,6 +10,7 @@ All URIs are relative to *https://api.lab5e.com*
 | [**FirmwareUsage**](FotaApi.md#firmwareusage) | **GET** /span/collections/{collectionId}/firmware/{imageId}/usage | Firmware usage |
 | [**ListFirmware**](FotaApi.md#listfirmware) | **GET** /span/collections/{collectionId}/firmware | List firmware |
 | [**RetrieveFirmware**](FotaApi.md#retrievefirmware) | **GET** /span/collections/{collectionId}/firmware/{imageId} | Retrieve firmware |
+| [**RetrieveFirmwareStats**](FotaApi.md#retrievefirmwarestats) | **GET** /span/collections/{collectionId}/firmware/{imageId}/stats | Retrieve firmware statistics |
 | [**UpdateFirmware**](FotaApi.md#updatefirmware) | **PATCH** /span/collections/{existingCollectionId}/firmware/{imageId} | Update firmware |
 
 <a name="clearfirmwareerror"></a>
@@ -605,6 +606,109 @@ catch (ApiException e)
 ### Return type
 
 [**Firmware**](Firmware.md)
+
+### Authorization
+
+[APIToken](../README.md#APIToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A successful response. |  -  |
+| **201** | It&#39;s created. |  -  |
+| **400** | The request has an error. |  -  |
+| **401** | You can&#39;t touch this |  -  |
+| **404** | Couldn&#39;t find the resource. |  -  |
+| **409** | There&#39;s a resource conflict here. |  -  |
+| **500** | I&#39;m sorry. We are broken |  -  |
+| **0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="retrievefirmwarestats"></a>
+# **RetrieveFirmwareStats**
+> FirmwareStats RetrieveFirmwareStats (string collectionId, string imageId)
+
+Retrieve firmware statistics
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Lab5e.Span.Api;
+using Com.Lab5e.Span.Client;
+using Com.Lab5e.Span.Model;
+
+namespace Example
+{
+    public class RetrieveFirmwareStatsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.lab5e.com";
+            // Configure API key authorization: APIToken
+            config.AddApiKey("X-API-Token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-API-Token", "Bearer");
+
+            var apiInstance = new FotaApi(config);
+            var collectionId = "collectionId_example";  // string | 
+            var imageId = "imageId_example";  // string | 
+
+            try
+            {
+                // Retrieve firmware statistics
+                FirmwareStats result = apiInstance.RetrieveFirmwareStats(collectionId, imageId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FotaApi.RetrieveFirmwareStats: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RetrieveFirmwareStatsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Retrieve firmware statistics
+    ApiResponse<FirmwareStats> response = apiInstance.RetrieveFirmwareStatsWithHttpInfo(collectionId, imageId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FotaApi.RetrieveFirmwareStatsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **imageId** | **string** |  |  |
+
+### Return type
+
+[**FirmwareStats**](FirmwareStats.md)
 
 ### Authorization
 

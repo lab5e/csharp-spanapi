@@ -9,6 +9,7 @@ All URIs are relative to *https://api.lab5e.com*
 | [**ListCollectionData**](CollectionsApi.md#listcollectiondata) | **GET** /span/collections/{collectionId}/data | Retrieve data from devices |
 | [**ListCollections**](CollectionsApi.md#listcollections) | **GET** /span/collections | List collections |
 | [**RetrieveCollection**](CollectionsApi.md#retrievecollection) | **GET** /span/collections/{collectionId} | Retrieve collection |
+| [**RetrieveCollectionStats**](CollectionsApi.md#retrievecollectionstats) | **GET** /span/collections/{collectionId}/stats | Retrieve collection statistics |
 | [**UpdateCollection**](CollectionsApi.md#updatecollection) | **PATCH** /span/collections/{collectionId} | Update collection |
 
 <a name="createcollection"></a>
@@ -508,6 +509,109 @@ catch (ApiException e)
 ### Return type
 
 **Collection**
+
+### Authorization
+
+[APIToken](../README.md#APIToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A successful response. |  -  |
+| **201** | It&#39;s created. |  -  |
+| **400** | The request has an error. |  -  |
+| **401** | You can&#39;t touch this |  -  |
+| **404** | Couldn&#39;t find the resource. |  -  |
+| **409** | There&#39;s a resource conflict here. |  -  |
+| **500** | I&#39;m sorry. We are broken |  -  |
+| **0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="retrievecollectionstats"></a>
+# **RetrieveCollectionStats**
+> CollectionStats RetrieveCollectionStats (string collectionId)
+
+Retrieve collection statistics
+
+Retrieve statistics for the collection. This is the aggregated metrics for devices, outputs, firmware images, blobs and gateways in the collection
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Lab5e.Span.Api;
+using Com.Lab5e.Span.Client;
+using Com.Lab5e.Span.Model;
+
+namespace Example
+{
+    public class RetrieveCollectionStatsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.lab5e.com";
+            // Configure API key authorization: APIToken
+            config.AddApiKey("X-API-Token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-API-Token", "Bearer");
+
+            var apiInstance = new CollectionsApi(config);
+            var collectionId = "collectionId_example";  // string | The collection ID of the collection you are requesting
+
+            try
+            {
+                // Retrieve collection statistics
+                CollectionStats result = apiInstance.RetrieveCollectionStats(collectionId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling CollectionsApi.RetrieveCollectionStats: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RetrieveCollectionStatsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Retrieve collection statistics
+    ApiResponse<CollectionStats> response = apiInstance.RetrieveCollectionStatsWithHttpInfo(collectionId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CollectionsApi.RetrieveCollectionStatsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** | The collection ID of the collection you are requesting |  |
+
+### Return type
+
+[**CollectionStats**](CollectionStats.md)
 
 ### Authorization
 
