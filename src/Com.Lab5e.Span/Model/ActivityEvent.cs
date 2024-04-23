@@ -27,39 +27,41 @@ using OpenAPIDateConverter = Com.Lab5e.Span.Client.OpenAPIDateConverter;
 namespace Com.Lab5e.Span.Model
 {
     /// <summary>
-    /// UpdateGatewayRequest
+    /// ActivityEvent
     /// </summary>
-    [DataContract(Name = "UpdateGateway_request")]
-    public partial class UpdateGatewayRequest : IEquatable<UpdateGatewayRequest>, IValidatableObject
+    [DataContract(Name = "ActivityEvent")]
+    public partial class ActivityEvent : IEquatable<ActivityEvent>, IValidatableObject
     {
-
         /// <summary>
-        /// Gets or Sets Type
+        /// Initializes a new instance of the <see cref="ActivityEvent" /> class.
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
-        public GatewayType? Type { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateGatewayRequest" /> class.
-        /// </summary>
-        /// <param name="name">name.</param>
+        /// <param name="_event">_event.</param>
+        /// <param name="time">time.</param>
         /// <param name="collectionId">collectionId.</param>
-        /// <param name="type">type.</param>
-        /// <param name="config">config.</param>
-        /// <param name="tags">tags.</param>
-        public UpdateGatewayRequest(string name = default(string), string collectionId = default(string), GatewayType? type = default(GatewayType?), GatewayConfig config = default(GatewayConfig), Dictionary<string, string> tags = default(Dictionary<string, string>))
+        /// <param name="deviceId">deviceId.</param>
+        /// <param name="gatewayId">gatewayId.</param>
+        /// <param name="data">data.</param>
+        public ActivityEvent(string _event = default(string), string time = default(string), string collectionId = default(string), string deviceId = default(string), string gatewayId = default(string), Dictionary<string, string> data = default(Dictionary<string, string>))
         {
-            this.Name = name;
+            this.Event = _event;
+            this.Time = time;
             this.CollectionId = collectionId;
-            this.Type = type;
-            this.Config = config;
-            this.Tags = tags;
+            this.DeviceId = deviceId;
+            this.GatewayId = gatewayId;
+            this.Data = data;
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or Sets Event
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
-        public string Name { get; set; }
+        [DataMember(Name = "event", EmitDefaultValue = false)]
+        public string Event { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Time
+        /// </summary>
+        [DataMember(Name = "time", EmitDefaultValue = false)]
+        public string Time { get; set; }
 
         /// <summary>
         /// Gets or Sets CollectionId
@@ -68,16 +70,22 @@ namespace Com.Lab5e.Span.Model
         public string CollectionId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Config
+        /// Gets or Sets DeviceId
         /// </summary>
-        [DataMember(Name = "config", EmitDefaultValue = false)]
-        public GatewayConfig Config { get; set; }
+        [DataMember(Name = "deviceId", EmitDefaultValue = false)]
+        public string DeviceId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Tags
+        /// Gets or Sets GatewayId
         /// </summary>
-        [DataMember(Name = "tags", EmitDefaultValue = false)]
-        public Dictionary<string, string> Tags { get; set; }
+        [DataMember(Name = "gatewayId", EmitDefaultValue = false)]
+        public string GatewayId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Data
+        /// </summary>
+        [DataMember(Name = "data", EmitDefaultValue = false)]
+        public Dictionary<string, string> Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -86,12 +94,13 @@ namespace Com.Lab5e.Span.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class UpdateGatewayRequest {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("class ActivityEvent {\n");
+            sb.Append("  Event: ").Append(Event).Append("\n");
+            sb.Append("  Time: ").Append(Time).Append("\n");
             sb.Append("  CollectionId: ").Append(CollectionId).Append("\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  Config: ").Append(Config).Append("\n");
-            sb.Append("  Tags: ").Append(Tags).Append("\n");
+            sb.Append("  DeviceId: ").Append(DeviceId).Append("\n");
+            sb.Append("  GatewayId: ").Append(GatewayId).Append("\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -112,15 +121,15 @@ namespace Com.Lab5e.Span.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateGatewayRequest);
+            return this.Equals(input as ActivityEvent);
         }
 
         /// <summary>
-        /// Returns true if UpdateGatewayRequest instances are equal
+        /// Returns true if ActivityEvent instances are equal
         /// </summary>
-        /// <param name="input">Instance of UpdateGatewayRequest to be compared</param>
+        /// <param name="input">Instance of ActivityEvent to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UpdateGatewayRequest input)
+        public bool Equals(ActivityEvent input)
         {
             if (input == null)
             {
@@ -128,9 +137,14 @@ namespace Com.Lab5e.Span.Model
             }
             return 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.Event == input.Event ||
+                    (this.Event != null &&
+                    this.Event.Equals(input.Event))
+                ) && 
+                (
+                    this.Time == input.Time ||
+                    (this.Time != null &&
+                    this.Time.Equals(input.Time))
                 ) && 
                 (
                     this.CollectionId == input.CollectionId ||
@@ -138,19 +152,20 @@ namespace Com.Lab5e.Span.Model
                     this.CollectionId.Equals(input.CollectionId))
                 ) && 
                 (
-                    this.Type == input.Type ||
-                    this.Type.Equals(input.Type)
+                    this.DeviceId == input.DeviceId ||
+                    (this.DeviceId != null &&
+                    this.DeviceId.Equals(input.DeviceId))
                 ) && 
                 (
-                    this.Config == input.Config ||
-                    (this.Config != null &&
-                    this.Config.Equals(input.Config))
+                    this.GatewayId == input.GatewayId ||
+                    (this.GatewayId != null &&
+                    this.GatewayId.Equals(input.GatewayId))
                 ) && 
                 (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
+                    this.Data == input.Data ||
+                    this.Data != null &&
+                    input.Data != null &&
+                    this.Data.SequenceEqual(input.Data)
                 );
         }
 
@@ -163,22 +178,29 @@ namespace Com.Lab5e.Span.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Name != null)
+                if (this.Event != null)
                 {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Event.GetHashCode();
+                }
+                if (this.Time != null)
+                {
+                    hashCode = (hashCode * 59) + this.Time.GetHashCode();
                 }
                 if (this.CollectionId != null)
                 {
                     hashCode = (hashCode * 59) + this.CollectionId.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                if (this.Config != null)
+                if (this.DeviceId != null)
                 {
-                    hashCode = (hashCode * 59) + this.Config.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DeviceId.GetHashCode();
                 }
-                if (this.Tags != null)
+                if (this.GatewayId != null)
                 {
-                    hashCode = (hashCode * 59) + this.Tags.GetHashCode();
+                    hashCode = (hashCode * 59) + this.GatewayId.GetHashCode();
+                }
+                if (this.Data != null)
+                {
+                    hashCode = (hashCode * 59) + this.Data.GetHashCode();
                 }
                 return hashCode;
             }

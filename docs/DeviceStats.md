@@ -5,10 +5,10 @@ This is the statistics for a single device
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BytesUpstreamMb** | **float** |  | [optional] 
-**BytesDownstreamMb** | **float** |  | [optional] 
-**MessagesUpstream** | **int** |  | [optional] 
-**MessagesDownstream** | **int** |  | [optional] 
+**BytesUpstream** | **string** |  | [optional] 
+**BytesDownstream** | **string** |  | [optional] 
+**MessagesUpstream** | **string** |  | [optional] 
+**MessagesDownstream** | **string** |  | [optional] 
 **SessionCount** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

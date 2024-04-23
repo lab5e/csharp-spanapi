@@ -5,10 +5,10 @@ This is statistics for a single gateway
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MessagesUpstream** | **int** |  | [optional] 
-**MessagesDownstream** | **int** |  | [optional] 
-**BytesUpstreamMb** | **float** |  | [optional] 
-**BytesDownstreamMb** | **float** |  | [optional] 
+**MessagesUpstream** | **string** |  | [optional] 
+**MessagesDownstream** | **string** |  | [optional] 
+**BytesUpstream** | **string** |  | [optional] 
+**BytesDownstream** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
