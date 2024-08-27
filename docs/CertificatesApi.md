@@ -11,7 +11,7 @@ All URIs are relative to *https://api.lab5e.com*
 
 <a name="createcertificate"></a>
 # **CreateCertificate**
-> CreateCertificateResponse CreateCertificate (string collectionId, CreateCertificateRequest body)
+> CreateCertificateResponse CreateCertificate (string collectionId, CreateCertificateBody body)
 
 Create certificate
 
@@ -40,7 +40,7 @@ namespace Example
 
             var apiInstance = new CertificatesApi(config);
             var collectionId = "collectionId_example";  // string | 
-            var body = new CreateCertificateRequest(); // CreateCertificateRequest | 
+            var body = new CreateCertificateBody(); // CreateCertificateBody | 
 
             try
             {
@@ -84,7 +84,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **collectionId** | **string** |  |  |
-| **body** | [**CreateCertificateRequest**](CreateCertificateRequest.md) |  |  |
+| **body** | [**CreateCertificateBody**](CreateCertificateBody.md) |  |  |
 
 ### Return type
 
@@ -223,7 +223,7 @@ catch (ApiException e)
 
 <a name="signcertificate"></a>
 # **SignCertificate**
-> SignCertificateResponse SignCertificate (string collectionId, SignCertificateRequest body)
+> SignCertificateResponse SignCertificate (string collectionId, SignCertificateBody body)
 
 Sign certificate
 
@@ -252,7 +252,7 @@ namespace Example
 
             var apiInstance = new CertificatesApi(config);
             var collectionId = "collectionId_example";  // string | 
-            var body = new SignCertificateRequest(); // SignCertificateRequest | 
+            var body = new SignCertificateBody(); // SignCertificateBody | 
 
             try
             {
@@ -296,7 +296,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **collectionId** | **string** |  |  |
-| **body** | [**SignCertificateRequest**](SignCertificateRequest.md) |  |  |
+| **body** | [**SignCertificateBody**](SignCertificateBody.md) |  |  |
 
 ### Return type
 
@@ -328,7 +328,7 @@ catch (ApiException e)
 
 <a name="verifycertificate"></a>
 # **VerifyCertificate**
-> VerifyCertificateResponse VerifyCertificate (string collectionId, VerifyCertificateRequest body)
+> VerifyCertificateResponse VerifyCertificate (string collectionId, VerifyCertificateBody body)
 
 Verify certificate
 
@@ -357,7 +357,7 @@ namespace Example
 
             var apiInstance = new CertificatesApi(config);
             var collectionId = "collectionId_example";  // string | 
-            var body = new VerifyCertificateRequest(); // VerifyCertificateRequest | 
+            var body = new VerifyCertificateBody(); // VerifyCertificateBody | 
 
             try
             {
@@ -401,7 +401,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **collectionId** | **string** |  |  |
-| **body** | [**VerifyCertificateRequest**](VerifyCertificateRequest.md) |  |  |
+| **body** | [**VerifyCertificateBody**](VerifyCertificateBody.md) |  |  |
 
 ### Return type
 

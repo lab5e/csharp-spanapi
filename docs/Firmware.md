@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **CollectionId** | **string** | Collection ID for the collection owning the firmware image. | [optional] 
 **Created** | **string** |  | [optional] 
 **Tags** | **Dictionary&lt;string, string&gt;** | Tags for firmware image. | [optional] 
+**Enabled** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

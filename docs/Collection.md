@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Tags** | **Dictionary&lt;string, string&gt;** | Tags for the collection. Tags are metadata fields that you can assign to the collection. | [optional] 
 **UpstreamTimestamps** | **List&lt;string&gt;** |  | [optional] 
 **DownstreamTimestamps** | **List&lt;string&gt;** |  | [optional] 
+**Enabled** | **bool** | Disabled flag for collection. If the collection is disabled it is in effect read only and inactive. You can&#39;t update a disabled collection. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

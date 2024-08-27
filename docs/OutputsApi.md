@@ -15,7 +15,7 @@ All URIs are relative to *https://api.lab5e.com*
 
 <a name="createoutput"></a>
 # **CreateOutput**
-> Output CreateOutput (string collectionId, CreateOutputRequest body)
+> Output CreateOutput (string collectionId, CreateOutputBody body)
 
 Create output
 
@@ -42,7 +42,7 @@ namespace Example
 
             var apiInstance = new OutputsApi(config);
             var collectionId = "collectionId_example";  // string | 
-            var body = new CreateOutputRequest(); // CreateOutputRequest | 
+            var body = new CreateOutputBody(); // CreateOutputBody | 
 
             try
             {
@@ -86,7 +86,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **collectionId** | **string** |  |  |
-| **body** | [**CreateOutputRequest**](CreateOutputRequest.md) |  |  |
+| **body** | [**CreateOutputBody**](CreateOutputBody.md) |  |  |
 
 ### Return type
 
@@ -734,7 +734,7 @@ catch (ApiException e)
 
 <a name="updateoutput"></a>
 # **UpdateOutput**
-> Output UpdateOutput (string existingCollectionId, string outputId, UpdateOutputRequest body)
+> Output UpdateOutput (string existingCollectionId, string outputId, UpdateOutputBody body)
 
 Update output
 
@@ -762,7 +762,7 @@ namespace Example
             var apiInstance = new OutputsApi(config);
             var existingCollectionId = "existingCollectionId_example";  // string | 
             var outputId = "outputId_example";  // string | 
-            var body = new UpdateOutputRequest(); // UpdateOutputRequest | 
+            var body = new UpdateOutputBody(); // UpdateOutputBody | 
 
             try
             {
@@ -807,7 +807,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **existingCollectionId** | **string** |  |  |
 | **outputId** | **string** |  |  |
-| **body** | [**UpdateOutputRequest**](UpdateOutputRequest.md) |  |  |
+| **body** | [**UpdateOutputBody**](UpdateOutputBody.md) |  |  |
 
 ### Return type
 

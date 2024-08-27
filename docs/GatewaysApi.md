@@ -14,7 +14,7 @@ All URIs are relative to *https://api.lab5e.com*
 
 <a name="creategateway"></a>
 # **CreateGateway**
-> Gateway CreateGateway (string collectionId, CreateGatewayRequest body)
+> Gateway CreateGateway (string collectionId, CreateGatewayBody body)
 
 Create gateway
 
@@ -43,7 +43,7 @@ namespace Example
 
             var apiInstance = new GatewaysApi(config);
             var collectionId = "collectionId_example";  // string | 
-            var body = new CreateGatewayRequest(); // CreateGatewayRequest | 
+            var body = new CreateGatewayBody(); // CreateGatewayBody | 
 
             try
             {
@@ -87,7 +87,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **collectionId** | **string** |  |  |
-| **body** | [**CreateGatewayRequest**](CreateGatewayRequest.md) |  |  |
+| **body** | [**CreateGatewayBody**](CreateGatewayBody.md) |  |  |
 
 ### Return type
 
@@ -640,7 +640,7 @@ catch (ApiException e)
 
 <a name="updategateway"></a>
 # **UpdateGateway**
-> Gateway UpdateGateway (string existingCollectionId, string gatewayId, UpdateGatewayRequest body)
+> Gateway UpdateGateway (string existingCollectionId, string gatewayId, UpdateGatewayBody body)
 
 Update gateway
 
@@ -670,7 +670,7 @@ namespace Example
             var apiInstance = new GatewaysApi(config);
             var existingCollectionId = "existingCollectionId_example";  // string | 
             var gatewayId = "gatewayId_example";  // string | 
-            var body = new UpdateGatewayRequest(); // UpdateGatewayRequest | 
+            var body = new UpdateGatewayBody(); // UpdateGatewayBody | 
 
             try
             {
@@ -715,7 +715,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **existingCollectionId** | **string** |  |  |
 | **gatewayId** | **string** |  |  |
-| **body** | [**UpdateGatewayRequest**](UpdateGatewayRequest.md) |  |  |
+| **body** | [**UpdateGatewayBody**](UpdateGatewayBody.md) |  |  |
 
 ### Return type
 

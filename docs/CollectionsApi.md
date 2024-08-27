@@ -639,7 +639,7 @@ catch (ApiException e)
 
 <a name="updatecollection"></a>
 # **UpdateCollection**
-> Collection UpdateCollection (string collectionId, UpdateCollectionRequest body)
+> Collection UpdateCollection (string collectionId, UpdateCollectionBody body)
 
 Update collection
 
@@ -668,7 +668,7 @@ namespace Example
 
             var apiInstance = new CollectionsApi(config);
             var collectionId = "collectionId_example";  // string | The ID of the collection. This is assigned by the backend.
-            var body = new UpdateCollectionRequest(); // UpdateCollectionRequest | 
+            var body = new UpdateCollectionBody(); // UpdateCollectionBody | 
 
             try
             {
@@ -712,7 +712,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **collectionId** | **string** | The ID of the collection. This is assigned by the backend. |  |
-| **body** | [**UpdateCollectionRequest**](UpdateCollectionRequest.md) |  |  |
+| **body** | [**UpdateCollectionBody**](UpdateCollectionBody.md) |  |  |
 
 ### Return type
 

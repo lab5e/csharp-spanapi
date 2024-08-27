@@ -19,7 +19,7 @@ All URIs are relative to *https://api.lab5e.com*
 
 <a name="adddownstreammessage"></a>
 # **AddDownstreamMessage**
-> MessageDownstream AddDownstreamMessage (string collectionId, string deviceId, AddDownstreamMessageRequest body)
+> MessageDownstream AddDownstreamMessage (string collectionId, string deviceId, AddDownstreamMessageBody body)
 
 Add message to oubox
 
@@ -49,7 +49,7 @@ namespace Example
             var apiInstance = new DevicesApi(config);
             var collectionId = "collectionId_example";  // string | 
             var deviceId = "deviceId_example";  // string | 
-            var body = new AddDownstreamMessageRequest(); // AddDownstreamMessageRequest | 
+            var body = new AddDownstreamMessageBody(); // AddDownstreamMessageBody | 
 
             try
             {
@@ -94,7 +94,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **collectionId** | **string** |  |  |
 | **deviceId** | **string** |  |  |
-| **body** | [**AddDownstreamMessageRequest**](AddDownstreamMessageRequest.md) |  |  |
+| **body** | [**AddDownstreamMessageBody**](AddDownstreamMessageBody.md) |  |  |
 
 ### Return type
 
@@ -126,7 +126,7 @@ catch (ApiException e)
 
 <a name="createdevice"></a>
 # **CreateDevice**
-> Device CreateDevice (string collectionId, CreateDeviceRequest body)
+> Device CreateDevice (string collectionId, CreateDeviceBody body)
 
 Create device
 
@@ -153,7 +153,7 @@ namespace Example
 
             var apiInstance = new DevicesApi(config);
             var collectionId = "collectionId_example";  // string | This is the containing collection
-            var body = new CreateDeviceRequest(); // CreateDeviceRequest | 
+            var body = new CreateDeviceBody(); // CreateDeviceBody | 
 
             try
             {
@@ -197,7 +197,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **collectionId** | **string** | This is the containing collection |  |
-| **body** | [**CreateDeviceRequest**](CreateDeviceRequest.md) |  |  |
+| **body** | [**CreateDeviceBody**](CreateDeviceBody.md) |  |  |
 
 ### Return type
 
@@ -1188,7 +1188,7 @@ catch (ApiException e)
 
 <a name="updatedevice"></a>
 # **UpdateDevice**
-> Device UpdateDevice (string existingCollectionId, string deviceId, UpdateDeviceRequest body)
+> Device UpdateDevice (string existingCollectionId, string deviceId, UpdateDeviceBody body)
 
 Update device
 
@@ -1218,7 +1218,7 @@ namespace Example
             var apiInstance = new DevicesApi(config);
             var existingCollectionId = "existingCollectionId_example";  // string | 
             var deviceId = "deviceId_example";  // string | 
-            var body = new UpdateDeviceRequest(); // UpdateDeviceRequest | 
+            var body = new UpdateDeviceBody(); // UpdateDeviceBody | 
 
             try
             {
@@ -1263,7 +1263,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **existingCollectionId** | **string** |  |  |
 | **deviceId** | **string** |  |  |
-| **body** | [**UpdateDeviceRequest**](UpdateDeviceRequest.md) |  |  |
+| **body** | [**UpdateDeviceBody**](UpdateDeviceBody.md) |  |  |
 
 ### Return type
 

@@ -118,7 +118,7 @@ catch (ApiException e)
 
 <a name="createfirmware"></a>
 # **CreateFirmware**
-> Firmware CreateFirmware (string collectionId, CreateFirmwareRequest body)
+> Firmware CreateFirmware (string collectionId, CreateFirmwareBody body)
 
 Create firmware
 
@@ -147,7 +147,7 @@ namespace Example
 
             var apiInstance = new FotaApi(config);
             var collectionId = "collectionId_example";  // string | 
-            var body = new CreateFirmwareRequest(); // CreateFirmwareRequest | 
+            var body = new CreateFirmwareBody(); // CreateFirmwareBody | 
 
             try
             {
@@ -191,7 +191,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **collectionId** | **string** |  |  |
-| **body** | [**CreateFirmwareRequest**](CreateFirmwareRequest.md) |  |  |
+| **body** | [**CreateFirmwareBody**](CreateFirmwareBody.md) |  |  |
 
 ### Return type
 
@@ -736,7 +736,7 @@ catch (ApiException e)
 
 <a name="updatefirmware"></a>
 # **UpdateFirmware**
-> Firmware UpdateFirmware (string existingCollectionId, string imageId, UpdateFirmwareRequest body)
+> Firmware UpdateFirmware (string existingCollectionId, string imageId, UpdateFirmwareBody body)
 
 Update firmware
 
@@ -766,7 +766,7 @@ namespace Example
             var apiInstance = new FotaApi(config);
             var existingCollectionId = "existingCollectionId_example";  // string | 
             var imageId = "imageId_example";  // string | 
-            var body = new UpdateFirmwareRequest(); // UpdateFirmwareRequest | 
+            var body = new UpdateFirmwareBody(); // UpdateFirmwareBody | 
 
             try
             {
@@ -811,7 +811,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **existingCollectionId** | **string** |  |  |
 | **imageId** | **string** |  |  |
-| **body** | [**UpdateFirmwareRequest**](UpdateFirmwareRequest.md) |  |  |
+| **body** | [**UpdateFirmwareBody**](UpdateFirmwareBody.md) |  |  |
 
 ### Return type
 
