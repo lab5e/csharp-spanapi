@@ -6,9 +6,11 @@ All URIs are relative to *https://api.lab5e.com*
 |--------|--------------|-------------|
 | [**ClearFirmwareError**](FotaApi.md#clearfirmwareerror) | **DELETE** /span/collections/{collectionId}/devices/{deviceId}/fwerror | Clear FOTA error |
 | [**CreateFirmware**](FotaApi.md#createfirmware) | **POST** /span/collections/{collectionId}/firmware | Create firmware |
+| [**CreateLabeledFirmware**](FotaApi.md#createlabeledfirmware) | **POST** /span/collections/{collectionId}/firmware/labeled | BETA: Create a labeled firmware image |
 | [**DeleteFirmware**](FotaApi.md#deletefirmware) | **DELETE** /span/collections/{collectionId}/firmware/{imageId} | Delete firmware |
 | [**FirmwareUsage**](FotaApi.md#firmwareusage) | **GET** /span/collections/{collectionId}/firmware/{imageId}/usage | Firmware usage |
 | [**ListFirmware**](FotaApi.md#listfirmware) | **GET** /span/collections/{collectionId}/firmware | List firmware |
+| [**ListLabeledFirmware**](FotaApi.md#listlabeledfirmware) | **GET** /span/collections/{collectionId}/firmware/labeled | BETA: List the labeled firmware images for a collection |
 | [**RetrieveFirmware**](FotaApi.md#retrievefirmware) | **GET** /span/collections/{collectionId}/firmware/{imageId} | Retrieve firmware |
 | [**RetrieveFirmwareStats**](FotaApi.md#retrievefirmwarestats) | **GET** /span/collections/{collectionId}/firmware/{imageId}/stats | Retrieve firmware statistics |
 | [**UpdateFirmware**](FotaApi.md#updatefirmware) | **PATCH** /span/collections/{existingCollectionId}/firmware/{imageId} | Update firmware |
@@ -204,6 +206,125 @@ catch (ApiException e)
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A successful response. |  -  |
+| **201** | It&#39;s created. |  -  |
+| **400** | The request has an error. |  -  |
+| **401** | You can&#39;t touch this |  -  |
+| **404** | Couldn&#39;t find the resource. |  -  |
+| **409** | There&#39;s a resource conflict here. |  -  |
+| **500** | I&#39;m sorry. We are broken |  -  |
+| **0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="createlabeledfirmware"></a>
+# **CreateLabeledFirmware**
+> CreateLabeledFirmwareResponse CreateLabeledFirmware (string collectionId, string? version = null, string? label = null, string? imageRefImageRef = null, string? imageRefCreatedAt = null, string? imageRefFileName = null, string? imageRefLength = null, string? imageRefChecksum = null, string? imageRefSha256 = null)
+
+BETA: Create a labeled firmware image
+
+Devices might need several different firmware images, depending on their configuration. Low-power devices usually have just a single firmware image but more complex devices might need several firmware images for their  subsystems. The firmware image must be uploaded prior to the call and the  returned data structure is included in the request.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Lab5e.Span.Api;
+using Com.Lab5e.Span.Client;
+using Com.Lab5e.Span.Model;
+
+namespace Example
+{
+    public class CreateLabeledFirmwareExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.lab5e.com";
+            // Configure API key authorization: APIToken
+            config.AddApiKey("X-API-Token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-API-Token", "Bearer");
+
+            var apiInstance = new FotaApi(config);
+            var collectionId = "collectionId_example";  // string | 
+            var version = "version_example";  // string? |  (optional) 
+            var label = "label_example";  // string? |  (optional) 
+            var imageRefImageRef = "imageRefImageRef_example";  // string? |  (optional) 
+            var imageRefCreatedAt = "imageRefCreatedAt_example";  // string? |  (optional) 
+            var imageRefFileName = "imageRefFileName_example";  // string? |  (optional) 
+            var imageRefLength = "imageRefLength_example";  // string? |  (optional) 
+            var imageRefChecksum = "imageRefChecksum_example";  // string? |  (optional) 
+            var imageRefSha256 = "imageRefSha256_example";  // string? |  (optional) 
+
+            try
+            {
+                // BETA: Create a labeled firmware image
+                CreateLabeledFirmwareResponse result = apiInstance.CreateLabeledFirmware(collectionId, version, label, imageRefImageRef, imageRefCreatedAt, imageRefFileName, imageRefLength, imageRefChecksum, imageRefSha256);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FotaApi.CreateLabeledFirmware: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the CreateLabeledFirmwareWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // BETA: Create a labeled firmware image
+    ApiResponse<CreateLabeledFirmwareResponse> response = apiInstance.CreateLabeledFirmwareWithHttpInfo(collectionId, version, label, imageRefImageRef, imageRefCreatedAt, imageRefFileName, imageRefLength, imageRefChecksum, imageRefSha256);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FotaApi.CreateLabeledFirmwareWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **version** | **string?** |  | [optional]  |
+| **label** | **string?** |  | [optional]  |
+| **imageRefImageRef** | **string?** |  | [optional]  |
+| **imageRefCreatedAt** | **string?** |  | [optional]  |
+| **imageRefFileName** | **string?** |  | [optional]  |
+| **imageRefLength** | **string?** |  | [optional]  |
+| **imageRefChecksum** | **string?** |  | [optional]  |
+| **imageRefSha256** | **string?** |  | [optional]  |
+
+### Return type
+
+[**CreateLabeledFirmwareResponse**](CreateLabeledFirmwareResponse.md)
+
+### Authorization
+
+[APIToken](../README.md#APIToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -503,6 +624,107 @@ catch (ApiException e)
 ### Return type
 
 [**ListFirmwareResponse**](ListFirmwareResponse.md)
+
+### Authorization
+
+[APIToken](../README.md#APIToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A successful response. |  -  |
+| **201** | It&#39;s created. |  -  |
+| **400** | The request has an error. |  -  |
+| **401** | You can&#39;t touch this |  -  |
+| **404** | Couldn&#39;t find the resource. |  -  |
+| **409** | There&#39;s a resource conflict here. |  -  |
+| **500** | I&#39;m sorry. We are broken |  -  |
+| **0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listlabeledfirmware"></a>
+# **ListLabeledFirmware**
+> ListLabeledFirmwareResponse ListLabeledFirmware (string collectionId)
+
+BETA: List the labeled firmware images for a collection
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Lab5e.Span.Api;
+using Com.Lab5e.Span.Client;
+using Com.Lab5e.Span.Model;
+
+namespace Example
+{
+    public class ListLabeledFirmwareExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.lab5e.com";
+            // Configure API key authorization: APIToken
+            config.AddApiKey("X-API-Token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-API-Token", "Bearer");
+
+            var apiInstance = new FotaApi(config);
+            var collectionId = "collectionId_example";  // string | 
+
+            try
+            {
+                // BETA: List the labeled firmware images for a collection
+                ListLabeledFirmwareResponse result = apiInstance.ListLabeledFirmware(collectionId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FotaApi.ListLabeledFirmware: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ListLabeledFirmwareWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // BETA: List the labeled firmware images for a collection
+    ApiResponse<ListLabeledFirmwareResponse> response = apiInstance.ListLabeledFirmwareWithHttpInfo(collectionId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FotaApi.ListLabeledFirmwareWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+
+### Return type
+
+[**ListLabeledFirmwareResponse**](ListLabeledFirmwareResponse.md)
 
 ### Authorization
 
