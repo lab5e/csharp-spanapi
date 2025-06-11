@@ -4,16 +4,130 @@ All URIs are relative to *https://api.lab5e.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
+| [**AssignTargetImage**](FotaApi.md#assigntargetimage) | **PATCH** /span/collections/{collectionId}/firmware/labeled/{imageId}/assign | BETA: Assign a target image |
 | [**ClearFirmwareError**](FotaApi.md#clearfirmwareerror) | **DELETE** /span/collections/{collectionId}/devices/{deviceId}/fwerror | Clear FOTA error |
 | [**CreateFirmware**](FotaApi.md#createfirmware) | **POST** /span/collections/{collectionId}/firmware | Create firmware |
 | [**CreateLabeledFirmware**](FotaApi.md#createlabeledfirmware) | **POST** /span/collections/{collectionId}/firmware/labeled | BETA: Create a labeled firmware image |
 | [**DeleteFirmware**](FotaApi.md#deletefirmware) | **DELETE** /span/collections/{collectionId}/firmware/{imageId} | Delete firmware |
+| [**DeleteLabeledImage**](FotaApi.md#deletelabeledimage) | **DELETE** /span/collections/{collectionId}/firmware/labeled/{imageId} | BETA: Remove a tagged firmware image |
 | [**FirmwareUsage**](FotaApi.md#firmwareusage) | **GET** /span/collections/{collectionId}/firmware/{imageId}/usage | Firmware usage |
+| [**GetImageState**](FotaApi.md#getimagestate) | **PATCH** /span/collections/{collectionId}/devices/{deviceId}/fotastate | BETA: Get state for a single device |
 | [**ListFirmware**](FotaApi.md#listfirmware) | **GET** /span/collections/{collectionId}/firmware | List firmware |
+| [**ListImageStates**](FotaApi.md#listimagestates) | **GET** /span/collections/{collectionId}/firmware/labeled/states | BETA: List image assignments plus states |
+| [**ListImageVersionHistory**](FotaApi.md#listimageversionhistory) | **PATCH** /span/collections/{collectionId}/devices/{deviceId}/fotalog | BETA: List version history for a single device |
 | [**ListLabeledFirmware**](FotaApi.md#listlabeledfirmware) | **GET** /span/collections/{collectionId}/firmware/labeled | BETA: List the labeled firmware images for a collection |
 | [**RetrieveFirmware**](FotaApi.md#retrievefirmware) | **GET** /span/collections/{collectionId}/firmware/{imageId} | Retrieve firmware |
 | [**RetrieveFirmwareStats**](FotaApi.md#retrievefirmwarestats) | **GET** /span/collections/{collectionId}/firmware/{imageId}/stats | Retrieve firmware statistics |
 | [**UpdateFirmware**](FotaApi.md#updatefirmware) | **PATCH** /span/collections/{existingCollectionId}/firmware/{imageId} | Update firmware |
+
+<a name="assigntargetimage"></a>
+# **AssignTargetImage**
+> AssignTargetImageResponse AssignTargetImage (string collectionId, string imageId, string? label = null, string? deviceId = null)
+
+BETA: Assign a target image
+
+Assign a particular labeled image to a device or a collection
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Lab5e.Span.Api;
+using Com.Lab5e.Span.Client;
+using Com.Lab5e.Span.Model;
+
+namespace Example
+{
+    public class AssignTargetImageExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.lab5e.com";
+            // Configure API key authorization: APIToken
+            config.AddApiKey("X-API-Token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-API-Token", "Bearer");
+
+            var apiInstance = new FotaApi(config);
+            var collectionId = "collectionId_example";  // string | 
+            var imageId = "imageId_example";  // string | 
+            var label = "label_example";  // string? |  (optional) 
+            var deviceId = "deviceId_example";  // string? |  (optional) 
+
+            try
+            {
+                // BETA: Assign a target image
+                AssignTargetImageResponse result = apiInstance.AssignTargetImage(collectionId, imageId, label, deviceId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FotaApi.AssignTargetImage: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the AssignTargetImageWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // BETA: Assign a target image
+    ApiResponse<AssignTargetImageResponse> response = apiInstance.AssignTargetImageWithHttpInfo(collectionId, imageId, label, deviceId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FotaApi.AssignTargetImageWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **imageId** | **string** |  |  |
+| **label** | **string?** |  | [optional]  |
+| **deviceId** | **string?** |  | [optional]  |
+
+### Return type
+
+[**AssignTargetImageResponse**](AssignTargetImageResponse.md)
+
+### Authorization
+
+[APIToken](../README.md#APIToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A successful response. |  -  |
+| **201** | It&#39;s created. |  -  |
+| **400** | The request has an error. |  -  |
+| **401** | You can&#39;t touch this |  -  |
+| **404** | Couldn&#39;t find the resource. |  -  |
+| **409** | There&#39;s a resource conflict here. |  -  |
+| **500** | I&#39;m sorry. We are broken |  -  |
+| **0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="clearfirmwareerror"></a>
 # **ClearFirmwareError**
@@ -225,7 +339,7 @@ catch (ApiException e)
 
 <a name="createlabeledfirmware"></a>
 # **CreateLabeledFirmware**
-> CreateLabeledFirmwareResponse CreateLabeledFirmware (string collectionId, string? version = null, string? label = null, string? imageRefImageRef = null, string? imageRefCreatedAt = null, string? imageRefFileName = null, string? imageRefLength = null, string? imageRefChecksum = null, string? imageRefSha256 = null)
+> CreateLabeledFirmwareResponse CreateLabeledFirmware (string collectionId, string? version = null, string? label = null, string? imageRef = null)
 
 BETA: Create a labeled firmware image
 
@@ -256,17 +370,12 @@ namespace Example
             var collectionId = "collectionId_example";  // string | 
             var version = "version_example";  // string? |  (optional) 
             var label = "label_example";  // string? |  (optional) 
-            var imageRefImageRef = "imageRefImageRef_example";  // string? |  (optional) 
-            var imageRefCreatedAt = "imageRefCreatedAt_example";  // string? |  (optional) 
-            var imageRefFileName = "imageRefFileName_example";  // string? |  (optional) 
-            var imageRefLength = "imageRefLength_example";  // string? |  (optional) 
-            var imageRefChecksum = "imageRefChecksum_example";  // string? |  (optional) 
-            var imageRefSha256 = "imageRefSha256_example";  // string? |  (optional) 
+            var imageRef = "imageRef_example";  // string? |  (optional) 
 
             try
             {
                 // BETA: Create a labeled firmware image
-                CreateLabeledFirmwareResponse result = apiInstance.CreateLabeledFirmware(collectionId, version, label, imageRefImageRef, imageRefCreatedAt, imageRefFileName, imageRefLength, imageRefChecksum, imageRefSha256);
+                CreateLabeledFirmwareResponse result = apiInstance.CreateLabeledFirmware(collectionId, version, label, imageRef);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -287,7 +396,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // BETA: Create a labeled firmware image
-    ApiResponse<CreateLabeledFirmwareResponse> response = apiInstance.CreateLabeledFirmwareWithHttpInfo(collectionId, version, label, imageRefImageRef, imageRefCreatedAt, imageRefFileName, imageRefLength, imageRefChecksum, imageRefSha256);
+    ApiResponse<CreateLabeledFirmwareResponse> response = apiInstance.CreateLabeledFirmwareWithHttpInfo(collectionId, version, label, imageRef);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -307,12 +416,7 @@ catch (ApiException e)
 | **collectionId** | **string** |  |  |
 | **version** | **string?** |  | [optional]  |
 | **label** | **string?** |  | [optional]  |
-| **imageRefImageRef** | **string?** |  | [optional]  |
-| **imageRefCreatedAt** | **string?** |  | [optional]  |
-| **imageRefFileName** | **string?** |  | [optional]  |
-| **imageRefLength** | **string?** |  | [optional]  |
-| **imageRefChecksum** | **string?** |  | [optional]  |
-| **imageRefSha256** | **string?** |  | [optional]  |
+| **imageRef** | **string?** |  | [optional]  |
 
 ### Return type
 
@@ -445,6 +549,111 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="deletelabeledimage"></a>
+# **DeleteLabeledImage**
+> Object DeleteLabeledImage (string collectionId, string imageId)
+
+BETA: Remove a tagged firmware image
+
+Remove a tagged firmware image from the backing store and it's metadata
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Lab5e.Span.Api;
+using Com.Lab5e.Span.Client;
+using Com.Lab5e.Span.Model;
+
+namespace Example
+{
+    public class DeleteLabeledImageExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.lab5e.com";
+            // Configure API key authorization: APIToken
+            config.AddApiKey("X-API-Token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-API-Token", "Bearer");
+
+            var apiInstance = new FotaApi(config);
+            var collectionId = "collectionId_example";  // string | 
+            var imageId = "imageId_example";  // string | 
+
+            try
+            {
+                // BETA: Remove a tagged firmware image
+                Object result = apiInstance.DeleteLabeledImage(collectionId, imageId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FotaApi.DeleteLabeledImage: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DeleteLabeledImageWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // BETA: Remove a tagged firmware image
+    ApiResponse<Object> response = apiInstance.DeleteLabeledImageWithHttpInfo(collectionId, imageId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FotaApi.DeleteLabeledImageWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **imageId** | **string** |  |  |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[APIToken](../README.md#APIToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A successful response. |  -  |
+| **201** | It&#39;s created. |  -  |
+| **400** | The request has an error. |  -  |
+| **401** | You can&#39;t touch this |  -  |
+| **404** | Couldn&#39;t find the resource. |  -  |
+| **409** | There&#39;s a resource conflict here. |  -  |
+| **500** | I&#39;m sorry. We are broken |  -  |
+| **0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="firmwareusage"></a>
 # **FirmwareUsage**
 > FirmwareUsageResponse FirmwareUsage (string collectionId, string imageId)
@@ -548,6 +757,109 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="getimagestate"></a>
+# **GetImageState**
+> GetImageStateResponse GetImageState (string collectionId, string deviceId)
+
+BETA: Get state for a single device
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Lab5e.Span.Api;
+using Com.Lab5e.Span.Client;
+using Com.Lab5e.Span.Model;
+
+namespace Example
+{
+    public class GetImageStateExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.lab5e.com";
+            // Configure API key authorization: APIToken
+            config.AddApiKey("X-API-Token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-API-Token", "Bearer");
+
+            var apiInstance = new FotaApi(config);
+            var collectionId = "collectionId_example";  // string | 
+            var deviceId = "deviceId_example";  // string | 
+
+            try
+            {
+                // BETA: Get state for a single device
+                GetImageStateResponse result = apiInstance.GetImageState(collectionId, deviceId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FotaApi.GetImageState: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetImageStateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // BETA: Get state for a single device
+    ApiResponse<GetImageStateResponse> response = apiInstance.GetImageStateWithHttpInfo(collectionId, deviceId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FotaApi.GetImageStateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **deviceId** | **string** |  |  |
+
+### Return type
+
+[**GetImageStateResponse**](GetImageStateResponse.md)
+
+### Authorization
+
+[APIToken](../README.md#APIToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A successful response. |  -  |
+| **201** | It&#39;s created. |  -  |
+| **400** | The request has an error. |  -  |
+| **401** | You can&#39;t touch this |  -  |
+| **404** | Couldn&#39;t find the resource. |  -  |
+| **409** | There&#39;s a resource conflict here. |  -  |
+| **500** | I&#39;m sorry. We are broken |  -  |
+| **0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="listfirmware"></a>
 # **ListFirmware**
 > ListFirmwareResponse ListFirmware (string collectionId)
@@ -624,6 +936,212 @@ catch (ApiException e)
 ### Return type
 
 [**ListFirmwareResponse**](ListFirmwareResponse.md)
+
+### Authorization
+
+[APIToken](../README.md#APIToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A successful response. |  -  |
+| **201** | It&#39;s created. |  -  |
+| **400** | The request has an error. |  -  |
+| **401** | You can&#39;t touch this |  -  |
+| **404** | Couldn&#39;t find the resource. |  -  |
+| **409** | There&#39;s a resource conflict here. |  -  |
+| **500** | I&#39;m sorry. We are broken |  -  |
+| **0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listimagestates"></a>
+# **ListImageStates**
+> ListImageStatesResponse ListImageStates (string collectionId)
+
+BETA: List image assignments plus states
+
+List the status for the labeled firmware images in the collection
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Lab5e.Span.Api;
+using Com.Lab5e.Span.Client;
+using Com.Lab5e.Span.Model;
+
+namespace Example
+{
+    public class ListImageStatesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.lab5e.com";
+            // Configure API key authorization: APIToken
+            config.AddApiKey("X-API-Token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-API-Token", "Bearer");
+
+            var apiInstance = new FotaApi(config);
+            var collectionId = "collectionId_example";  // string | 
+
+            try
+            {
+                // BETA: List image assignments plus states
+                ListImageStatesResponse result = apiInstance.ListImageStates(collectionId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FotaApi.ListImageStates: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ListImageStatesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // BETA: List image assignments plus states
+    ApiResponse<ListImageStatesResponse> response = apiInstance.ListImageStatesWithHttpInfo(collectionId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FotaApi.ListImageStatesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+
+### Return type
+
+[**ListImageStatesResponse**](ListImageStatesResponse.md)
+
+### Authorization
+
+[APIToken](../README.md#APIToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A successful response. |  -  |
+| **201** | It&#39;s created. |  -  |
+| **400** | The request has an error. |  -  |
+| **401** | You can&#39;t touch this |  -  |
+| **404** | Couldn&#39;t find the resource. |  -  |
+| **409** | There&#39;s a resource conflict here. |  -  |
+| **500** | I&#39;m sorry. We are broken |  -  |
+| **0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listimageversionhistory"></a>
+# **ListImageVersionHistory**
+> ListImageVersionHistoryResponse ListImageVersionHistory (string collectionId, string deviceId)
+
+BETA: List version history for a single device
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Lab5e.Span.Api;
+using Com.Lab5e.Span.Client;
+using Com.Lab5e.Span.Model;
+
+namespace Example
+{
+    public class ListImageVersionHistoryExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.lab5e.com";
+            // Configure API key authorization: APIToken
+            config.AddApiKey("X-API-Token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-API-Token", "Bearer");
+
+            var apiInstance = new FotaApi(config);
+            var collectionId = "collectionId_example";  // string | 
+            var deviceId = "deviceId_example";  // string | 
+
+            try
+            {
+                // BETA: List version history for a single device
+                ListImageVersionHistoryResponse result = apiInstance.ListImageVersionHistory(collectionId, deviceId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FotaApi.ListImageVersionHistory: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ListImageVersionHistoryWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // BETA: List version history for a single device
+    ApiResponse<ListImageVersionHistoryResponse> response = apiInstance.ListImageVersionHistoryWithHttpInfo(collectionId, deviceId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FotaApi.ListImageVersionHistoryWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **collectionId** | **string** |  |  |
+| **deviceId** | **string** |  |  |
+
+### Return type
+
+[**ListImageVersionHistoryResponse**](ListImageVersionHistoryResponse.md)
 
 ### Authorization
 
